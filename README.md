@@ -1,7 +1,7 @@
 # Twitchcord Discord Theme
-`v0.0.1` By BakedPVP
+`v0.0.1` By BakedPVP ![alt text](http://www.dperolio.com/Twitchcord/images/verified5.png "Verified")
 
-![alt text](http://www.dperolio.com/Twitchcord/images/verified5.png "Twitchcord")
+![alt text](http://www.dperolio.com/Twitchcord/images/twitchcord-ava-256.png "Twitchcord")
 
 **[Website](http://www.twitchcord.com)**
 
