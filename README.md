@@ -3,11 +3,11 @@
 
 **[Website](http://www.twitchcord.com)**
 
-**[Download]()**(coming soon)
+**Download** (coming soon)
 
 **[Twitchcord discord server](https://discord.me/twitchcord)**
 
-### Want to help test the theme for bugs?
+# Want to help test the theme for bugs?
 I'm only one man, and there are thousands of lines of codes
 and lots of hidden elements, and Discord is updating
 them constantly. If you see something is off, or if you have
@@ -16,7 +16,7 @@ please!
 
 [Twitchcord discord server](https://discord.me/twitchcord)
 
-### Previews:
+# Previews:
 (might be out of date)
 ![Full size preview](http://www.dperolio.com/Twitchcord/images/preview-1.jpg)
 ![Full size preview](http://www.dperolio.com/Twitchcord/images/preview-2.jpg)
