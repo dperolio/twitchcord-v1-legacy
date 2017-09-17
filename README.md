@@ -1,18 +1,11 @@
 # Twitchcord Discord Theme
 `v0.0.1` By BakedPVP
 
-<<<<<<< HEAD
 **[Website](http://www.twitchcord.com)
 
 **[Download](coming soon)
 
 [Twitchcord discord server](https://discord.me/twitchcord)**
-=======
-**[Download](http://www.twitchcord.com)** (coming soon)
-
-**[Twitchcord discord server](http://discord.me/twitchcord)**
-
->>>>>>> 0353f47d2da049f06a8a4619718659dffa02456c
 
 ### Want to help test the theme for bugs?
 I'm only one man, and there are thousands of lines of codes
@@ -20,13 +13,8 @@ and lots of hidden elements, and Discord is updating
 them constantly. If you see something is off, or if you have
 an issue, head on over to the Discord server and let me know
 please!
-<<<<<<< HEAD
 
 [Twitchcord discord server](https://discord.me/twitchcord)
-=======
-[Twitchcord discord server](http://discord.me/twitchcord)
-
->>>>>>> 0353f47d2da049f06a8a4619718659dffa02456c
 
 ### Previews:
 (might be out of date)
