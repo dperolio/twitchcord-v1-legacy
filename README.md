@@ -1,11 +1,11 @@
 # Twitchcord Discord Theme
 `v0.0.1` By BakedPVP
 
-**[Website](http://www.twitchcord.com)
+**[Website](http://www.twitchcord.com)**
 
-**[Download](coming soon)
+**[Download]()**(coming soon)
 
-[Twitchcord discord server](https://discord.me/twitchcord)**
+**[Twitchcord discord server](https://discord.me/twitchcord)**
 
 ### Want to help test the theme for bugs?
 I'm only one man, and there are thousands of lines of codes
