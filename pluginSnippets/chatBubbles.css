@@ -1,0 +1,54 @@
+/* =========================================== */
+/* =============== CHAT BUBBLES== ============ */
+/* =========================================== */
+
+.message-group {
+    background: var(--chat-color);
+    border: 1px solid #2c2541!important;
+    margin: 7px 20px;
+    padding: 20px;
+    padding-right: 0;
+}
+
+.search-result-message .message-group {
+    border: none!important;
+}
+
+.search-result-message .message-group {
+    border: none!important;
+}
+
+.search-results-wrap .search-result .search-result-message.hit:hover .message-group, .search-results-wrap .search-result.expanded .search-result-message.hit .message-group {
+    background-color: #08050d!important;
+}
+
+.chat form {
+    background: var(--channels-color)!important;
+    margin: 0;
+    padding: 0 29px 0 20px;
+    box-shadow: none!important;
+}
+
+.messages-wrapper {
+    background-color: var(--channels-color)!important;
+}
+
+.chat .divider {
+    margin-bottom: 0;
+}
+
+.chat .messages {
+    padding-bottom: 5px;
+}
+
+.channelTextArea-os01xC {
+    background: var(--channels-color);
+}
+
+.messages-wrapper .scroller-wrap::-webkit-scrollbar-thumb {
+    border-right: 10px solid var(--channels-color);
+}
+
+.channel-members-wrap {
+    border-left: 1px solid #2c2541;
+}

@@ -1,0 +1,92 @@
+/* Baked's special label */
+.avatar-large[style*="97549189629636608"]+.comment .timestamp::before
+{
+   content: 'Twitchcord Creator';
+   text-transform: uppercase;
+   border: 1px solid #9866ff;
+   border-radius: 3px;
+   font-weight: 400;
+   margin: 0;
+   background: #5f29cc;
+   box-shadow: 0 0 5px 1px var(--top-nav-color), inset 0 0 10px rgba(57, 46, 92, 0.7);
+   color: #efe;
+   font-size: 10px;
+   outline: none;
+   margin-right: 7px;
+   padding: 0 6px;
+   line-height: 16px;
+   top: -2px;
+   position: relative;
+   display: inline-block!important;
+}
+
+
+/* =========================================== */
+/* ============== SPECIAL LABELS ============= */
+/* =========================================== */
+
+.avatar-large[style*="177744816665395200"]+.comment .timestamp::before,
+.avatar-large[style*="269929826075410432"]+.comment .timestamp::before,
+.avatar-large[style*="284122164582416385"]+.comment .timestamp::before,
+.avatar-large[style*="71575679543549952"]+.comment .timestamp::before,
+.avatar-large[style*="173449041181409281"]+.comment .timestamp::before,
+.avatar-large[style*="258591131758100481"]+.comment .timestamp::before,
+.avatar-large[style*="111476801762537472"]+.comment .timestamp::before,
+.avatar-large[style*="96269247411400704"]+.comment .timestamp::before,
+.avatar-large[style*="90076279646212096"]+.comment .timestamp::before,
+.avatar-large[style*="112008049975099392"]+.comment .timestamp::before,
+.avatar-large[style*="111894694652280832"]+.comment .timestamp::before,
+.avatar-large[style*="212749887803097088"]+.comment .timestamp::before,
+.avatar-large[style*="250322741406859265"]+.comment .timestamp::before,
+.avatar-large[style*="318401651029442560"]+.comment .timestamp::before,
+.avatar-large[style*="98270968945864704"]+.comment .timestamp::before,
+.avatar-large[style*="98829797735559168"]+.comment .timestamp::before,
+.avatar-large[style*="274950159195176963"]+.comment .timestamp::before
+ {
+    text-transform: uppercase;
+    border: 1px solid;
+    border-radius: 3px;
+    font-weight: 400;
+    margin: 0;
+    color: #efe;
+    font-size: 10px;
+    outline: none;
+    margin-right: 7px;
+    padding: 2px 6px;
+    line-height: 16px;
+    top: -2px;
+    position: relative;
+}
+
+/*
+.avatar-large[style*="250322741406859265"]+.comment .timestamp::before,
+.avatar-large[style*="177744816665395200"]+.comment .timestamp::before {
+    content: 'Supporter';
+    border-color: #FF6666;
+    background: #e52e2e;
+    box-shadow: 0 0 5px 1px #5c2e2e, inset 0 0 10px rgba(92, 46, 46, 0.7);
+}
+*/
+
+.avatar-large[style*="177744816665395200"]+.comment .timestamp::before,
+.avatar-large[style*="269929826075410432"]+.comment .timestamp::before,
+.avatar-large[style*="284122164582416385"]+.comment .timestamp::before,
+.avatar-large[style*="71575679543549952"]+.comment .timestamp::before,
+.avatar-large[style*="173449041181409281"]+.comment .timestamp::before,
+.avatar-large[style*="258591131758100481"]+.comment .timestamp::before,
+.avatar-large[style*="111476801762537472"]+.comment .timestamp::before,
+.avatar-large[style*="96269247411400704"]+.comment .timestamp::before,
+.avatar-large[style*="90076279646212096"]+.comment .timestamp::before,
+.avatar-large[style*="112008049975099392"]+.comment .timestamp::before,
+.avatar-large[style*="111894694652280832"]+.comment .timestamp::before,
+.avatar-large[style*="212749887803097088"]+.comment .timestamp::before,
+.avatar-large[style*="250322741406859265"]+.comment .timestamp::before,
+.avatar-large[style*="318401651029442560"]+.comment .timestamp::before,
+.avatar-large[style*="98270968945864704"]+.comment .timestamp::before,
+.avatar-large[style*="98829797735559168"]+.comment .timestamp::before,
+.avatar-large[style*="274950159195176963"]+.comment .timestamp::before {
+    content: 'Beta Tester';
+    border-color: #ffa066;
+    background: #e56b2e;
+    box-shadow: 0 0 5px 1px #5C482E, inset 0 0 10px rgba(92, 68, 46, 0.7);
+}

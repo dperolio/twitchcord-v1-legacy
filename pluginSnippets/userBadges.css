@@ -1,0 +1,28 @@
+/* ================================================== */
+/* ================= BADGES TOGGLE ================== */
+/* ================================================== */
+
+/*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
+.avatar-large+.comment .username-wrapper::before {
+    display: none;
+}
+
+/*--- friends list ---*/
+.avatar-small+.discord-tag .username::before {
+    display: none;
+}
+
+/*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
+.avatar-large+.comment .username-wrapper::after {
+    display: none;
+}
+
+/*--- channel members wrap ---*/
+.avatar-small+.member-inner .member-username-inner::before {
+    display: none;
+}
+
+/*--- friends list ---*/
+.avatar-small+.discord-tag .username::after {
+    display: none;
+}

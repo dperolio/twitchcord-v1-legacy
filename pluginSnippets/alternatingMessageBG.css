@@ -1,0 +1,52 @@
+/* ==================================================== */
+/* ============== ALTERNATING MESSAGE BG ============== */
+/* ==================================================== */
+
+.messages-wrapper .messages >div:nth-of-type(odd) {
+    background-color: #13101a;
+}
+
+.message-group {
+    background-color: var(--chat-color);
+    margin: 0;
+    border: none!important;
+    padding: 20px;
+    padding-right: 0;
+}
+
+.chat form {
+    background-color: var(--chat-color)!important;
+    margin: 0;
+    padding: 20px 29px 0 20px;
+    box-shadow: none!important;
+}
+
+.messages-wrapper {
+    background-color: var(--chat-color)!important;
+}
+
+.chat .divider {
+    margin-bottom: 0;
+}
+
+.channelTextArea-os01xC {
+    background-color: var(--chat-color);
+}
+
+.channel-members-wrap {
+    border-left: 1px solid #2c2541;
+}
+
+.chat .divider {
+    margin: 0;
+    padding: 0 65px;
+}
+
+.chat .empty-message {
+    margin: 0;
+    padding: 0 20px 14px 20px;
+}
+
+.search-results-wrap .search-result .search-result-message.hit:hover .message-group, .search-results-wrap .search-result.expanded .search-result-message.hit .message-group {
+    background-color: #08050d!important;
+}
