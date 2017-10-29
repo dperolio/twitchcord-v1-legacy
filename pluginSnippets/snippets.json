@@ -1,7 +1,32 @@
 [
   {
-    "title": "Hide blocked users' messages entirely",
-    "description": "Enable this to completely remove blocked users' messages",
+    "title": "Blocked Messages",
+    "description": "Hide blocked users' messages completely",
     "filePath": "/pluginSnippets/blockedMessages.css"
+  },
+  {
+    "title": "Chat Bubbles",
+    "description": "Show blocks around chat messages",
+    "filePath": "/pluginSnippets/chatBubbles.css"
+  },
+  {
+    "title": "User Badges",
+    "description": "Display special user badges",
+    "filePath": "/pluginSnippets/userBadges.css"
+  },
+  {
+    "title": "User Labels",
+    "description": "Display special user labels",
+    "filePath": "/pluginSnippets/userLabels.css"
+  },
+  {
+    "title": "Swap Core Colors",
+    "description": "Swap the theme's primary and accent colors",
+    "filePath": "/pluginSnippets/swapPrimaryAccent.css"
+  },
+  {
+    "title": "Altnerating Message Backgrounds",
+    "description": "Makes the background of messages alternate between two different colors",
+    "filePath": "/pluginSnippets/alternatingMessageBG.css"
   }
 ]
