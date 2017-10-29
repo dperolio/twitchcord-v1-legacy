@@ -1,7 +1,7 @@
 [
   {
-    "title": "Test title woohoo",
-    "description": "test description skldjfhskdjfasbdfjk;sdf",
-    "filePath": "/pluginSnippets/test.css"
+    "title": "Hide blocked users' messages entirely",
+    "description": "Enable this to completely remove blocked users' messages",
+    "filePath": "/pluginSnippets/blockedMessages.css"
   }
 ]
