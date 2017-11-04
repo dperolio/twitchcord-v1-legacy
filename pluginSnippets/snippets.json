@@ -2,7 +2,8 @@
   {
     "title": "Hide Blocked Messages",
     "description": "Hide blocked users' messages completely",
-    "filePath": "/pluginSnippets/blockedMessages.css"
+    "filePath": "/pluginSnippets/blockedMessages.css",
+    "default": "true"
   },
   {
     "title": "Chat Bubbles",
