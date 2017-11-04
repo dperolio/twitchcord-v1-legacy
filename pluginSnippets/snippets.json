@@ -1,6 +1,6 @@
 [
   {
-    "title": "Blocked Messages",
+    "title": "Hide Blocked Messages",
     "description": "Hide blocked users' messages completely",
     "filePath": "/pluginSnippets/blockedMessages.css"
   },
@@ -12,7 +12,8 @@
   {
     "title": "User Badges",
     "description": "Display special user badges",
-    "filePath": "/pluginSnippets/userBadges.css"
+    "filePath": "/pluginSnippets/userBadges.css",
+    "default": "true"
   },
   {
     "title": "User Labels",
