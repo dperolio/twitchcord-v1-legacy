@@ -3,7 +3,7 @@
     "title": "Hide Blocked Messages",
     "description": "Hide blocked users' messages completely",
     "filePath": "/pluginSnippets/blockedMessages.css",
-    "default": "true"
+    "default": true
   },
   {
     "title": "Chat Bubbles",
@@ -14,7 +14,7 @@
     "title": "User Badges",
     "description": "Display special user badges",
     "filePath": "/pluginSnippets/userBadges.css",
-    "default": "true"
+    "default": true
   },
   {
     "title": "User Labels",
