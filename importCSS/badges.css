@@ -427,9 +427,9 @@
 /* =========================================== */
 
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
-.avatar-large[style*="177744816665395200"]+.comment .username-wrapper::after,
-.avatar-large[style*="269929826075410432"]+.comment .username-wrapper::after,
-.avatar-large[style*="284122164582416385"]+.comment .username-wrapper::after {
+.avatar-large[style*="284122164582416385"]+.comment .username-wrapper::after,
+.avatar-large[style*="249746236008169473"]+.comment .username-wrapper::after,
+.avatar-large[style*="278543574059057154"]+.comment .username-wrapper::after {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/plugin-developer.png');
     background-repeat: no-repeat;
@@ -445,9 +445,9 @@
 }
 
 /*--- channel members wrap ---*/
-.avatar-small[style*="177744816665395200"]+.member-inner .member-username-inner::before,
-.avatar-small[style*="269929826075410432"]+.member-inner .member-username-inner::before,
-.avatar-small[style*="284122164582416385"]+.member-inner .member-username-inner::before {
+.avatar-small[style*="284122164582416385"]+.member-inner .member-username-inner::before,
+.avatar-small[style*="249746236008169473"]+.member-inner .member-username-inner::before,
+.avatar-small[style*="278543574059057154"]+.member-inner .member-username-inner::before {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/plugin-developer.png');
     background-repeat: no-repeat;
@@ -463,9 +463,9 @@
 }
 
 /*--- friends list ---*/
-.avatar-small[style*="177744816665395200"]+.discord-tag .username::after,
-.avatar-small[style*="269929826075410432"]+.discord-tag .username::after,
-.avatar-small[style*="284122164582416385"]+.discord-tag .username::after {
+.avatar-small[style*="284122164582416385"]+.discord-tag .username::after,
+.avatar-small[style*="249746236008169473"]+.discord-tag .username::after,
+.avatar-small[style*="278543574059057154"]+.discord-tag .username::after {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/plugin-developer.png');
     background-repeat: no-repeat;

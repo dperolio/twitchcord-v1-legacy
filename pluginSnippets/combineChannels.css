@@ -1,0 +1,70 @@
+/* ================================================================ */
+/* ============== COMBINE SERVER AND MEMBER CHANNELS ============== */
+/* ================================================================ */
+
+.channels-3g2vYe .scroller-fzNley {
+    max-height: 40vh;
+}
+
+.channel-members {
+    background-color: var(--channels-color)!important;
+    padding-bottom: 0;
+    max-height: 45vh;
+    border-top: 1px solid #2c2541;
+}
+
+.container-3lnMWU {
+    z-index: 101;
+}
+
+.channel-members-wrap {
+    position: fixed;
+    left: 69px;
+    z-index: 1;
+    top: 45vh;
+    margin-top: 53px;
+    box-shadow: 0 -60px 70px -40px var(--chat-color);
+}
+
+.channels-3g2vYe .private-channels .scroller-fzNley {
+    max-height: 100%;
+}
+
+.channels-3g2vYe .private-channels .scroller-fzNley::before {
+    display: none;
+}
+
+.channels-3g2vYe .unreadBottom-2LxhSR {
+    bottom: 486px;
+    z-index: 2;
+}
+
+.channel-members::before, .channels-3g2vYe .scroller-fzNley::before {
+    content: 'Members List';
+    font-size: 12px;
+    text-transform: uppercase;
+    height: auto;
+    line-height: 1px;
+    width: 240px;
+    background: var(--titlebar-color);
+    color: #fff;
+    position: fixed;
+    z-index:9;
+    padding: 15px 0px 15px 14px;
+    margin-top: -30px;
+    box-sizing: border-box;   
+}
+
+.channels-3g2vYe .scroller-fzNley::before {
+    content: 'Channels List';
+}
+
+.channels-3g2vYe .scroller-fzNley {
+     padding-top: 30px;
+}
+
+.guilds-wrapper .guilds .friends-online {
+    margin: 40px 0 -2px 0;
+    color: #fff;
+    line-height: 14px;
+}

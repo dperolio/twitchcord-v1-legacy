@@ -1,0 +1,10 @@
+/* =================================================== */
+/* ================ ANIMATED TOOLTIPS ================ */
+/* =================================================== */
+
+.tooltip.tooltip-brand,
+.tooltip.tooltip-black,
+.tipsy-inner {
+    -webkit-animation: none!important;
+    animation: none!important;
+}

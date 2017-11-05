@@ -1,0 +1,36 @@
+/* =================================================== */
+/* ================= TYPING INDICATOR ================ */
+/* =================================================== */
+
+.chat form {
+    margin-bottom: 14px;
+}
+
+.chat form .typing {
+    background-color: transparent!important;
+    position: absolute;
+    top: 32px;
+    left: -8px;
+    height: 30px;
+    padding-right: 0;
+    line-height: 30px;
+    vertical-align: middle;
+    pointer-events: none;
+    cursor: default;
+}
+
+.chat form .typing .text {
+    color: var(--dark-text-tint)!important;
+}
+
+.chat form .typing .text strong {
+    color: #fff!important;
+}
+
+.chat form .typing .ellipsis {
+    margin: 0px 4px 0 8px;
+}
+
+.chat form .typing .spinner-pulsing-ellipsis .spinner-item {
+    background: #fff;
+}

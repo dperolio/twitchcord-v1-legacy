@@ -1,0 +1,58 @@
+/* =================================================== */
+/* ================== LIGHT TOOLTIPS ================= */
+/* =================================================== */
+
+.tooltip,
+.tooltip.tooltip-black,
+.tipsy-inner {
+    padding: 8px 18px;
+}
+
+.tooltip.tooltip-brand,
+.tooltip.tooltip-black,
+.tipsy-inner {
+    background-color: #fff;
+    border-radius: 1px;
+    color: #0e1011;
+    border: 1px solid #b8b5c0;
+    padding: 8px 18px;
+    line-height: 16px;
+    font-size: 12px;
+}
+
+.tooltip.tooltip-brand.tooltip-right:after,
+.tooltip.tooltip-black.tooltip-right:after {
+    border-radius: 0;
+    border-right: 8px solid #fff;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.tooltip.tooltip-brand.tooltip-top:after,
+.tooltip.tooltip-black.tooltip-top:after,
+.tipsy-se .tipsy-inner:after {
+    border-radius: 0;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #fff;
+    border-left: 8px solid transparent;
+}
+
+.tooltip.tooltip-brand.tooltip-left:after,
+.tooltip.tooltip-black.tooltip-left:after {
+    border-radius: 0;
+    border-left: 8px solid #fff;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.tooltip.tooltip-brand.tooltip-bottom:after,
+.tooltip.tooltip-black.tooltip-bottom:after {
+    border-radius: 0;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid transparent;
+}
+
+.tooltip.tooltip-top {
+    margin-top: -11px;
+}

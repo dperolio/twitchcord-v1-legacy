@@ -7,12 +7,6 @@
     display: none;
 }
 
-/*--- friends list ---*/
-.avatar-small+.discord-tag .username::before {
-    display: none;
-}
-
-/*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
 .avatar-large+.comment .username-wrapper::after {
     display: none;
 }
@@ -22,7 +16,15 @@
     display: none;
 }
 
+.avatar-small+.member-inner .member-username::before {
+    display: none;
+}
+
 /*--- friends list ---*/
 .avatar-small+.discord-tag .username::after {
+    display: none;
+}
+
+.avatar-small+.discord-tag .username::before {
     display: none;
 }
