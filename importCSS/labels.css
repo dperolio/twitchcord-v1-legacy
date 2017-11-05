@@ -27,7 +27,7 @@
     border-radius: 3px;
     font-weight: 400;
     margin: 0;
-    color: #efefef;
+    color: #fefefe;
     font-size: 10px;
     outline: none;
     margin-right: 7px;
@@ -97,7 +97,7 @@
    margin: 0;
    background: #5f29cc;
    box-shadow: 0 0 5px 1px var(--top-nav-color), inset 0 0 10px rgba(57, 46, 92, 0.7);
-   color: #efefef;
+   color: #fefefe;
    font-size: 10px;
    outline: none;
    margin-right: 7px;
