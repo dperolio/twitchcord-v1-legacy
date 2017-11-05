@@ -86,7 +86,7 @@
 /* Aetheryx's special label */
 .avatar-large[style*="284122164582416385"]+.comment .timestamp::before {
     content: 'Twitchcord Head Developer';
-    border-color: #ea2463;
+    border-color: #ff6395;
     background: #b82553;
     box-shadow: 0 0 5px 1px #9e1842, inset 0 0 10px rgba(158,24,66, 0.7);
 }
