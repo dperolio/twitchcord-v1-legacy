@@ -1,105 +1,46 @@
+/* ============================================== */
+/* ================= BASES  ===================== */
+/* ============================================== */
+
+/*--- friends list ---*/
+.avatar-small+.discord-tag .username::before,
+/*--- friends list ---*/
+.avatar-small+.discord-tag .username::after,
+/*--- channel members wrap ---*/
+.avatar-small+.member-inner .member-username::before,
+/*--- channel members wrap ---*/
+.avatar-small+.member-inner .member-username-inner::before,
+/*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
+.avatar-large+.comment .username-wrapper:before,
+/*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
+.avatar-large+.comment .username-wrapper::after
+ {
+    content: none;
+    background-repeat: no-repeat;
+    font-size: 1px;
+    margin-right: 7px;
+    height: 18px;
+    width: 18px;
+    line-height: 16px;
+    cursor: default;
+    pointer-events: none;
+    float: left;
+    position: relative;
+}
+
 /* =========================================== */
 /* ============== NITRO BADGES  ============== */
 /* =========================================== */
 
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
-.avatar-large[style*="a_"]+.comment .username-wrapper:before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/nitro2.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
+.avatar-large[style*="a_"]+.comment .username-wrapper:before,
 /*--- channel members wrap ---*/
-.avatar-small[style*="a_"]+.member-inner .member-username::before {
+.avatar-small[style*="a_"]+.member-inner .member-username::before,
+/*--- friends list ---*/
+.avatar-small[style*="a_"]+.discord-tag .username::before
+ {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/nitro2.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
-/*--- friends list ---*/
-.avatar-small[style*="a_"]+.discord-tag .username::before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/nitro2.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
-/* =========================================== */
-/* ============== DONOR BADGES  ============== */
-/* =========================================== */
-
-/*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
-.avatar-large[style*="numGoesHere"]+.comment .username-wrapper::after {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/donor.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
-/*--- channel members wrap ---*/
-.avatar-small[style*="numGoesHere"]+.member-inner .member-username-inner::before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/donor.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
-/*--- friends list ---*/
-.avatar-small[style*="numGoesHere"]+.discord-tag .username::after {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/donor.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
 }
 
 /* =========================================== */
@@ -123,21 +64,7 @@
 .avatar-large[style*="318401651029442560"]+.comment .username-wrapper::after,
 .avatar-large[style*="98270968945864704"]+.comment .username-wrapper::after,
 .avatar-large[style*="98829797735559168"]+.comment .username-wrapper::after,
-.avatar-large[style*="274950159195176963"]+.comment .username-wrapper::after {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/beta-tester2.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
+.avatar-large[style*="274950159195176963"]+.comment .username-wrapper::after,
 /*--- channel members wrap ---*/
 .avatar-small[style*="177744816665395200"]+.member-inner .member-username-inner::before,
 .avatar-small[style*="269929826075410432"]+.member-inner .member-username-inner::before,
@@ -155,21 +82,7 @@
 .avatar-small[style*="318401651029442560"]+.member-inner .member-username-inner::before,
 .avatar-small[style*="98270968945864704"]+.member-inner .member-username-inner::before,
 .avatar-small[style*="98829797735559168"]+.member-inner .member-username-inner::before,
-.avatar-small[style*="274950159195176963"]+.member-inner .member-username-inner::before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/beta-tester2.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
+.avatar-small[style*="274950159195176963"]+.member-inner .member-username-inner::before,
 /*--- friends list ---*/
 .avatar-small[style*="177744816665395200"]+.discord-tag .username::after,
 .avatar-small[style*="269929826075410432"]+.discord-tag .username::after,
@@ -190,236 +103,34 @@
 .avatar-small[style*="274950159195176963"]+.discord-tag .username::after {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/beta-tester2.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
 }
 
+/* =============================================== */
+/* ============== SUPPORTER BADGES  ============== */
+/* =============================================== */
+
+/*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
+.avatar-large[style*="numGoesHere"]+.comment .username-wrapper::after,
+/*--- channel members wrap ---*/
+.avatar-small[style*="numGoesHere"]+.member-inner .member-username-inner::before,
+/*--- friends list ---*/
+.avatar-small[style*="numGoesHere"]+.discord-tag .username::after {
+    content: '';
+    background: url('https://www.twitchcord.com/twitchcord-theme/images/donor.png');
+}
 
 /* ============================================== */
 /* ============== TURBO BADGES  ============== */
 /* ============================================== */
 
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
-.avatar-large[style*="97549189629636608"]+.comment .username-wrapper::before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/turbo.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    border-radius: 0;
-    line-height: 16px;
-    color: transparent!important;
-    width: 18px;
-    height: 18px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
+.avatar-large[style*="97549189629636608"]+.comment .username-wrapper::before,
 /*--- channel members wrap ---*/
-.avatar-small[style*="97549189629636608"]+.member-inner .member-username::before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/turbo.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
+.avatar-small[style*="97549189629636608"]+.member-inner .member-username::before,
 /*--- friends list ---*/
 .avatar-small[style*="97549189629636608"]+.discord-tag .username::before {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/turbo.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
-
-/* ============================================== */
-/* ============== VERIFIED BADGES  ============== */
-/* ============================================== */
-
-/*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
-.avatar-large[style*="97549189629636608"]+.comment .username-wrapper::after {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/verified5.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    border-radius: 0;
-    line-height: 16px;
-    color: transparent!important;
-    width: 18px;
-    height: 18px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
-/*--- channel members wrap ---*/
-.avatar-small[style*="97549189629636608"]+.member-inner .member-username-inner::before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/verified5.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
-/*--- friends list ---*/
-.avatar-small[style*="97549189629636608"]+.discord-tag .username::after {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/verified5.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
-/* ============================================== */
-/* ============== STAFF BADGES  ================= */
-/* ============================================== */
-
-/*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
-.avatar-large[style*="97549189629636608"]+.comment .username-wrapper:before,
-.avatar-large[style*="284122164582416385"]+.comment .username-wrapper:before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/staff-badge.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
-/*--- channel members wrap ---*/
-.avatar-small[style*="97549189629636608"]+.member-inner .member-username::before,
-.avatar-small[style*="284122164582416385"]+.member-inner .member-username::before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/staff-badge.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
-/*--- friends list ---*/
-.avatar-small[style*="97549189629636608"]+.discord-tag .username::before,
-.avatar-small[style*="284122164582416385"]+.discord-tag .username::before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/staff-badge.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
-/* ============================================== */
-/* ============== STAFF BADGES  ================= */
-/* ============================================== */
-
-/*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
-.avatar-large[style*="97549189629636608"]+.comment .username-wrapper:before,
-.avatar-large[style*="284122164582416385"]+.comment .username-wrapper:before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/staff-badge.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
-/*--- channel members wrap ---*/
-.avatar-small[style*="97549189629636608"]+.member-inner .member-username::before,
-.avatar-small[style*="284122164582416385"]+.member-inner .member-username::before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/staff-badge.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
-/*--- friends list ---*/
-.avatar-small[style*="97549189629636608"]+.discord-tag .username::before,
-.avatar-small[style*="284122164582416385"]+.discord-tag .username::before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/staff-badge.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
 }
 
 /* =========================================== */
@@ -429,53 +140,47 @@
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
 .avatar-large[style*="284122164582416385"]+.comment .username-wrapper::after,
 .avatar-large[style*="249746236008169473"]+.comment .username-wrapper::after,
-.avatar-large[style*="278543574059057154"]+.comment .username-wrapper::after {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/plugin-developer.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
+.avatar-large[style*="278543574059057154"]+.comment .username-wrapper::after,
 /*--- channel members wrap ---*/
 .avatar-small[style*="284122164582416385"]+.member-inner .member-username-inner::before,
 .avatar-small[style*="249746236008169473"]+.member-inner .member-username-inner::before,
-.avatar-small[style*="278543574059057154"]+.member-inner .member-username-inner::before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/plugin-developer.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
-}
-
+.avatar-small[style*="278543574059057154"]+.member-inner .member-username-inner::before,
 /*--- friends list ---*/
 .avatar-small[style*="284122164582416385"]+.discord-tag .username::after,
 .avatar-small[style*="249746236008169473"]+.discord-tag .username::after,
 .avatar-small[style*="278543574059057154"]+.discord-tag .username::after {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/plugin-developer.png');
-    background-repeat: no-repeat;
-    font-size: 1px;
-    margin-right: 7px;
-    height: 18px;
-    width: 18px;
-    line-height: 16px;
-    cursor: default;
-    pointer-events: none;
-    float: left;
-    position: relative;
+}
+
+/* ============================================== */
+/* ============== VERIFIED BADGES  ============== */
+/* ============================================== */
+
+/*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
+.avatar-large[style*="97549189629636608"]+.comment .username-wrapper::after,
+/*--- channel members wrap ---*/
+.avatar-small[style*="97549189629636608"]+.member-inner .member-username-inner::before,
+/*--- friends list ---*/
+.avatar-small[style*="97549189629636608"]+.discord-tag .username::after {
+    content: '';
+    background: url('https://www.twitchcord.com/twitchcord-theme/images/verified5.png');
+}
+
+/* ============================================== */
+/* ============== STAFF BADGES  ================= */
+/* ============================================== */
+
+/*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
+.avatar-large[style*="97549189629636608"]+.comment .username-wrapper:before,
+.avatar-large[style*="284122164582416385"]+.comment .username-wrapper:before,
+/*--- channel members wrap ---*/
+.avatar-small[style*="97549189629636608"]+.member-inner .member-username::before,
+.avatar-small[style*="284122164582416385"]+.member-inner .member-username::before,
+/*--- friends list ---*/
+.avatar-small[style*="97549189629636608"]+.discord-tag .username::before,
+.avatar-small[style*="284122164582416385"]+.discord-tag .username::before
+ {
+    content: '';
+    background: url('https://www.twitchcord.com/twitchcord-theme/images/staff-badge.png');
 }
