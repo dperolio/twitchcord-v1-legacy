@@ -21,8 +21,7 @@
 .avatar-large[style*="98829797735559168"]+.comment .timestamp::before,
 .avatar-large[style*="274950159195176963"]+.comment .timestamp::before,
 .avatar-large[style*="249746236008169473"]+.comment .timestamp::before,
-.avatar-large[style*="278543574059057154"]+.comment .timestamp::before
- {
+.avatar-large[style*="278543574059057154"]+.comment .timestamp::before {
     text-transform: uppercase;
     border: 1px solid #9866ff;
     border-radius: 3px;
@@ -71,6 +70,7 @@
 }
 
 /* Plugin Developer */
+.avatar-large[style*="284122164582416385"]+.comment .timestamp::before,
 .avatar-large[style*="249746236008169473"]+.comment .timestamp::before,
 .avatar-large[style*="278543574059057154"]+.comment .timestamp::before {
     content: 'Plugin Developer';
@@ -82,10 +82,13 @@
     box-shadow: 0 0 5px 1px #3a3a3a, inset 0 0 10px rgba(58,58,58, 0.7);*/
 }
 
+/* Aetheryx's special label */
+.avatar-large[style*="284122164582416385"]+.comment .timestamp::before {
+    content: 'Twitchcord Head Developer';
+}
+
 /* Baked's special label */
-.avatar-large[style*="97549189629636608"]+.comment .timestamp::before,
-.avatar-large[style*="284122164582416385"]+.comment .timestamp::before
-{
+.avatar-large[style*="97549189629636608"]+.comment .timestamp::before {
    content: 'Twitchcord Creator';
    text-transform: uppercase;
    border: 1px solid #9866ff;
@@ -103,8 +106,4 @@
    top: -2px;
    position: relative;
    display: inline-block!important;
-}
-
-.avatar-large[style*="284122164582416385"]+.comment .timestamp::before {
-    content: 'Twitchcord Head Developer';
 }
