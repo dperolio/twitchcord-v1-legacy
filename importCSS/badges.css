@@ -2,16 +2,16 @@
 /* ================= BASES  ===================== */
 /* ============================================== */
 
-/*--- friends list ---*/
+/*--- friends list (Staff > Turbo > Nitro) ---*/
 .avatar-small+.discord-tag .username::before,
-/*--- friends list ---*/
+/*--- friends list (Verified > Plugin Developer > Supporter > Beta) ---*/
 .avatar-small+.discord-tag .username::after,
-/*--- channel members wrap ---*/
+/*--- channel members wrap (Staff > Turbo > Nitro) ---*/
 .avatar-small+.member-inner .member-username::before,
-/*--- channel members wrap ---*/
+/*--- channel members wrap (Verified > Plugin Developer > Supporter > Beta) ---*/
 .avatar-small+.member-inner .member-username-inner::before,
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
-.avatar-large+.comment .username-wrapper:before,
+.avatar-large+.comment .username-wrapper::before,
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
 .avatar-large+.comment .username-wrapper::after
  {
@@ -33,7 +33,7 @@
 /* =========================================== */
 
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
-.avatar-large[style*="a_"]+.comment .username-wrapper:before,
+.avatar-large[style*="a_"]+.comment .username-wrapper::before,
 /*--- channel members wrap ---*/
 .avatar-small[style*="a_"]+.member-inner .member-username::before,
 /*--- friends list ---*/
@@ -172,8 +172,8 @@
 /* ============================================== */
 
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
-.avatar-large[style*="97549189629636608"]+.comment .username-wrapper:before,
-.avatar-large[style*="284122164582416385"]+.comment .username-wrapper:before,
+.avatar-large[style*="97549189629636608"]+.comment .username-wrapper::before,
+.avatar-large[style*="284122164582416385"]+.comment .username-wrapper::before,
 /*--- channel members wrap ---*/
 .avatar-small[style*="97549189629636608"]+.member-inner .member-username::before,
 .avatar-small[style*="284122164582416385"]+.member-inner .member-username::before,
