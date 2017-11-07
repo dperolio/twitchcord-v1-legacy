@@ -14,7 +14,7 @@
     "title": "User Badges",
     "description": "Display special user badges",
     "filePath": "/pluginSnippets/userBadges.css",
-    "default": true
+    "inverted": true
   },
   {
     "title": "User Labels",
