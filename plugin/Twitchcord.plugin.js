@@ -1,5 +1,5 @@
 //META{"name":"Twitchcord"}*//
-/* global bdPluginStorage, $, PluginUtilities, PluginContextMenu, BdApi */
+/* global bdPluginStorage, $, PluginUtilities, PluginContextMenu */
 /* Special thanks to Zerebos#7790 for helping us out with the right click context menus. ❤ */
 
 class Twitchcord {
@@ -8,12 +8,16 @@ class Twitchcord {
     this.SNIPPET_URL = `${this.BASE_URL}/pluginSnippets/snippets.json`;
     this.USER_BG_URL = `${this.BASE_URL}/pluginSnippets/userBackgrounds.json`;
 
-    this.initialized = false;
+    this.observers = [];
     this.contextObserver = new MutationObserver((changes) => {
       for (const change of changes) {
         this.observeContextMenus(change);
       }
     });
+    this.observers.push(this.contextObserver);
+
+    this.initialized = false;
+
     this.selectedTabClasses = 'itemDefaultSelected-1UAWLe item-3879bf selected-eNoxEK';
     this.unselectedTabClasses = 'itemDefault-3NDwnY item-3879bf notSelected-PgwTMa';
 
@@ -27,27 +31,25 @@ class Twitchcord {
 
   async watchUserModals () {
     const MO = new MutationObserver(changes => {
-      if (changes.some(change => change.target&& change.previousSibling && change.target.className === 'guilds scroller' && change.previousSibling.className === 'section')) {
+      if (changes.some(change => change.target && change.previousSibling && change.target.className === 'guilds scroller' && change.previousSibling.className === 'section')) {
         this.injectUserModal();
       }
     });
 
     MO.observe(document.querySelector('#app-mount'), { childList: true, subtree: true });
+    this.observers.push(MO);
   }
 
   get userAvatars () {
-    return $.ajax({
-      url: this.USER_BG_URL,
-      async: false
-    }).responseJSON;
+    return window.fetch(this.USER_BG_URL).then(r => r.json());
   }
 
   async injectUserModal () {
     const headerModal = document.querySelector('#user-profile-modal .header');
     const id = document.querySelector('#user-profile-modal .avatar-wrapper .avatar-profile').style.backgroundImage.split('/')[4];
-
-    if (this.userAvatars[id]) {
-      headerModal.style.backgroundImage = `url("${this.userAvatars[id]}")`;
+    const avatars = await this.userAvatars;
+    if (avatars[id]) {
+      headerModal.style.backgroundImage = `url("${avatars[id]}")`;
     }
   }
 
@@ -58,12 +60,12 @@ class Twitchcord {
       get socialUL () {
         const socialInfo = [
           ['Facebook', 'https://www.facebook.com/BakedPVP'],
-          ['Twitter',  'https://twitter.com/BakedPVP_'],
-          ['Discord',  'https://www.discord.me/twitchcord'],
-          ['GitHub',   'https://github.com/dperolio/twitchcordTheme'],
-          ['Twitch',   'https://twitch.tv/bakedpvp'],
-          ['Patreon',  'https://www.patreon.com/twitchcord'],
-          ['Website',  'https://twitchcord.com']
+          ['Twitter', 'https://twitter.com/BakedPVP_'],
+          ['Discord', 'https://www.discord.me/twitchcord'],
+          ['GitHub', 'https://github.com/dperolio/twitchcordTheme'],
+          ['Twitch', 'https://twitch.tv/bakedpvp'],
+          ['Patreon', 'https://www.patreon.com/twitchcord'],
+          ['Website', 'https://twitchcord.com']
         ];
 
         const socialLIs = socialInfo.map(item => {
@@ -124,8 +126,8 @@ class Twitchcord {
                   e('input', {
                     type: 'checkbox',
                     className: 'checkboxEnabled-4QfryV checkbox-1KYsPm',
-                    value: this.checked ? 'on' : 'off' }
-                  )
+                    value: this.checked ? 'on' : 'off'
+                  })
                 )
               ),
               e('div', { className: 'divider-1G01Z9 dividerDefault-77PXsz marginTop20-3UscxH' })
@@ -142,7 +144,7 @@ class Twitchcord {
           });
         });
 
-        return e('div', { id: 'twitchcord-hamburger-menu-container', style: { display: 'none'} },
+        return e('div', { id: 'twitchcord-hamburger-menu-container' },
           e('div', { className: 'tc-logo-bg' }),
 
           e('div', { className: 'tc-hamburger-top' },
@@ -189,10 +191,7 @@ class Twitchcord {
 
     const hamburger = document.createElement('div');
     hamburger.id = 'twitchcord-hamburger-clicker';
-    
-    const hamburgerBackdrop = document.createElement('div');
-    hamburgerBackdrop.id = 'tc-hamburger-backdrop';
-    
+
     hamburger.style.zIndex = '100 !important';
     hamburger.onclick = () => {
       const container = document.querySelector('#twitchcord-hamburger-menu-container');
@@ -230,7 +229,6 @@ class Twitchcord {
     };
 
     titleBar.insertBefore(hamburger, titleBar.children[0]);
-    titleBar.insertBefore(hamburgerBackdrop, titleBar.children[0]);
 
     await window.BDV2.reactDom.render(window.BDV2.react.createElement(this.hamburgerMenu), document.querySelector('#twitchcord-hamburger-menu-vessel'));
     titleBar.replaceChild(document.querySelector('#twitchcord-hamburger-menu-container'), document.querySelector('#twitchcord-hamburger-menu-vessel'));
@@ -250,7 +248,7 @@ class Twitchcord {
       .forEach(snippet => {
         this.toggleSnippet(snippet.title);
       });
-    }
+  }
 
   getSettingsPanel () {
     return '<img src onerror="document.querySelector(\'#twitchcord-button\').click();">'; // LUL
@@ -266,8 +264,9 @@ class Twitchcord {
       }
     };
 
-    this.observer = new MutationObserver(onMutation);
-    this.observer.observe(document.querySelector('.app .layer'), { attributes: true });
+    const tabObserver = new MutationObserver(onMutation);
+    this.observers.push(tabObserver);
+    tabObserver.observe(document.querySelector('.app .layer'), { attributes: true });
   }
 
   createElement (type, properties) {
@@ -501,13 +500,15 @@ class Twitchcord {
   }
 
   observer (e) {
-    if (!e.addedNodes.length || !(e.addedNodes[0] instanceof Element) || !e.addedNodes[0].classList) {return;}
-    if (!e.addedNodes[0].querySelector('.container-iksrDt div.button-1aU9q1')) {return;}
+    if (!e.addedNodes.length || !(e.addedNodes[0] instanceof Element) || !e.addedNodes[0].classList) { return; }
+    if (!e.addedNodes[0].querySelector('.container-iksrDt div.button-1aU9q1')) { return; }
     $('.container-iksrDt div.button-1aU9q1').on('contextmenu.bdcs', () => { this.bindContextMenus(); });
   }
 
   stop () {
-    this.observer.disconnect();
+    for (const observer of this.observers) {
+      observer.disconnect();
+    }
     $('*').off('.bdcs');
   }
 
@@ -520,10 +521,10 @@ class Twitchcord {
   }
 
   observeContextMenus (e) {
-    if (!e.addedNodes.length || !(e.addedNodes[0] instanceof Element) || !e.addedNodes[0].classList) {return;}
+    if (!e.addedNodes.length || !(e.addedNodes[0] instanceof Element) || !e.addedNodes[0].classList) { return; }
     const elem = e.addedNodes[0];
     const isContext = elem.classList.contains('context-menu');
-    if (!isContext) {return;}
+    if (!isContext) { return; }
     const contextMenu = $(elem);
 
     const coreMenu = new PluginContextMenu.Menu(true);
@@ -532,59 +533,44 @@ class Twitchcord {
     const themeMenu = new PluginContextMenu.Menu(true);
 
     for (const setting in window.settings) {
-      ((setting) => {
-        if (window.settings[setting].implemented && !window.settings[setting].hidden && window.settings[setting].cat === 'core')
-                    {coreMenu.addItems(new PluginContextMenu.ToggleItem(setting, window.settingsCookie[window.settings[setting].id], { callback: () => { this.changeBDSetting(window.settings[setting].id); } }));}
-      })(setting);
+      if (window.settings[setting].implemented && !window.settings[setting].hidden && window.settings[setting].cat === 'core') { coreMenu.addItems(new PluginContextMenu.ToggleItem(setting, window.settingsCookie[window.settings[setting].id], { callback: () => { this.changeBDSetting(window.settings[setting].id); } })); }
     }
 
     for (const setting in window.settings) {
-      ((setting) => {
-        if (window.settings[setting].implemented && !window.settings[setting].hidden && window.settings[setting].cat === 'emote')
-                    {emoteMenu.addItems(new PluginContextMenu.ToggleItem(setting, window.settingsCookie[window.settings[setting].id], { callback: () => { this.changeBDSetting(window.settings[setting].id); } }));}
-      })(setting);
+      if (window.settings[setting].implemented && !window.settings[setting].hidden && window.settings[setting].cat === 'emote') { emoteMenu.addItems(new PluginContextMenu.ToggleItem(setting, window.settingsCookie[window.settings[setting].id], { callback: () => { this.changeBDSetting(window.settings[setting].id); } })); }
     }
 
     for (const plugin in window.bdplugins) {
-      ((plugin) => {
-        pluginMenu.addItems(new PluginContextMenu.ToggleItem(plugin, window.pluginCookie[plugin], { callback: () => { this.togglePlugin(plugin); } }));
-      })(plugin);
+      pluginMenu.addItems(new PluginContextMenu.ToggleItem(plugin, window.pluginCookie[plugin], { callback: () => { this.togglePlugin(plugin); } }));
     }
 
     for (const theme in window.bdthemes) {
-      ((theme) => {
-        themeMenu.addItems(new PluginContextMenu.ToggleItem(theme, window.themeCookie[theme], { callback: () => { this.toggleTheme(theme); } }));
-      })(theme);
+      themeMenu.addItems(new PluginContextMenu.ToggleItem(theme, window.themeCookie[theme], { callback: () => { this.toggleTheme(theme); } }));
     }
 
-    const TCButtons = BdApi.getPlugin('Twitchcord') && BdApi.getPlugin('Twitchcord').buttons;
     const TCSubMenu = new PluginContextMenu.Menu(true);
 
-    for (const button of TCButtons) {
-      ((button) => {
-        let checked = bdPluginStorage.get('Twitchcord', button.title);
-        if (!checked) {checked = false;}
-        else {checked = checked.state;}
-        TCSubMenu.addItems(new PluginContextMenu.ToggleItem(button.title, checked, {
-          callback: () => {
-            BdApi.getPlugin('Twitchcord') && BdApi.getPlugin('Twitchcord').toggleSnippet(button.title);
-          }
-        }));
-      })(button);
+    for (const button of this.buttons) {
+      const checked = this.getState(button.title) === !button.inverted;
+      TCSubMenu.addItems(new PluginContextMenu.ToggleItem(button.title, checked, {
+        callback: () => {
+          this.toggleSnippet(button.title);
+        }
+      }));
     }
     const TCmenu = new PluginContextMenu.SubMenuItem('Twitchcord', new PluginContextMenu.Menu(false).addItems(
-            new PluginContextMenu.SubMenuItem('Theme Settings', TCSubMenu, { callback: () => { contextMenu.hide(); this.openTCMenu(0); } })
-        ));
+      new PluginContextMenu.SubMenuItem('Theme Settings', TCSubMenu, { callback: () => { contextMenu.hide(); this.openTCMenu(0); } })
+    ));
     contextMenu.append(new PluginContextMenu.ItemGroup().addItems(TCmenu).getElement());
     contextMenu.css('top', `-=${TCmenu.getElement().outerHeight()}`);
 
     const menu = new PluginContextMenu.SubMenuItem('BetterDiscord', new PluginContextMenu.Menu(false).addItems(
-            new PluginContextMenu.SubMenuItem('Core', coreMenu, { callback: () => { contextMenu.hide(); this.openMenu(0); } }),
-            new PluginContextMenu.SubMenuItem('Emotes', emoteMenu, { callback: () => { contextMenu.hide(); this.openMenu(1); } }),
-            new PluginContextMenu.TextItem('Custom CSS', { callback: () => { contextMenu.hide(); this.openMenu(2); } }),
-            new PluginContextMenu.SubMenuItem('Plugins', pluginMenu, { callback: () => { contextMenu.hide(); this.openMenu(3); } }),
-            new PluginContextMenu.SubMenuItem('Themes', themeMenu, { callback: () => { contextMenu.hide(); this.openMenu(4); } })
-        ));
+      new PluginContextMenu.SubMenuItem('Core', coreMenu, { callback: () => { contextMenu.hide(); this.openMenu(0); } }),
+      new PluginContextMenu.SubMenuItem('Emotes', emoteMenu, { callback: () => { contextMenu.hide(); this.openMenu(1); } }),
+      new PluginContextMenu.TextItem('Custom CSS', { callback: () => { contextMenu.hide(); this.openMenu(2); } }),
+      new PluginContextMenu.SubMenuItem('Plugins', pluginMenu, { callback: () => { contextMenu.hide(); this.openMenu(3); } }),
+      new PluginContextMenu.SubMenuItem('Themes', themeMenu, { callback: () => { contextMenu.hide(); this.openMenu(4); } })
+    ));
     contextMenu.append(new PluginContextMenu.ItemGroup().addItems(menu).getElement());
     contextMenu.css('top', `-=${menu.getElement().outerHeight()}`);
 
@@ -661,7 +647,7 @@ class Twitchcord {
   openMenu (index) {
     const observer = new MutationObserver((changes) => {
       for (const e of changes) {
-        if (!e.addedNodes.length || !(e.addedNodes[0] instanceof Element) || !e.addedNodes[0].classList) {return;}
+        if (!e.addedNodes.length || !(e.addedNodes[0] instanceof Element) || !e.addedNodes[0].classList) { return; }
         if (e.addedNodes[0].querySelector('#bd-settings-sidebar') || e.addedNodes[0].id === 'bd-settings-sidebar') {
           document.querySelectorAll('#bd-settings-sidebar .ui-tab-bar-item')[index].click();
           document.querySelectorAll('#bd-settings-sidebar .ui-tab-bar-item')[index].classList.add('selected');
@@ -676,7 +662,7 @@ class Twitchcord {
   openTCMenu (index) {
     const observer = new MutationObserver((changes) => {
       for (const e of changes) {
-        if (!e.addedNodes.length || !(e.addedNodes[0] instanceof Element) || !e.addedNodes[0].classList) {return;}
+        if (!e.addedNodes.length || !(e.addedNodes[0] instanceof Element) || !e.addedNodes[0].classList) { return; }
         if (e.addedNodes[0].querySelector('#twitchcord-tab') || e.addedNodes[0].id === 'twitchcord-tab') {
           document.querySelectorAll('#twitchcord-tab .item-3879bf')[index].click();
           observer.disconnect();
@@ -687,9 +673,9 @@ class Twitchcord {
     $('.container-iksrDt div.button-1aU9q1').click();
   }
 
-  load () {}
+  load () { }
 
-  unload () {}
+  unload () { }
 
   getDescription () {
     return 'The official plugin for Twitchcord. Includes fixes and features and a full array of user theme settings options!';
@@ -700,7 +686,7 @@ class Twitchcord {
   }
 
   getVersion () {
-    return '0.3.2';
+    return '0.4.0';
   }
 
   getAuthor () {
