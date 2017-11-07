@@ -19,7 +19,8 @@
   {
     "title": "User Labels",
     "description": "Display special user labels",
-    "filePath": "/pluginSnippets/userLabels.css"
+    "filePath": "/pluginSnippets/userLabels.css",
+    "inverted": true
   },
   {
     "title": "Swap Core Colors",
