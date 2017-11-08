@@ -192,7 +192,15 @@ class Twitchcord {
     hamburger.id = 'twitchcord-hamburger-clicker';
     hamburger.style.zIndex = '100 !important';
 
+<<<<<<< HEAD
+    const hamburgerBackdrop = document.createElement('div');
+    hamburgerBackdrop.id = 'tc-hamburger-backdrop';
+
     titleBar.insertBefore(hamburger, titleBar.children[0]);
+    titleBar.insertBefore(hamburgerBackdrop, titleBar.children[0]);
+=======
+    titleBar.insertBefore(hamburger, titleBar.children[0]);
+>>>>>>> 5ac747baac726fdbedeb8b428bd4044e43583755
 
     await window.BDV2.reactDom.render(window.BDV2.react.createElement(this.hamburgerMenu), menuVessel);
     titleBar.replaceChild(document.querySelector('#twitchcord-hamburger-menu-container'), menuVessel);
