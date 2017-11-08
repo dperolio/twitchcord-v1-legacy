@@ -21,8 +21,7 @@ class Twitchcord {
     this.selectedTabClasses = 'itemDefaultSelected-1UAWLe item-3879bf selected-eNoxEK';
     this.unselectedTabClasses = 'itemDefault-3NDwnY item-3879bf notSelected-PgwTMa';
 
-    this.styleTag = document.createElement('style');
-    this.styleTag.id = 'twitchcord-styletag';
+    this.styleTag = this.createElement('style', { id: 'twitchcord-styletag' });
     document.body.appendChild(this.styleTag);
 
     const bodySelect = document.body;
@@ -184,16 +183,15 @@ class Twitchcord {
     }
 
     const titleBar = document.querySelector('div[class*=titleBar]');
-    const menuVessel = document.createElement('div');
-    menuVessel.id = 'twitchcord-hamburger-menu-vessel';
+    const menuVessel = this.createElement('div', { id: 'twitchcord-hamburger-menu-vessel' });
     titleBar.insertBefore(menuVessel, titleBar.children[0]);
 
-    const hamburger = document.createElement('div');
-    hamburger.id = 'twitchcord-hamburger-clicker';
-    hamburger.style.zIndex = '100 !important';
+    const hamburger = this.createElement('div', {
+      id: 'twitchcord-hamburger-clicker',
+      style: 'z-index: 100 !important'
+    });
 
-    const hamburgerBackdrop = document.createElement('div');
-    hamburgerBackdrop.id = 'tc-hamburger-backdrop';
+    const hamburgerBackdrop = this.createElement('div', { id: 'tc-hamburger-backdrop' });
 
     titleBar.insertBefore(hamburgerBackdrop, titleBar.children[0]);
     titleBar.insertBefore(hamburger, titleBar.children[0]);
@@ -490,10 +488,11 @@ class Twitchcord {
     if (libraryScript) {
       libraryScript.parentElement.removeChild(libraryScript);
     }
-    libraryScript = document.createElement('script');
-    libraryScript.setAttribute('type', 'text/javascript');
-    libraryScript.setAttribute('src', 'https://rauenzi.github.io/BetterDiscordAddons/Plugins/PluginLibrary.js');
-    libraryScript.setAttribute('id', 'zeresLibraryScript');
+    libraryScript = this.createElement('script', {
+      type: 'text/javascript',
+      src: 'https://rauenzi.github.io/BetterDiscordAddons/Plugins/PluginLibrary.js',
+      id: 'zeresLibraryScript'
+    });
     document.head.appendChild(libraryScript);
 
     if (typeof window.ZeresLibrary !== 'undefined') {
