@@ -178,7 +178,7 @@ class Twitchcord {
     if (!window.BDV2) {
       return setTimeout(this.addHamburgerMenu.bind(this), 2000);
     }
-    const qSA = document.querySelectorAll('#twitchcord-hamburger-menu-vessel, #twitchcord-hamburger-clicker, #twitchcord-hamburger-menu-container');
+    const qSA = document.querySelectorAll('#twitchcord-hamburger-menu-vessel, #twitchcord-hamburger-clicker, #twitchcord-hamburger-menu-container, #tc-hamburger-backdrop');
     if (qSA) { // todo: remove this
       Array.from(qSA).map(e => e.remove());
     }
