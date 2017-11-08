@@ -343,7 +343,7 @@ class Twitchcord {
 
   getState (key) {
     const stuff = bdPluginStorage.get('Twitchcord', key);
-    return stuff ? stuff.state : null;
+    return stuff ? stuff.state : false;
   }
 
   toggleSnippet (title) {
