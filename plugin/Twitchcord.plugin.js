@@ -143,7 +143,7 @@ class Twitchcord {
           });
         });
 
-        return e('div', { id: 'twitchcord-hamburger-menu-container' },
+        return e('div', { id: 'twitchcord-hamburger-menu-container', style: { display: 'none' } },
           e('div', { className: 'tc-logo-bg' }),
 
           e('div', { className: 'tc-hamburger-top' },
