@@ -29,7 +29,14 @@ class Twitchcord {
     bodySelect.setAttribute('tc-plugin-enabled', '');
   }
 
-  async watchUserModals () {
+  async injectUserModals () {
+    const URLs = await window.fetch(this.USER_BG_URL).then(r => r.json());
+    for (const ID in URLs) {
+      this.styleTag.innerHTML += `
+        #user-profile-modal[user-id="${ID}"] .header {
+          background-image: url('${URLs[ID]}')!important;
+        }`;
+    }
     const MO = new MutationObserver(changes => {
       if (changes.some(change => change.target && change.previousSibling && change.target.className === 'guilds scroller' && change.previousSibling.className === 'section')) {
         this.injectUserModal();
@@ -40,17 +47,9 @@ class Twitchcord {
     this.observers.push(MO);
   }
 
-  get userAvatars () {
-    return window.fetch(this.USER_BG_URL).then(r => r.json());
-  }
-
   async injectUserModal () {
-    const headerModal = document.querySelector('#user-profile-modal .header');
-    const id = document.querySelector('#user-profile-modal .avatar-wrapper .avatar-profile').style.backgroundImage.split('/')[4];
-    const avatars = await this.userAvatars;
-    if (avatars[id]) {
-      headerModal.style.backgroundImage = `url("${avatars[id]}")`;
-    }
+    const modal = document.querySelector('#user-profile-modal');
+    modal.setAttribute('user-id', modal.children[2].children[0].style.backgroundImage.split('/')[4]);
   }
 
   get hamburgerMenu () {
@@ -191,47 +190,55 @@ class Twitchcord {
 
     const hamburger = document.createElement('div');
     hamburger.id = 'twitchcord-hamburger-clicker';
-
     hamburger.style.zIndex = '100 !important';
-    hamburger.onclick = () => {
-      const container = document.querySelector('#twitchcord-hamburger-menu-container');
-      const bodySelect = document.body;
-
-      if (!container) {
-        return;
-      }
-
-      if (container.hasAttribute('opened')) {
-        container.removeAttribute('opened');
-        bodySelect.removeAttribute('tc-opened');
-      } else {
-        container.setAttribute('opened', '');
-        bodySelect.setAttribute('tc-opened', '');
-
-        const app = document.querySelector('.layer');
-
-        const keyDownEvent = (event) => {
-          if (event.key === 'Escape') {
-            document.body.removeEventListener('keydown', keyDownEvent);
-            hamburger.click();
-            app.onclick = null;
-          }
-        };
-
-        app.onclick = () => {
-          app.onclick = null;
-          document.body.removeEventListener('keydown', keyDownEvent);
-          hamburger.click();
-        };
-
-        document.body.addEventListener('keydown', keyDownEvent);
-      }
-    };
 
     titleBar.insertBefore(hamburger, titleBar.children[0]);
 
-    await window.BDV2.reactDom.render(window.BDV2.react.createElement(this.hamburgerMenu), document.querySelector('#twitchcord-hamburger-menu-vessel'));
-    titleBar.replaceChild(document.querySelector('#twitchcord-hamburger-menu-container'), document.querySelector('#twitchcord-hamburger-menu-vessel'));
+    await window.BDV2.reactDom.render(window.BDV2.react.createElement(this.hamburgerMenu), menuVessel);
+    titleBar.replaceChild(document.querySelector('#twitchcord-hamburger-menu-container'), menuVessel);
+
+    const container = document.querySelector('#twitchcord-hamburger-menu-container');
+    const openContainer = () => {
+      container.setAttribute('opened', '');
+      document.body.setAttribute('tc-opened', '');
+    };
+
+    const closeContainer = () => {
+      container.removeAttribute('opened');
+      document.body.removeAttribute('tc-opened');
+    };
+
+    hamburger.onclick = () => {
+      if (container.hasAttribute('opened')) {
+        closeContainer();
+      } else {
+        openContainer();
+      }
+    };
+
+    const app = document.querySelector('.layer').parentNode.parentNode.parentNode;
+    app.onclick = () => {
+      if (container.hasAttribute('opened')) {
+        closeContainer();
+      }
+    };
+
+    const keyDownEvent = (event) => {
+      if (event.key === 'Escape') {
+        if (container.hasAttribute('opened')) {
+          closeContainer();
+        }
+      }
+      if (event.altKey) {
+        if (event.key === 'ArrowLeft') {
+          closeContainer();
+        }
+        if (event.key === 'ArrowRight') {
+          openContainer();
+        }
+      }
+    };
+    document.body.addEventListener('keydown', keyDownEvent);
   }
 
   loadSnippets () {
@@ -471,7 +478,7 @@ class Twitchcord {
     this.loadSnippets();
     this.watchState();
     this.addHamburgerMenu();
-    this.watchUserModals();
+    this.injectUserModals();
 
     /* Most of everything beyond this point is Zere's script */
 
@@ -527,25 +534,33 @@ class Twitchcord {
     if (!isContext) { return; }
     const contextMenu = $(elem);
 
-    const coreMenu = new PluginContextMenu.Menu(true);
-    const emoteMenu = new PluginContextMenu.Menu(true);
-    const pluginMenu = new PluginContextMenu.Menu(true);
-    const themeMenu = new PluginContextMenu.Menu(true);
+    const menus = {
+      Core: new PluginContextMenu.Menu(true),
+      Emotes: new PluginContextMenu.Menu(true),
+      Plugins: new PluginContextMenu.Menu(true),
+      Themes: new PluginContextMenu.Menu(true)
+    };
 
     for (const setting in window.settings) {
-      if (window.settings[setting].implemented && !window.settings[setting].hidden && window.settings[setting].cat === 'core') { coreMenu.addItems(new PluginContextMenu.ToggleItem(setting, window.settingsCookie[window.settings[setting].id], { callback: () => { this.changeBDSetting(window.settings[setting].id); } })); }
+      for (const item of [['core', 'Core'], ['emote', 'Emotes']]) {
+        if (window.settings[setting].implemented && !window.settings[setting].hidden && window.settings[setting].cat === item[0]) {
+          menus[item[1]].addItems(new PluginContextMenu.ToggleItem(setting, window.settingsCookie[window.settings[setting].id], {
+            callback: () => {
+              this.changeBDSetting(window.settings[setting].id);
+            }
+          }));
+        }
+      }
     }
 
-    for (const setting in window.settings) {
-      if (window.settings[setting].implemented && !window.settings[setting].hidden && window.settings[setting].cat === 'emote') { emoteMenu.addItems(new PluginContextMenu.ToggleItem(setting, window.settingsCookie[window.settings[setting].id], { callback: () => { this.changeBDSetting(window.settings[setting].id); } })); }
-    }
-
-    for (const plugin in window.bdplugins) {
-      pluginMenu.addItems(new PluginContextMenu.ToggleItem(plugin, window.pluginCookie[plugin], { callback: () => { this.togglePlugin(plugin); } }));
-    }
-
-    for (const theme in window.bdthemes) {
-      themeMenu.addItems(new PluginContextMenu.ToggleItem(theme, window.themeCookie[theme], { callback: () => { this.toggleTheme(theme); } }));
+    for (const item of [['plugins', 'Plugins'], ['themes', 'Themes']]) {
+      for (const setting in window[`bd${item[0]}`]) {
+        menus[item[1]].addItems(new PluginContextMenu.ToggleItem(setting, window[`${item[0].slice(0, -1)}Cookie`], {
+          callback: () => {
+            this[`toggle${item[1].slice(0, -1)}`](setting);
+          }
+        }));
+      }
     }
 
     const TCSubMenu = new PluginContextMenu.Menu(true);
@@ -564,13 +579,18 @@ class Twitchcord {
     contextMenu.append(new PluginContextMenu.ItemGroup().addItems(TCmenu).getElement());
     contextMenu.css('top', `-=${TCmenu.getElement().outerHeight()}`);
 
-    const menu = new PluginContextMenu.SubMenuItem('BetterDiscord', new PluginContextMenu.Menu(false).addItems(
-      new PluginContextMenu.SubMenuItem('Core', coreMenu, { callback: () => { contextMenu.hide(); this.openMenu(0); } }),
-      new PluginContextMenu.SubMenuItem('Emotes', emoteMenu, { callback: () => { contextMenu.hide(); this.openMenu(1); } }),
-      new PluginContextMenu.TextItem('Custom CSS', { callback: () => { contextMenu.hide(); this.openMenu(2); } }),
-      new PluginContextMenu.SubMenuItem('Plugins', pluginMenu, { callback: () => { contextMenu.hide(); this.openMenu(3); } }),
-      new PluginContextMenu.SubMenuItem('Themes', themeMenu, { callback: () => { contextMenu.hide(); this.openMenu(4); } })
-    ));
+    const settings = ['Core', 'Emotes', 'Custom CSS', 'Plugins', 'Themes']
+      .map(item => {
+        const callback = () => {
+          contextMenu.hide();
+          this.openMenu(settings.indexOf(item));
+        };
+
+        const args = [item, menus[item] || { callback }, menus[item] ? { callback } : null];
+        return new PluginContextMenu[item === 'Custom CSS' ? 'TextItem' : 'SubMenuItem'](...args);
+      });
+
+    const menu = new PluginContextMenu.SubMenuItem('BetterDiscord', new PluginContextMenu.Menu(false).addItems(...settings));
     contextMenu.append(new PluginContextMenu.ItemGroup().addItems(menu).getElement());
     contextMenu.css('top', `-=${menu.getElement().outerHeight()}`);
 
