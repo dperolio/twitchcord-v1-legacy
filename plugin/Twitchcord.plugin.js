@@ -31,10 +31,7 @@ class Twitchcord {
   async injectUserModals () {
     const URLs = await window.fetch(this.USER_BG_URL).then(r => r.json());
     for (const ID in URLs) {
-      this.styleTag.innerHTML += `
-        #user-profile-modal[user-id="${ID}"] .header {
-          background-image: url('${URLs[ID]}')!important;
-        }`;
+      this.styleTag.innerHTML = `${this.styleTag.innerHTML  }\n#user-profile-modal[user-id="${ID}"] .header { background-image: url('${URLs[ID]}') !important; }`;
     }
     const MO = new MutationObserver(changes => {
       if (changes.some(change => change.target && change.previousSibling && change.target.className === 'guilds scroller' && change.previousSibling.className === 'section')) {
@@ -247,7 +244,7 @@ class Twitchcord {
     this.buttons
       .filter(snippet => bdPluginStorage.get('Twitchcord', snippet.title) && bdPluginStorage.get('Twitchcord', snippet.title).state)
       .forEach(snippet => {
-        this.styleTag.innerHTML += snippet.filePath;
+        this.styleTag.innerHTML += `${snippet.filePath}\n`;
         bdPluginStorage.set('Twitchcord', snippet.title, { state: true });
       });
 
@@ -352,7 +349,7 @@ class Twitchcord {
     if (snippet && snippet.state) {
       this.styleTag.innerHTML = this.styleTag.innerHTML.replace(css, '');
     } else {
-      this.styleTag.innerHTML += css;
+      this.styleTag.innerHTML = `${css}\n${this.styleTag.innerHTML}`;
     }
     bdPluginStorage.set('Twitchcord', title, { state: snippet ? !snippet.state : true });
   }
