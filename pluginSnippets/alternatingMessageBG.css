@@ -17,7 +17,7 @@
 .chat form {
     background-color: var(--chat-color)!important;
     margin: 0;
-    padding: 20px 29px 0 20px;
+    padding: 0 29px 0 20px;
     box-shadow: none!important;
 }
 
