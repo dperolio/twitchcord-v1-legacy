@@ -31,7 +31,7 @@ class Twitchcord {
   async injectUserModals () {
     const URLs = await window.fetch(this.USER_BG_URL).then(r => r.json());
     for (const ID in URLs) {
-      this.styleTag.innerHTML = `${this.styleTag.innerHTML  }\n#user-profile-modal[user-id="${ID}"] .header { background-image: url('${URLs[ID]}') !important; }`;
+      this.styleTag.innerHTML = `${this.styleTag.innerHTML}\n#user-profile-modal[user-id="${ID}"] .header { background-image: url('${URLs[ID]}') !important; }`;
     }
     const MO = new MutationObserver(changes => {
       if (changes.some(change => change.target && change.previousSibling && change.target.className === 'guilds scroller' && change.previousSibling.className === 'section')) {
@@ -50,7 +50,6 @@ class Twitchcord {
 
   get hamburgerMenu () {
     const e = window.BDV2.react.createElement;
-    const _this = this;
     return class HamburgerMenu extends window.BDV2.react.Component {
       get socialUL () {
         const socialInfo = [
@@ -80,73 +79,13 @@ class Twitchcord {
         );
       }
 
-      get settingToggles () {
-        return class settingsToggle extends window.BDV2.react.Component {
-          constructor (props) {
-            super(props);
-
-            this.checked = _this.getState(this.props.title) === !this.props.inverted;
-          }
-
-          click () {
-            this.checked = !this.checked;
-            _this.toggleSnippet(this.props.title);
-            this.setState(() => ({
-              checked: this.checked
-            }));
-          }
-
-          render () {
-            const style = { flex: '1 1 auto' };
-            const style2 = { flex: '0 0 auto' };
-
-            return e('div', {
-              className: 'flex-lFgbSz flex-3B1Tl4 vertical-3X17r5 flex-3B1Tl4 directionColumn-2h-LPR justifyStart-2yIZo0 alignStretch-1hwxMa noWrap-v6g9vO margin-top-8 margin-bottom-40',
-              style
-            },
-              e('div', {
-                className: 'flex-lFgbSz flex-3B1Tl4 horizontal-2BEEBe horizontal-2VE-Fw flex-3B1Tl4 directionRow-yNbSvJ justifyStart-2yIZo0 alignStart-pnSyE6 noWrap-v6g9vO',
-                style
-              },
-                e('h3', {
-                  className: 'titleDefault-1CWM9y title-3i-5G_ marginReset-3hwONl weightMedium-13x9Y8 size16-3IvaX_ height24-2pMcnc flexChild-1KGW5q',
-                  style
-                }, this.props.title),
-                e('div', {
-                  className: `flexChild-1KGW5q switchEnabled-3CPlLV switch-3lyafC value-kmHGfs sizeDefault-rZbSBU size-yI1KRe themeDefault-3M0dJU
-                            ${this.checked ? 'valueChecked-3Bzkbm' : 'valueUnchecked-XR6AOk'}`,
-                  style: style2,
-                  onClick: this.click.bind(this)
-                },
-                  e('input', {
-                    type: 'checkbox',
-                    className: 'checkboxEnabled-4QfryV checkbox-1KYsPm',
-                    value: this.checked ? 'on' : 'off'
-                  })
-                )
-              ),
-              e('div', { className: 'divider-1G01Z9 dividerDefault-77PXsz marginTop20-3UscxH' })
-            );
-          }
-        };
-      }
-
       render () {
-        const settingToggles = _this.buttons.map(button => {
-          return e(this.settingToggles, {
-            title: button.title,
-            inverted: button.inverted
-          });
-        });
-
         return e('div', { id: 'twitchcord-hamburger-menu-container', style: { display: 'none' } },
           e('div', { className: 'tc-logo-bg' }),
 
           e('div', { className: 'tc-hamburger-top' },
             e('div', { className: 'tc-hamburger-heading options' }),
-            e('div', { className: 'tc-hamburger-options-inner' },
-              ...settingToggles
-            )
+            e('div', { className: 'tc-hamburger-options-inner' })
           ),
 
           e('div', { className: 'tc-hamburger-middle' },
@@ -168,6 +107,75 @@ class Twitchcord {
         );
       }
     };
+  }
+
+  async renderToggles () {
+    const _this = this;
+    const e = window.BDV2.react.createElement;
+    class settingsToggle extends window.BDV2.react.Component {
+      constructor (props) {
+        super(props);
+
+        this.checked = _this.getState(this.props.title) === !this.props.inverted;
+      }
+
+      click () {
+        this.checked = !this.checked;
+        _this.toggleSnippet(this.props.title);
+        this.setState(() => ({
+          checked: this.checked
+        }));
+      }
+
+      render () {
+        const style = { flex: '1 1 auto' };
+        const style2 = { flex: '0 0 auto' };
+
+        return e('div', {
+          className: 'flex-lFgbSz flex-3B1Tl4 vertical-3X17r5 flex-3B1Tl4 directionColumn-2h-LPR justifyStart-2yIZo0 alignStretch-1hwxMa noWrap-v6g9vO margin-top-8 margin-bottom-40',
+          style
+        },
+          e('div', {
+            className: 'flex-lFgbSz flex-3B1Tl4 horizontal-2BEEBe horizontal-2VE-Fw flex-3B1Tl4 directionRow-yNbSvJ justifyStart-2yIZo0 alignStart-pnSyE6 noWrap-v6g9vO',
+            style
+          },
+            e('h3', {
+              className: 'titleDefault-1CWM9y title-3i-5G_ marginReset-3hwONl weightMedium-13x9Y8 size16-3IvaX_ height24-2pMcnc flexChild-1KGW5q',
+              style
+            }, this.props.title),
+            e('div', {
+              className: `flexChild-1KGW5q switchEnabled-3CPlLV switch-3lyafC value-kmHGfs sizeDefault-rZbSBU size-yI1KRe themeDefault-3M0dJU
+                        ${this.checked ? 'valueChecked-3Bzkbm' : 'valueUnchecked-XR6AOk'}`,
+              style: style2,
+              onClick: this.click.bind(this)
+            },
+              e('input', {
+                type: 'checkbox',
+                className: 'checkboxEnabled-4QfryV checkbox-1KYsPm',
+                value: this.checked ? 'on' : 'off'
+              })
+            )
+          ),
+          e('div', { className: 'divider-1G01Z9 dividerDefault-77PXsz marginTop20-3UscxH' })
+        );
+      }
+    }
+
+    class settingsToggles extends window.BDV2.react.Component {
+      render () {
+        const settingToggles = _this.buttons.map(button => {
+          return e(settingsToggle, {
+            title: button.title,
+            inverted: button.inverted
+          });
+        });
+
+        return e('div', {},
+          ...settingToggles);
+      }
+    }
+
+    window.BDV2.reactDom.render(e(settingsToggles), document.querySelector('.tc-hamburger-options-inner'));
   }
 
   async addHamburgerMenu () {
@@ -200,11 +208,15 @@ class Twitchcord {
     const openContainer = () => {
       container.setAttribute('opened', '');
       document.body.setAttribute('tc-opened', '');
+      this.renderToggles();
     };
 
     const closeContainer = () => {
       container.removeAttribute('opened');
       document.body.removeAttribute('tc-opened');
+      setTimeout(() => {
+        document.querySelector('.tc-hamburger-options-inner').innerHTML = '';
+      }, 450); // Wait for the animation to finish before we remove the toggles, to make it look smoother
     };
 
     hamburger.onclick = () => {
@@ -706,7 +718,7 @@ class Twitchcord {
   }
 
   getVersion () {
-    return '0.4.0';
+    return '0.4.1';
   }
 
   getAuthor () {
