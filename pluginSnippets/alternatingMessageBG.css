@@ -38,8 +38,7 @@
 }
 
 .chat .divider {
-    margin: 0;
-    padding: 0 65px;
+    margin: 0 65px;
 }
 
 .chat .empty-message {
