@@ -4674,7 +4674,8 @@ button {
     color: #fff;
 }
 
-div[class*="avatar-"][style*="/assets/f78426a064bc9dd24847519259bc42af.png"] {
+div[class*="avatar-"][style*="/assets/f78426a064bc9dd24847519259bc42af.png"],
+div[class*="avatar-"]>[class*="image-"][style*="/assets/f78426a064bc9dd24847519259bc42af.png"] {
     background: url('https://www.twitchcord.com/twitchcord-theme/images/twitchcord-bot.png') no-repeat center !important;
     background-size: contain!important;
 }
@@ -11317,7 +11318,7 @@ div#bd-customcss-detach-container::before {
     background-color: var(--button-color-hover);
     transition: background-color 0.2s;
 }
-/*
+
 
 @media (max-width: 1040px) { 
     .header-1tSljs, .container-iksrDt {
@@ -11326,7 +11327,7 @@ div#bd-customcss-detach-container::before {
         transition:visibility 0s linear 0.1s, opacity 0.1s linear;
     }
     .guilds-wrapper, .guilds-wrapper .guilds-add {
-        background: var(--dark-modal-bg);
+        background: var(--chat-bg);
     }
     .guilds-wrapper:hover + .base-3AoPqv .channels-3g2vYe .header-1tSljs, .channels-3g2vYe:hover .header-1tSljs,
     .guilds-wrapper:hover + .base-3AoPqv .channels-3g2vYe .container-iksrDt, .channels-3g2vYe:hover .container-iksrDt {
@@ -11382,7 +11383,6 @@ div#bd-customcss-detach-container::before {
         margin-left: 0;
     }
 }
-*/
 
 .search-filter:first-child {
     margin-left: -10px;

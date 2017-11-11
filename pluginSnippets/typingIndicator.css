@@ -3,7 +3,7 @@
 /* =================================================== */
 
 .chat form {
-    margin-bottom: 14px;
+    margin-bottom: 14px!important;
 }
 
 .chat form .typing {
