@@ -55,3 +55,11 @@
 .channel-members-wrap {
     border-left: 1px solid #2c2541;
 }
+
+.chat>.content {
+    background: var(--channels-color);
+}
+
+.chat form .typing {
+    left: 11px;
+}
