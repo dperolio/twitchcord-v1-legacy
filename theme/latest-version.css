@@ -6598,8 +6598,11 @@ div[class*="modal-"] {
 }
 
 .assetsLargeImage-1A0_EG, .assetsSmallImage-3WEvRP {
-    border-radius: 0;
     border: 4px solid var(--channels-color)
+}
+
+#user-profile-modal .actionButton-3gCSjA:first-of-type {
+    margin-left: 0;
 }
 
 .assetsSmallImage-3WEvRP {
@@ -11521,10 +11524,16 @@ div#bd-customcss-detach-container::before {
     background-color: var(--button-color);
 }
 
-.mask-2vyqAW, .assetsLargeMaskProfile-2u315x, .avatarMasked-1DKyfL {
+.mask-2vyqAW, .assetsLargeMaskProfile-2u315x, .avatarMasked-1DKyfL, .assetsLargeMaskUserPopout-14rwc_ {
     border-radius: 0;
     -webkit-mask: none;
     mask: none;
+}
+
+.assetsSmallImageActivityFeed-2CaztB, .assetsSmallImageUserPopout-dXG26U {
+    bottom: -12px;
+    position: absolute;
+    right: -5px;
 }
 
 .private-channel-recipients-invite .search-bar-inner {
