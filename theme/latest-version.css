@@ -8646,10 +8646,6 @@ content: "";
     cursor: normal!important
 }
 
-.slider-handle span {
-    display: none;
-}
-
 .context-menu .slider .slider-handle {
     height: 18px;
     border-radius: 0;
@@ -15754,3 +15750,8 @@ Forum style start
     height: 50px;
 }
 */
+
+.slider-handle span {
+    border-radius: 0;
+    display: none;
+}

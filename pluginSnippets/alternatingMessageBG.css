@@ -2,7 +2,7 @@
 /* ============== ALTERNATING MESSAGE BG ============== */
 /* ==================================================== */
 
-.messages-wrapper .messages >div:nth-of-type(odd) {
+.messages-wrapper .messages >div:not(.divider):nth-of-type(odd) {
     background-color: #13101a;
 }
 
@@ -53,4 +53,8 @@
 
 .chat form .typing {
     left: 12px;
+}
+
+body .chat>.content {
+    background: var(--chat-color)!important;
 }
