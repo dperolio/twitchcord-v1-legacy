@@ -50,3 +50,7 @@
 .search-results-wrap .search-result .search-result-message.hit:hover .message-group, .search-results-wrap .search-result.expanded .search-result-message.hit .message-group {
     background-color: #08050d!important;
 }
+
+.chat form .typing {
+    left: 12px;
+}
