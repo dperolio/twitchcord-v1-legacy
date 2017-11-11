@@ -1,35 +1,57 @@
 [
   {
     "title": "Hide Blocked Messages",
-    "description": "Hide blocked users' messages completely",
+    "description": "Hide blocked users' messages completely.",
     "filePath": "/pluginSnippets/blockedMessages.css",
     "default": true
   },
   {
+    "title": "Hide Typing Indicator",
+    "description": "Hide the \"is typing\" chat area indicator.",
+    "filePath": "/pluginSnippets/typingIndicator.css",
+    "default": true
+  },
+  {
     "title": "Chat Bubbles",
-    "description": "Show blocks around chat messages",
+    "description": "Show blocks around chat messages.",
     "filePath": "/pluginSnippets/chatBubbles.css"
   },
   {
+    "title": "Alternating Message Background Colors",
+    "description": "Makes the background color of messages appear in an alternating-style.",
+    "filePath": "/pluginSnippets/alternatingMessageBG.css"
+  },
+  {
+    "title": "Combine Channels",
+    "description": "Combines the server channels sidebar and server members sidebar into one.",
+    "filePath": "/pluginSnippets/combineChannels.css"
+  },
+  {
+    "title": "Animated Tooltips",
+    "description": "Makes tooltips fade in and scale on appearance.",
+    "filePath": "/pluginSnippets/animatedTooltips.css",
+    "inverted": true
+  },
+  {
+    "title": "Light Tooltips",
+    "description": "Changes the tooltips to a light alternative.",
+    "filePath": "/pluginSnippets/lightTooltips.css"
+  },
+  {
     "title": "User Badges",
-    "description": "Display special user badges",
+    "description": "Display special user badges.",
     "filePath": "/pluginSnippets/userBadges.css",
     "inverted": true
   },
   {
     "title": "User Labels",
-    "description": "Display special user labels",
+    "description": "Display special user labels.",
     "filePath": "/pluginSnippets/userLabels.css",
     "inverted": true
   },
   {
     "title": "Swap Core Colors",
-    "description": "Swap the theme's primary and accent colors",
+    "description": "Swap the theme's primary and accent colors.",
     "filePath": "/pluginSnippets/swapPrimaryAccent.css"
-  },
-  {
-    "title": "Alternating Message Backgrounds",
-    "description": "Makes the background of messages alternate between two different colors",
-    "filePath": "/pluginSnippets/alternatingMessageBG.css"
   }
 ]
