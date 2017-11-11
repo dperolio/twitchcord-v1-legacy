@@ -11330,7 +11330,7 @@ div#bd-customcss-detach-container::before {
         transition:visibility 0s linear 0.1s, opacity 0.1s linear;
     }
     .guilds-wrapper, .guilds-wrapper .guilds-add {
-        background: var(--chat-bg);
+        background: var(--chat-color);
     }
     .guilds-wrapper:hover + .base-3AoPqv .channels-3g2vYe .header-1tSljs, .channels-3g2vYe:hover .header-1tSljs,
     .guilds-wrapper:hover + .base-3AoPqv .channels-3g2vYe .container-iksrDt, .channels-3g2vYe:hover .container-iksrDt {
