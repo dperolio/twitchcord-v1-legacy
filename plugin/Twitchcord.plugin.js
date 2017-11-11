@@ -518,7 +518,6 @@ class Twitchcord {
 
   initialize () {
     this.initialized = true;
-    PluginUtilities.checkForUpdate(this.getName(), this.getVersion());
     $('.container-iksrDt div.button-1aU9q1').on('contextmenu.bdcs', () => { this.bindContextMenus(); });
     PluginUtilities.showToast(`${this.getName()} ${this.getVersion()} has started.`);
   }
