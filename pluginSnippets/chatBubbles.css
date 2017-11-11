@@ -57,7 +57,7 @@
 }
 
 .chat>.content {
-    background: var(--channels-color);
+    background: var(--channels-color)!important;
 }
 
 .chat form .typing {
