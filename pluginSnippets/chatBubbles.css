@@ -53,7 +53,7 @@
 }
 
 .channel-members-wrap {
-    border-left: 1px solid #2c2541;
+    border-left: 1px solid var(--titlebar-color);
 }
 
 .chat>.content {
