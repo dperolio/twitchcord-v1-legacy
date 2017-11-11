@@ -6,8 +6,8 @@
     "default": true
   },
   {
-    "title": "Hide Typing Indicator",
-    "description": "Hide the \"is typing\" chat area indicator.",
+    "title": "Typing Indicator",
+    "description": "Show the \"is typing\" chat area indicator when someone is typing.",
     "filePath": "/pluginSnippets/typingIndicator.css",
     "default": true
   },

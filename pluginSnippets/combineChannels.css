@@ -19,11 +19,17 @@
 
 .channel-members-wrap {
     position: fixed;
-    left: 69px;
+    left: 70px;
     z-index: 1;
     top: 45vh;
     margin-top: 53px;
     box-shadow: 0 -60px 70px -40px var(--chat-color);
+    width: 239px;
+    min-width: 239px;
+}
+
+.channel-members-wrap .scrollerWrap-2uBjct {
+    border-left: 1px solid var(--titlebar-color);
 }
 
 .channels-3g2vYe .private-channels .scroller-fzNley {
@@ -45,7 +51,7 @@
     text-transform: uppercase;
     height: auto;
     line-height: 1px;
-    width: 240px;
+    width: 239px;
     background: var(--titlebar-color);
     color: #fff;
     position: fixed;
