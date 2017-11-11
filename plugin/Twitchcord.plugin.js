@@ -235,7 +235,7 @@ class Twitchcord {
       }
     };
 
-    const keyDownEvent = (event) => {
+    this.keyDownEvent = (event) => {
       if (event.key === 'Escape') {
         if (container.hasAttribute('opened')) {
           closeContainer();
@@ -250,7 +250,7 @@ class Twitchcord {
         }
       }
     };
-    document.body.addEventListener('keydown', keyDownEvent);
+    document.body.addEventListener('keydown', this.keyDownEvent.bind(this));
   }
 
   loadSnippets () {
@@ -392,6 +392,7 @@ class Twitchcord {
     }
     this.styleTag.innerHTML = '';
     this.loadSnippets();
+    this.loadUserModals();
   }
 
   get settingTabThing () {
@@ -533,6 +534,10 @@ class Twitchcord {
       observer.disconnect();
     }
     $('*').off('.bdcs');
+    document.body.removeEventListener('keydown', this.keyDownEvent.bind(this));
+    for (const element of Array.from(document.querySelectorAll('#twitchcord-hamburger-menu-vessel, #twitchcord-hamburger-clicker, #twitchcord-hamburger-menu-container, #tc-hamburger-backdrop, #twitchcord-styletag'))) {
+      element.remove();
+    }
   }
 
   bindContextMenus () {
@@ -722,7 +727,7 @@ class Twitchcord {
   }
 
   getVersion () {
-    return '0.4.1';
+    return '0.4.2';
   }
 
   getAuthor () {
