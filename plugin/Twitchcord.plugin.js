@@ -392,7 +392,7 @@ class Twitchcord {
     }
     this.styleTag.innerHTML = '';
     this.loadSnippets();
-    this.loadUserModals();
+    this.injectUserModals();
   }
 
   get settingTabThing () {
