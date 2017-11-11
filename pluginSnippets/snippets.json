@@ -8,8 +8,7 @@
   {
     "title": "Typing Indicator",
     "description": "Show the \"...is typing\" chat area indicator when someone is typing.",
-    "filePath": "/pluginSnippets/typingIndicator.css",
-    "default": true
+    "filePath": "/pluginSnippets/typingIndicator.css"
   },
   {
     "title": "Chat Bubbles",
