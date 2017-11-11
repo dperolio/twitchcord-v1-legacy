@@ -31,7 +31,8 @@ class Twitchcord {
   async injectUserModals () {
     const URLs = await window.fetch(this.USER_BG_URL).then(r => r.json());
     for (const ID in URLs) {
-      this.styleTag.innerHTML = `${this.styleTag.innerHTML}\n#user-profile-modal[user-id="${ID}"] .header { background-image: url('${URLs[ID]}') !important; }`;
+      const styleTag = document.querySelector('#twitchcord-styletag');
+      styleTag.innerHTML = `${styleTag.innerHTML}\n#user-profile-modal[user-id="${ID}"] .header { background-image: url('${URLs[ID]}') !important; }`;
     }
     const MO = new MutationObserver(changes => {
       if (changes.some(change => change.target && change.previousSibling && change.target.className === 'guilds scroller' && change.previousSibling.className === 'section')) {
@@ -216,7 +217,7 @@ class Twitchcord {
       document.body.removeAttribute('tc-opened');
       setTimeout(() => {
         document.querySelector('.tc-hamburger-options-inner').innerHTML = '';
-      }, 450); // Wait for the animation to finish before we remove the toggles, to make it look smoother
+      }, 500);
     };
 
     hamburger.onclick = () => {
@@ -330,7 +331,10 @@ class Twitchcord {
             if (querySelector) {
               querySelector.className = this.unselectedTabClasses;
             } else {
-              document.querySelector('.layer .sidebar .side-2nYO0F div.ui-tab-bar-item.selected:not(#twitchcord-button)').className = 'ui-tab-bar-item';
+              const selectedTab = document.querySelector('.layer .sidebar .side-2nYO0F div.ui-tab-bar-item.selected:not(#twitchcord-button)');
+              if (selectedTab) {
+                selectedTab.className = 'ui-tab-bar-item';
+              }
             }
           };
         } else if (c.id === 'bd-settings-sidebar') { // If it's a BD button
