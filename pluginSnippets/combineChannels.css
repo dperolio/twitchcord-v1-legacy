@@ -3,14 +3,15 @@
 /* ================================================================ */
 
 .channels-3g2vYe .scroller-fzNley {
-    max-height: 40vh;
+    max-height: 36vh;
+    padding-top: 30px;
+    padding-bottom: 0;
 }
 
 .channel-members {
     background-color: var(--channels-color)!important;
-    padding-bottom: 0;
-    max-height: 45vh;
-    border-top: 1px solid #2c2541;
+    padding-bottom: 5px;
+    max-height: 43vh;
 }
 
 .container-3lnMWU {
@@ -21,15 +22,15 @@
     position: fixed;
     left: 70px;
     z-index: 1;
-    top: 45vh;
-    margin-top: 53px;
+    top: 48vh;
+    margin-top: 8px;
     box-shadow: 0 -60px 70px -40px var(--chat-color);
     width: 239px;
     min-width: 239px;
 }
 
 .channel-members-wrap .scrollerWrap-2uBjct {
-    border-left: 1px solid var(--titlebar-color);
+    border-left: none!important;
 }
 
 .channels-3g2vYe .private-channels .scroller-fzNley {
@@ -63,10 +64,6 @@
 
 .channels-3g2vYe .scroller-fzNley::before {
     content: 'Channels List';
-}
-
-.channels-3g2vYe .scroller-fzNley {
-     padding-top: 30px;
 }
 
 .channels-3g2vYe .private-channels .scroller-fzNley  {
