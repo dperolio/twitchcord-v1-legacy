@@ -1616,8 +1616,8 @@ textarea {
 
 .message-group .comment .markup code.inline,
 .message-group .comment .markup pre code {
-    border: 1px solid #39383c!important;
-    background-color: #1a181e!important;
+    border: 1px solid var(--titlebar-color)!important;
+    background-color: var(--dark-modal-bg)!important;
     margin-bottom: 10px;
 }
 
@@ -1867,7 +1867,7 @@ textarea {
 }
 
 .message-group .mentioned .markup {
-    background: #19171d!important;
+    background: var(--dark-modal-bg)!important;
     height: auto!important;
     margin-top: 9px!important;
     margin-bottom: 5px;
