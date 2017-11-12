@@ -33,10 +33,6 @@
     background-color: var(--chat-color);
 }
 
-.channel-members-wrap {
-    border-left: 1px solid #2c2541;
-}
-
 .chat .divider {
     margin: 0 65px;
 }

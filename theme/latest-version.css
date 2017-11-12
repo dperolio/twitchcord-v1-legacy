@@ -4665,13 +4665,14 @@ button {
 
 .avatar-large[style*="/assets/f78426a064bc9dd24847519259bc42af.png"]+.comment .user-name {
     color: transparent;
-    pointer-events: none;
     margin-right: -35px;
+    visibility: hidden;
 }
 
 .avatar-large[style*="/assets/f78426a064bc9dd24847519259bc42af.png"]+.comment .user-name::before {
     content: 'Twitchcord Bot';
     color: #fff;
+    visibility: visible;
 }
 
 div[class*="avatar-"][style*="/assets/f78426a064bc9dd24847519259bc42af.png"],
@@ -6970,6 +6971,10 @@ div[class*="modal-"] {
     font-size: 12px;
     min-height: 32px;
     min-width: 60px;
+}
+
+.userPopout-4pfA0d .actionButton-3gCSjA {
+    margin: 0 10px 10px;
 }
 
 .actionButton-3gCSjA {
