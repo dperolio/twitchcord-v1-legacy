@@ -4508,7 +4508,7 @@ button {
 
 /* replace members list icon on top nav bar */
 
-.title-qAcLxz svg[name="People"], .headerBar-cxbhPD svg[name="People"] {
+.title-qAcLxz svg[name="People"], .headerBar-cxbhPD svg[name="People"], .titleCall-3X0yGQ svg[name="People"] {
     background: url('https://www.twitchcord.com/twitchcord-theme/images/members-list.png') no-repeat center !important;
     height: 50px!important;
     width: 20px!important;
@@ -4675,22 +4675,28 @@ button {
     visibility: visible;
 }
 
-div[class*="avatar-"][style*="/assets/f78426a064bc9dd24847519259bc42af.png"],
-div[class*="avatar-"]>[class*="image-"][style*="/assets/f78426a064bc9dd24847519259bc42af.png"] {
+[class*="avatar-"][style*="/assets/f78426a064bc9dd24847519259bc42af.png"],
+[class*="avatar-"]>[class*="image-"][style*="/assets/f78426a064bc9dd24847519259bc42af.png"] {
     background: url('https://www.twitchcord.com/twitchcord-theme/images/twitchcord-bot.png') no-repeat center !important;
     background-size: contain!important;
 }
 
-div[class*="avatar"][style*="/assets/6debd47ed13483642cf09e832ed0bc1b.png"],
-div[class*="avatar"][style*="/assets/322c936a8c8be1b803cd94861bdfa868.png"],
-div[class*="avatar"][style*="/assets/0e291f67c9274a1abdddeb3fd919cbaa.png"],
-div[class*="avatar"][style*="/assets/1cbd08c76f8af6dddce02c5138971129.png"],
-div[class*="avatar"][style*="/assets/dd4dbc0016779df1378e7812eabaa04d.png"],
-div[class*="avatar"]>[class*="image-"][style*="/assets/6debd47ed13483642cf09e832ed0bc1b.png"],
-div[class*="avatar"]>[class*="image-"][style*="/assets/322c936a8c8be1b803cd94861bdfa868.png"],
-div[class*="avatar"]>[class*="image-"][class*="image-"][style*="/assets/0e291f67c9274a1abdddeb3fd919cbaa.png"],
-div[class*="avatar"]>[class*="image-"][style*="/assets/1cbd08c76f8af6dddce02c5138971129.png"],
-div[class*="avatar"]>[class*="image-"][style*="/assets/dd4dbc0016779df1378e7812eabaa04d.png"] {
+[class*="avatar"][style*="/assets/f046e2247d730629309457e902d5c5b3.svg"],
+[class*="avatar"]>[class*="image-"][style*="/assets/f046e2247d730629309457e902d5c5b3.svg"] {
+    background: url('https://www.twitchcord.com/twitchcord-theme/images/group-ava.png') no-repeat center !important;
+    background-size: contain!important;
+}
+
+[class*="avatar"][style*="/assets/6debd47ed13483642cf09e832ed0bc1b.png"],
+[class*="avatar"][style*="/assets/322c936a8c8be1b803cd94861bdfa868.png"],
+[class*="avatar"][style*="/assets/0e291f67c9274a1abdddeb3fd919cbaa.png"],
+[class*="avatar"][style*="/assets/1cbd08c76f8af6dddce02c5138971129.png"],
+[class*="avatar"][style*="/assets/dd4dbc0016779df1378e7812eabaa04d.png"],
+[class*="avatar"]>[class*="image-"][style*="/assets/6debd47ed13483642cf09e832ed0bc1b.png"],
+[class*="avatar"]>[class*="image-"][style*="/assets/322c936a8c8be1b803cd94861bdfa868.png"],
+[class*="avatar"]>[class*="image-"][class*="image-"][style*="/assets/0e291f67c9274a1abdddeb3fd919cbaa.png"],
+[class*="avatar"]>[class*="image-"][style*="/assets/1cbd08c76f8af6dddce02c5138971129.png"],
+[class*="avatar"]>[class*="image-"][style*="/assets/dd4dbc0016779df1378e7812eabaa04d.png"] {
     background: url('https://www.twitchcord.com/twitchcord-theme/images/twitchcord-ava.png') no-repeat center !important;
     background-size: contain!important;
 }

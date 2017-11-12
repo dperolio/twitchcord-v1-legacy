@@ -111,10 +111,13 @@
 
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
 .avatar-large[style*="167335587488071682"]+.comment .username-wrapper::after,
+.avatar-large[style*="98270968945864704"]+.comment .username-wrapper::after
 /*--- channel members wrap ---*/
 .avatar-small[style*="167335587488071682"]+.member-inner .member-username-inner::before,
+.avatar-small[style*="98270968945864704"]+.member-inner .member-username-inner::before
 /*--- friends list ---*/
-.avatar-small[style*="167335587488071682"]+.discord-tag .username::after {
+.avatar-small[style*="167335587488071682"]+.discord-tag .username::after,
+.avatar-small[style*="98270968945864704"]+.discord-tag .username::after {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/donor.png');
 }
@@ -124,11 +127,11 @@
 /* ============================================== */
 
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
-.avatar-large[style*="97549189629636608"]+.comment .username-wrapper::before,
+/* 5/12/2018 */ .avatar-large[style*="98270968945864704"]+.comment .username-wrapper::before,
 /*--- channel members wrap ---*/
-.avatar-small[style*="97549189629636608"]+.member-inner .member-username::before,
+/* 5/12/2018 */ .avatar-small[style*="98270968945864704"]+.member-inner .member-username::before,
 /*--- friends list ---*/
-.avatar-small[style*="97549189629636608"]+.discord-tag .username::before {
+/* 5/12/2018 */ .avatar-small[style*="98270968945864704"]+.discord-tag .username::before {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/turbo.png');
 }

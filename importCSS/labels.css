@@ -64,16 +64,17 @@
     box-shadow: 0 0 5px 1px #5C482E, inset 0 0 10px rgba(92, 68, 46, 0.7);
 }
 
-/* Donor */
-.avatar-large[style*="167335587488071682"]+.comment .timestamp::before {
-    content: 'Donor';
+/* Supporter */
+.avatar-large[style*="167335587488071682"]+.comment .timestamp::before,
+.avatar-large[style*="98270968945864704"]+.comment .timestamp::before {
+    content: 'Supporter';
     border-color: #FF6666;
     background: #e52e2e;
     box-shadow: 0 0 5px 1px #5c2e2e, inset 0 0 10px rgba(92, 46, 46, 0.7);
 }
 
 /* Turbo User */
-.avatar-large[style*="numHere"]+.comment .timestamp::before {
+/* 5/12/2018 */ .avatar-large[style*="98270968945864704"]+.comment .timestamp::before {
     content: 'Turbo User';
     border-color: #9866ff;
     background: #5f29cc;
