@@ -35,7 +35,7 @@ class Twitchcord {
       styleTag.innerHTML = `${styleTag.innerHTML}\n#user-profile-modal[user-id="${ID}"] .header { background-image: url('${URLs[ID]}') !important; }`;
     }
     const MO = new MutationObserver(changes => {
-      if (changes.some(change => change.target && change.previousSibling && change.target.className === 'guilds scroller' && change.previousSibling.className === 'section')) {
+      if (changes.some(change => change.target && change.target.className.includes('scroll') && document.querySelector('#user-profile-modal'))) {
         this.injectUserModal();
       }
     });
