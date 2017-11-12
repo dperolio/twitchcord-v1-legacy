@@ -110,11 +110,11 @@
 /* =============================================== */
 
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
-.avatar-large[style*="numGoesHere"]+.comment .username-wrapper::after,
+.avatar-large[style*="167335587488071682"]+.comment .username-wrapper::after,
 /*--- channel members wrap ---*/
-.avatar-small[style*="numGoesHere"]+.member-inner .member-username-inner::before,
+.avatar-small[style*="167335587488071682"]+.member-inner .member-username-inner::before,
 /*--- friends list ---*/
-.avatar-small[style*="numGoesHere"]+.discord-tag .username::after {
+.avatar-small[style*="167335587488071682"]+.discord-tag .username::after {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/donor.png');
 }
