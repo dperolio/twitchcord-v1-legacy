@@ -7,6 +7,7 @@ class Twitchcord {
     this.BASE_URL = 'https://rawgit.com/dperolio/twitchcordTheme/master';
     this.SNIPPET_URL = `${this.BASE_URL}/pluginSnippets/snippets.json`;
     this.USER_BG_URL = `${this.BASE_URL}/pluginSnippets/userBackgrounds.json`;
+    this.PLUGIN_URL = `${this.BASE_URL}/plugin/Twitchcord.plugin.js`;
 
     this.observers = [];
     this.contextObserver = new MutationObserver((changes) => {
@@ -490,11 +491,45 @@ class Twitchcord {
     window.BDV2.reactDom.render(window.BDV2.react.createElement(this.settingTabThing), document.querySelector(querySelector));
   }
 
+  async update (code) {
+    const { writeFileSync } = require('fs');
+    const { join } = require('path');
+    let pluginPath;
+
+    switch (process.platform) {
+      case 'win32':
+        pluginPath = join(process.env.appdata, 'BetterDiscord', 'plugins');
+        break;
+      case 'darwin':
+        pluginPath = join(process.env.HOME, 'Library', 'Preferences', 'BetterDiscord', 'Plugins');
+        break;
+      default:
+        pluginPath = join(process.env.HOME, '.config', 'BetterDiscord', 'plugins');
+    }
+
+    pluginPath = join(pluginPath, 'Twitchcord.plugin.js');
+    writeFileSync(pluginPath, code);
+  }
+
+  async checkForUpdate () {
+    const GHPlugin = await window.fetch(this.PLUGIN_URL).then(r => r.text());
+    const versionRegex = /getVersion \(\) {\n {4}return '([^]*?)';/;
+    const GHVersions = versionRegex.exec(GHPlugin)[1].split('.').map(Number);
+    const localVersions = this.getVersion().split('.').map(Number);
+    for (const version of GHVersions) {
+      if (version > localVersions[GHVersions.indexOf(version)]) {
+        this.update(GHPlugin);
+        break;
+      }
+    }
+  }
+
   start () {
     this.loadSnippets();
     this.watchState();
     this.addHamburgerMenu();
     this.injectUserModals();
+    this.checkForUpdate();
 
     /* Most of everything beyond this point is Zere's script */
 
@@ -726,7 +761,7 @@ class Twitchcord {
   }
 
   getVersion () {
-    return '0.4.2';
+    return '0.4.3';
   }
 
   getAuthor () {
