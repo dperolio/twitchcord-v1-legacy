@@ -41,8 +41,9 @@ Cheers, and enjoy.
     --version: "Twitchcord v1.0.1";
 
     --theme-notice: 'Congratulations, you have successfully installed and enabled the Twitchcord theme!\A\A Now that you\'ve succesffully installed the theme, there are a few things you should know. First, the theme should auto-update from now until the future. The updates won\'t be instant, but shouldn\'t take more than a couple of hours. Next, Twitchcord enables custom user backgrounds viewable by other Twitchcord users, but you must enable the Twitchcord plugin to see them. The plugin is avaiable on the website at www.twitchcord.com or from our Discord server listed below. If you have any questions, concerns, problems, or suggestions drop by the Discord server and let us know. Thanks and enjoy the theme.\A\A Discord server: www.discord.me/twitchcord';
-    --plugin-notice: 'Now that you\'re using the Twitchcord theme, it\'s highly recommended you also download and enable the official Twitchcord plugin. The plugin contains some small fixes and features not possible with just CSS, including a ton of user customizability options! The plugin also enables custom user profile backgrounds, so if you want to have yours added to the list so other Twitchcord users can see it as well, just download and enable the plugin, and stop on over to our Discord server and submit your background in the #custom-user-backgrounds channel. Unlike the theme, the plugin does not automatically update at this time.';
-
+    --plugin-notice: 'Now that you\'re using the Twitchcord theme, it\'s highly recommended you also download and enable the official Twitchcord plugin. The plugin contains some small fixes and features not possible with just CSS, including a ton of user customizability options! The plugin also enables custom user profile backgrounds, so if you want to have yours added to the list so other Twitchcord users can see it as well, just download and enable the plugin, and stop on over to our Discord server and submit your background in the #custom-user-backgrounds channel.';
+    --plugin-enabled-notice: 'You\'ve successfully downloaded and installed the Twitchcord plugin! You now have access to many customizability options and settings, as well as small features and improvements you may notice around the theme. One great aspect of the plugin is the user of custom user profile backgrounds: to set yours, join the Discord server (listed above) and head over to the #custom-user-backgrounds channel. Like the theme, the plugin should automatically update as well.';
+    
     --dark-modal-bg: #201c2b;
     --titlebar-color: #2c2541;
     --chat-color: #0e0c13;
@@ -1598,7 +1599,6 @@ textarea {
 .hljs {
     padding: .4em!important;
 }
-
 
 .message-group .comment .markup pre {
     background: none!important;
@@ -13419,8 +13419,8 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
 }
 
 .theme-dark .user-settings-games .now-playing, .theme-light .user-settings-games .now-playing {
-    background: rgba(67,181,129,.3);
-    border: 2px solid rgba(67,181,129,.75);
+    border: 2px solid #31d31c;
+    background-color: #326125;
 }
 
 .theme-dark .user-settings-games .not-detected, .theme-light .user-settings-games .not-detected {
@@ -13435,7 +13435,6 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
 .theme-dark .user-settings-games .now-playing .game-name-input:focus, .theme-dark .user-settings-games .now-playing .game-name-input:hover,
 .theme-light .user-settings-games .now-playing .game-name-input:focus, .theme-light .user-settings-games .now-playing .game-name-input:hover {
     background: var(--chat-color);
-    box-shadow: inset 0 0 0 1px rgba(67,181,129,.75), 0 0 0 transparent!important;
 }
 
 .user-settings-games .game-name-input {
@@ -15704,6 +15703,10 @@ body[tc-opened] .container-2OU7Cz, body[tc-opened] .ui-standard-sidebar-view {
     content: var(--plugin-notice)!important;
 }
 
+body[tc-plugin-enabled] .ui-standard-sidebar-view #bd-settingspane-container .content-column.default .bda-slist::before {
+    content: var(--plugin-enabled-notice)!important;
+}
+
 #bd-settingspane-container .bda-slist::before {
     display: block;
     width: 100%;
@@ -15728,6 +15731,14 @@ body[tc-opened] .container-2OU7Cz, body[tc-opened] .ui-standard-sidebar-view {
     text-transform: none;
     box-sizing: border-box;
     white-space: normal;
+}
+
+body[tc-plugin-enabled] #bd-settingspane-container .bda-slist::before {
+    border: 2px solid #31d31c;
+    background-color: #326125;
+    background: #326125 url('https://www.twitchcord.com/twitchcord-theme/images/checkmark-large.png') no-repeat;
+    background-size: 60px;
+    background-position: center left 20px;
 }
 
 #bd-settingspane-container .bda-slist::first-line::before {
