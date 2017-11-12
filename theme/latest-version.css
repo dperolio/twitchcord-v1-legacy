@@ -2165,8 +2165,8 @@ textarea {
     padding: 5px!important;
     margin-left: 15px;
     color: #cbc8d0!important;
-    height: 44px;
-    line-height: 44px;
+    height: 46px;
+    line-height: 46px;
 }
 
 .message-group .comment .markup {
@@ -15320,7 +15320,7 @@ img[src*="/assets/5fb477ca84edd15d9a2888ac28365acd.svg"] {
       width: 800px;
       top: 130px;
       left: 0;
-      background: linear-gradient(to top, rgba(14,12,19,1), rgba(14,12,19,0));
+      background: linear-gradient(to top, rgba(14,12,19,1), rgba(14,12,19,0.6) 80%, rgba(14,12,19,0));
   }
 
   #user-profile-modal .tab-bar-container {
