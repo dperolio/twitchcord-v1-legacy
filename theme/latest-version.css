@@ -15315,12 +15315,12 @@ img[src*="/assets/5fb477ca84edd15d9a2888ac28365acd.svg"] {
   #user-profile-modal .header::before {
       content: '';
       position: absolute;
-      height: 90px;
+      height: 120px;
       display: block;
       width: 800px;
-      top: 130px;
+      top: 100px;
       left: 0;
-      background: linear-gradient(to top, rgba(14,12,19,1), rgba(14,12,19,0.6) 80%, rgba(14,12,19,0));
+      background: linear-gradient(to top, rgba(14,12,19,1), rgba(14,12,19,0));
   }
 
   #user-profile-modal .tab-bar-container {
