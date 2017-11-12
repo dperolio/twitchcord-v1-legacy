@@ -20,14 +20,20 @@ please!
 
 # Previews:
 (might be out of date)
-![Full size preview](http://www.dperolio.com/Twitchcord/images/preview-1.jpg)
-![Full size preview](http://www.dperolio.com/Twitchcord/images/preview-2.jpg)
-![Full size preview](http://www.dperolio.com/Twitchcord/images/preview-3.jpg)
-![Full size preview](http://www.dperolio.com/Twitchcord/images/preview-4.jpg)
-![Full size preview](http://www.dperolio.com/Twitchcord/images/preview-5.jpg)
-![Full size preview](http://www.dperolio.com/Twitchcord/images/preview-6.jpg)
-![Full size preview](http://www.dperolio.com/Twitchcord/images/preview-7.jpg)
-![Full size preview](http://www.dperolio.com/Twitchcord/images/preview-8.jpg)
+![Full size preview](https://www.twitchcord.com/images/prev-1.png)
+![Full size preview](https://www.twitchcord.com/images/prev-2.png)
+![Full size preview](https://www.twitchcord.com/images/prev-3.png)
+![Full size preview](https://www.twitchcord.com/images/prev-4.png)
+![Full size preview](https://www.twitchcord.com/images/prev-5.png)
+![Full size preview](https://www.twitchcord.com/images/prev-6.png)
+![Full size preview](https://www.twitchcord.com/images/prev-7.png)
+![Full size preview](https://www.twitchcord.com/images/prev-8.png)
+![Full size preview](https://www.twitchcord.com/images/prev-9.png)
+![Full size preview](https://www.twitchcord.com/images/prev-10.png)
+![Full size preview](https://www.twitchcord.com/images/prev-11.png)
+![Full size preview](https://www.twitchcord.com/images/prev-12.png)
+![Full size preview](https://www.twitchcord.com/images/prev-13.png)
+
 
 
 # Changelog:
