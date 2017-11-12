@@ -5,7 +5,7 @@
 
 **[Website](http://www.twitchcord.com)**
 
-**[Download](http://www.twitchcord.com/twitchcord-theme/Twitchcord.theme.css)** (BETA)
+**[Download](http://www.twitchcord.com/twitchcord-theme/Twitchcord.zip)** v1.0.1
 
 **[Twitchcord discord server](https://discord.me/twitchcord)**
 
