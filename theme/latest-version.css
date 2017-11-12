@@ -2742,7 +2742,7 @@ textarea {
     justify-content: center;
     background: var(--important-notification-color);
     color: #fff;
-    padding: 0!important;
+    padding: 0 2px!important;
     line-height: 16px;
     font-size: 11px;
     display: flex;
