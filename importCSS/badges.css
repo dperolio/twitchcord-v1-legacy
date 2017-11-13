@@ -2,10 +2,6 @@
 /* ================= BASES  ===================== */
 /* ============================================== */
 
-/*--- user profile (Staff > Turbo) ---*/
-#user-profile-modal .header-info .username::before,
-/*--- user profile (Verified > Plugin Developer > Supporter > Beta) ---*/
-#user-profile-modal .header-info .username::after,
 /*--- user profile friends list (Staff > Turbo > Nitro) ---*/
 .avatar-large+.guild-inner .username::before,
 /*--- user profile friends list (Verified > Plugin Developer > Supporter > Beta) ---*/
@@ -34,13 +30,6 @@
     pointer-events: none;
     float: left;
     position: relative;
-}
-
-/*--- user profile (Staff > Turbo) ---*/
-#user-profile-modal .header-info .username::before,
-/*--- user profile (Verified > Plugin Developer > Supporter > Beta) ---*/
-#user-profile-modal .header-info .username::after {
-    top: 5px;
 }
 
 /* =========================================== */
@@ -117,24 +106,6 @@
 .avatar-small[style*="98270968945864704"]+.discord-tag .username::after,
 .avatar-small[style*="98829797735559168"]+.discord-tag .username::after,
 .avatar-small[style*="274950159195176963"]+.discord-tag .username::after,
-/*--- user profile ---*/
-#user-profile-modal[user-id="177744816665395200"] .header-info .username::after,
-#user-profile-modal[user-id="269929826075410432"] .header-info .username::after,
-#user-profile-modal[user-id="284122164582416385"] .header-info .username::after,
-#user-profile-modal[user-id="71575679543549952"] .header-info .username::after,
-#user-profile-modal[user-id="173449041181409281"] .header-info .username::after,
-#user-profile-modal[user-id="258591131758100481"] .header-info .username::after,
-#user-profile-modal[user-id="111476801762537472"] .header-info .username::after,
-#user-profile-modal[user-id="96269247411400704"] .header-info .username::after,
-#user-profile-modal[user-id="90076279646212096"] .header-info .username::after,
-#user-profile-modal[user-id="112008049975099392"] .header-info .username::after,
-#user-profile-modal[user-id="111894694652280832"] .header-info .username::after,
-#user-profile-modal[user-id="212749887803097088"] .header-info .username::after,
-#user-profile-modal[user-id="250322741406859265"] .header-info .username::after,
-#user-profile-modal[user-id="318401651029442560"] .header-info .username::after,
-#user-profile-modal[user-id="98270968945864704"] .header-info .username::after,
-#user-profile-modal[user-id="98829797735559168"] .header-info .username::after,
-#user-profile-modal[user-id="274950159195176963"] .header-info .username::after,
 /*--- user profile friends list ---*/
 .avatar-large[style*="177744816665395200"]+.guild-inner .username::after,
 .avatar-large[style*="269929826075410432"]+.guild-inner .username::after,
@@ -170,9 +141,6 @@
 /*--- friends list ---*/
 .avatar-small[style*="167335587488071682"]+.discord-tag .username::after,
 .avatar-small[style*="98270968945864704"]+.discord-tag .username::after,
-/*--- user profile ---*/
-#user-profile-modal[user-id="167335587488071682"] .header-info .username::after,
-#user-profile-modal[user-id="98270968945864704"] .header-info .username::after,
 /*--- user profile friends list ---*/
 .avatar-large[style*="167335587488071682"]+.guild-inner .username::after,
 .avatar-large[style*="98270968945864704"]+.guild-inner .username::after {
@@ -190,8 +158,6 @@
 /* 5/12/2018 */ .avatar-small[style*="98270968945864704"]+.member-inner .member-username::before,
 /*--- friends list ---*/
 /* 5/12/2018 */ .avatar-small[style*="98270968945864704"]+.discord-tag .username::before,
-/*--- user profile ---*/
-/* 5/12/2018 */ #user-profile-modal[user-id="98270968945864704"] .header-info .username::before,
 /*--- user profile friends list ---*/
 /* 5/12/2018 */ .avatar-large[style*="98270968945864704"]+.guild-inner .username::before {
     content: '';
@@ -214,10 +180,6 @@
 .avatar-small[style*="284122164582416385"]+.discord-tag .username::after,
 .avatar-small[style*="249746236008169473"]+.discord-tag .username::after,
 .avatar-small[style*="278543574059057154"]+.discord-tag .username::after,
-/*--- user profile ---*/
-#user-profile-modal[user-id="284122164582416385"] .header-info .username::after,
-#user-profile-modal[user-id="249746236008169473"] .header-info .username::after,
-#user-profile-modal[user-id="278543574059057154"] .header-info .username::after,
 /*--- user profile friends list ---*/
 .avatar-large[style*="284122164582416385"]+.guild-inner .username::after,
 .avatar-large[style*="249746236008169473"]+.guild-inner .username::after,
@@ -236,8 +198,6 @@
 .avatar-small[style*="numGoesHere"]+.member-inner .member-username-inner::before,
 /*--- friends list ---*/
 .avatar-small[style*="numGoesHere"]+.discord-tag .username::after,
-/*--- user profile ---*/
-#user-profile-modal[user-id="numGoesHere"] .header-info .username::after,
 /*--- user profile friends list ---*/
 .avatar-large[style*="numGoesHere"]+.guild-inner .username::after {
     content: '';
@@ -254,8 +214,6 @@
 .avatar-small[style*="97549189629636608"]+.member-inner .member-username-inner::before,
 /*--- friends list ---*/
 .avatar-small[style*="97549189629636608"]+.discord-tag .username::after,
-/*--- user profile ---*/
-#user-profile-modal[user-id="97549189629636608"] .header-info .username::after,
 /*--- user profile friends list ---*/
 .avatar-large[style*="97549189629636608"]+.guild-inner .username::after {
     content: '';
@@ -275,9 +233,6 @@
 /*--- friends list ---*/
 .avatar-small[style*="97549189629636608"]+.discord-tag .username::before,
 .avatar-small[style*="284122164582416385"]+.discord-tag .username::before,
-/*--- user profile ---*/
-#user-profile-modal[user-id="97549189629636608"] .header-info .username::before,
-#user-profile-modal[user-id="284122164582416385"] .header-info .username::before,
 /*--- user profile friends list ---*/
 .avatar-large[style*="97549189629636608"]+.guild-inner .username::before,
 .avatar-large[style*="284122164582416385"]+.guild-inner .username::before {
