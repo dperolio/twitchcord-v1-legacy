@@ -24,7 +24,7 @@
 .avatar-large+.comment .username-wrapper::after
  {
     content: none;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat!important;
     font-size: 1px;
     margin-right: 7px;
     height: 18px;
@@ -34,6 +34,13 @@
     pointer-events: none;
     float: left;
     position: relative;
+}
+
+/*--- user profile (Staff > Turbo) ---*/
+#user-profile-modal .header-info .username::before,
+/*--- user profile (Verified > Plugin Developer > Supporter > Beta) ---*/
+#user-profile-modal .header-info .username::after {
+    top: 5px;
 }
 
 /* =========================================== */
