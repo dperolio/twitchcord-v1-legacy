@@ -15326,6 +15326,11 @@ img[src*="/assets/5fb477ca84edd15d9a2888ac28365acd.svg"] {
       background: linear-gradient(to top, rgba(14,12,19,1), rgba(14,12,19,0));
   }
 
+  #user-profile-modal .bot-tag {
+    top: 5px;
+    position: relative;
+  }
+
   #user-profile-modal .tab-bar-container {
       background-color: var(--dark-modal-bg);
       border-bottom: 1px solid var(--titlebar-color);
