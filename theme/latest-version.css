@@ -15330,6 +15330,7 @@ img[src*="/assets/5fb477ca84edd15d9a2888ac28365acd.svg"] {
       background-color: var(--dark-modal-bg);
       border-bottom: 1px solid var(--titlebar-color);
       border-top: 2px solid var(--chat-color);
+      box-shadow: inset 0 1px 0 0 var(--titlebar-color);
   }
 
   #user-profile-modal {
