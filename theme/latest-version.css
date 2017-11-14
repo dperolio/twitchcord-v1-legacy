@@ -1837,7 +1837,7 @@ textarea {
 }
 
 .guilds-wrapper .guilds .guild.unread:not(.selected) .guild-inner {
-    box-shadow: rgba(163, 115, 255, .8) 0px 0px 15px!important;
+    box-shadow: rgba(163, 115, 255, .8) 0px 0px 25px!important;
 }
 
 .guilds-wrapper .guilds .guild.unread:not(.selected) .guild-inner a {
@@ -2681,7 +2681,7 @@ textarea {
 
 .guilds-wrapper .guilds>div.guild:first-of-type .badge {
     bottom: 22px;
-    right: 8px;
+    right: 5px;
     border-color: var(--top-nav-color);
     box-shadow: none;
 }
@@ -4809,7 +4809,7 @@ button {
 #user-profile-modal .header .header-info .header-info-inner .discord-tag .username {
     color: #fff;
     font-size: 24px;
-    max-width: 333px;
+    max-width: 320px;
     line-height: 28px;
 }
 
@@ -5351,10 +5351,8 @@ button {
 }
 
 .guilds-wrapper .guilds .friends-icon {
-    background-image: url('https://www.twitchcord.com/twitchcord-theme/images/chat-boxes.png') !important;
-    background-size: 28px!important;
-    top: 2px;
-    position: relative;
+    background-image: url('https://www.twitchcord.com/twitchcord-theme/images/chat.png') !important;
+    background-size: 32px!important;
 }
 
 .recent-mentions-popout .mention-filter .label {
