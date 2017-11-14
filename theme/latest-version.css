@@ -15796,3 +15796,40 @@ Forum style start
     border-radius: 0;
     display: none;
 }
+
+.message-group .comment .markup.spoiler {
+    border: 1px solid var(--titlebar-color);
+    box-sizing: border-box;
+    padding: 0;
+    margin: 10px 0;
+    overflow: hidden;
+    margin-bottom: 10px;
+    width: 100%;
+    position: relative;
+    min-height: 33px;
+    max-height: 33px;
+    color: transparent!important;
+    transition: max-height 0.3s, color 0.3s, padding 0s 0.3s;
+}
+
+.message-group .comment .markup.spoiler:hover {
+    color: #cbc8d0!important;
+    padding: 15px;
+    padding-top: 47px;
+    max-height: 9999px;
+    transition: max-height 0.3s, color 0.3s;
+}
+
+.spoiler::before {
+    content: "SPOILER - (hover to reveal)";
+    font-family: var(--font);
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top: 0;
+    left: 0;
+    line-height: 32px;
+    background: var(--top-nav-color);
+    color: #fff!important;
+    font-size: 12px;
+}
