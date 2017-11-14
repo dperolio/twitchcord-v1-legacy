@@ -1836,6 +1836,10 @@ textarea {
     box-sizing: border-box;
 }
 
+.nameTag-26T3kW {
+    overflow: initial;
+}
+
 .guilds-wrapper .guilds .guild.unread:not(.selected) .guild-inner {
     box-shadow: rgba(163, 115, 255, .8) 0px 0px 25px!important;
 }
