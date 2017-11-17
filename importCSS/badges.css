@@ -135,15 +135,19 @@
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
 .avatar-large[style*="167335587488071682"]+.comment .username-wrapper::after,
 .avatar-large[style*="98270968945864704"]+.comment .username-wrapper::after,
+.avatar-large[style*="119321587026493441"]+.comment .username-wrapper::after
 /*--- channel members wrap ---*/
 .avatar-small[style*="167335587488071682"]+.member-inner .member-username-inner::before,
 .avatar-small[style*="98270968945864704"]+.member-inner .member-username-inner::before,
+.avatar-small[style*="119321587026493441"]+.member-inner .member-username-inner::before
 /*--- friends list ---*/
 .avatar-small[style*="167335587488071682"]+.discord-tag .username::after,
 .avatar-small[style*="98270968945864704"]+.discord-tag .username::after,
+.avatar-small[style*="119321587026493441"]+.discord-tag .username::after,
 /*--- user profile friends list ---*/
 .avatar-large[style*="167335587488071682"]+.guild-inner .username::after,
-.avatar-large[style*="98270968945864704"]+.guild-inner .username::after {
+.avatar-large[style*="98270968945864704"]+.guild-inner .username::after,
+.avatar-large[style*="119321587026493441"]+.guild-inner .username::after {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/donor.png');
 }
