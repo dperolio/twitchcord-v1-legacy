@@ -6,7 +6,7 @@ class Twitchcord {
   constructor () {
     this.BASE_URL = 'https://rawgit.com/dperolio/twitchcordTheme/master';
     this.SNIPPET_URL = `${this.BASE_URL}/pluginSnippets/snippets.json`;
-    this.USER_BG_URL = `${this.BASE_URL}/pluginSnippets/userBackgrounds.json`;
+    this.USER_BG_URL = 'https://api.github.com/gists/aaa364d4cae7e5c0cf7799c6fd5310d3';
     this.PLUGIN_URL = `${this.BASE_URL}/plugin/Twitchcord.plugin.js`;
 
     this.observers = [];
@@ -30,7 +30,8 @@ class Twitchcord {
   }
 
   async injectUserModals () {
-    const URLs = await window.fetch(this.USER_BG_URL).then(r => r.json());
+    const res = await window.fetch(this.USER_BG_URL).then(r => r.json());
+    const URLs = JSON.parse(res.files['f.json'].content);
     for (const ID in URLs) {
       const styleTag = document.querySelector('#twitchcord-styletag');
       styleTag.innerHTML = `${styleTag.innerHTML}\n#user-profile-modal[user-id="${ID}"] .header { background-image: url('${URLs[ID]}') !important; }`;
@@ -761,7 +762,7 @@ class Twitchcord {
   }
 
   getVersion () {
-    return '0.4.3';
+    return '0.4.4';
   }
 
   getAuthor () {
