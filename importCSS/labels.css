@@ -23,7 +23,8 @@
 .avatar-large[style*="274950159195176963"]+.comment .timestamp::before,
 .avatar-large[style*="249746236008169473"]+.comment .timestamp::before,
 .avatar-large[style*="278543574059057154"]+.comment .timestamp::before,
-.avatar-large[style*="167335587488071682"]+.comment .timestamp::before {
+.avatar-large[style*="167335587488071682"]+.comment .timestamp::before,
+.avatar-large[style*="119321587026493441"]+.comment .timestamp::before {
     text-transform: uppercase;
     border: 1px solid #9866ff;
     border-radius: 3px;
