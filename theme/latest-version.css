@@ -41,8 +41,8 @@ Cheers, and enjoy.
     --version: "Twitchcord v1.0.1";
 
     --theme-notice: 'Congratulations, you have successfully installed and enabled the Twitchcord theme!\A\A Now that you\'ve succesffully installed the theme, there are a few things you should know. First, the theme should auto-update from now until the future. The updates won\'t be instant, but shouldn\'t take more than a couple of hours. Next, Twitchcord enables custom user backgrounds viewable by other Twitchcord users, but you must enable the Twitchcord plugin to see them. The plugin is avaiable on the website at www.twitchcord.com or from our Discord server listed below. If you have any questions, concerns, problems, or suggestions drop by the Discord server and let us know. Thanks and enjoy the theme.\A\A Discord server: www.discord.me/twitchcord';
-    --plugin-notice: 'Now that you\'re using the Twitchcord theme, it\'s highly recommended you also download and enable the official Twitchcord plugin. The plugin contains some small fixes and features not possible with just CSS, including a ton of user customizability options! The plugin also enables custom user profile backgrounds, so if you want to have yours added to the list so other Twitchcord users can see it as well, just download and enable the plugin, and stop on over to our Discord server and submit your background in the #custom-user-backgrounds channel.';
-    --plugin-enabled-notice: 'You\'ve successfully downloaded and installed the Twitchcord plugin! You now have access to many customizability options and settings, as well as small features and improvements you may notice around the theme. One great aspect of the plugin is the use of custom user profile backgrounds: to set yours, join the Discord server (listed above) and head over to the #custom-user-backgrounds channel. Like the theme, the plugin should automatically update as well.';
+    --plugin-notice: 'Now that you\'re using the Twitchcord theme, it\'s highly recommended you also download and enable the official Twitchcord plugin. The plugin contains some small fixes and features not possible with just CSS, including a ton of user customizability options! The plugin also enables custom user profile backgrounds, so if you want to have yours added to the list so other Twitchcord users can see it as well, just download and enable the plugin, and stop on over to our Discord server and submit your background in the #set-user-profile-background channel.';
+    --plugin-enabled-notice: 'You\'ve successfully downloaded and installed the Twitchcord plugin! You now have access to many customizability options and settings, as well as small features and improvements you may notice around the theme. One great aspect of the plugin is the use of custom user profile backgrounds: to set yours, join the Discord server (listed above) and head over to the #set-user-profile-background channel. Like the theme, the plugin should automatically update as well.';
     
     --dark-modal-bg: #201c2b;
     --titlebar-color: #2c2541;
@@ -1619,6 +1619,7 @@ textarea {
     border: 1px solid var(--titlebar-color)!important;
     background-color: var(--dark-modal-bg)!important;
     margin-bottom: 10px;
+    line-height: 22px!important;
 }
 
 .message-group .comment .edited {
@@ -2178,6 +2179,10 @@ textarea {
     line-height: 22px;
     font-size: 14px;
     font-weight: 400;
+}
+
+.message-group .comment .message-send-failed .markup, .message-group .comment .message-send-failed .markup a { 
+    color: var(--important-notification-color)!important;
 }
 
 .channel-members .member .member-activity {
@@ -13311,6 +13316,8 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
     border: none!important;
     border-radius: 0;
     margin: 5px 5px 0;
+    font-size: 34px;
+    padding: 10px;
 }
 
 .minorAction-2WStW0:hover {
