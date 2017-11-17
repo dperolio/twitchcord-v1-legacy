@@ -31,7 +31,7 @@ class Twitchcord {
 
   async injectUserModals () {
     const res = await window.fetch(this.USER_BG_URL).then(r => r.json());
-    const URLs = JSON.parse(res.files['f.json'].content);
+    const URLs = JSON.parse(res.files['userBackgrounds.json'].content);
     for (const ID in URLs) {
       const styleTag = document.querySelector('#twitchcord-styletag');
       styleTag.innerHTML = `${styleTag.innerHTML}\n#user-profile-modal[user-id="${ID}"] .header { background-image: url('${URLs[ID]}') !important; }`;
@@ -762,7 +762,7 @@ class Twitchcord {
   }
 
   getVersion () {
-    return '0.4.4';
+    return '0.4.5';
   }
 
   getAuthor () {
