@@ -2823,7 +2823,7 @@ textarea {
 }
 
 .guilds-wrapper .guilds-add:hover,
-.guilds-wrapper .guilds-add:active, {
+.guilds-wrapper .guilds-add:active {
     color: #fff;
 }
 
@@ -4736,7 +4736,7 @@ button {
 }
 
 .headerActivityText-3qBQRo {
-    margin-bottom: 15spx;
+    margin-bottom: 15px;
 }
 
 .headerUsernameNoNickname-1iGxNP {
@@ -14447,8 +14447,12 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
     display: inline-block;
 }
 
-#bd-settingspane-container .ui-switch-item {
+#bd-settingspane-container .bda-slist .ui-switch-item {
     padding: 10px 0 10px;
+}
+
+#bd-settingspane-container .ui-switch-item {
+    padding: 10px 40px 10px;
 }
 
 #bd-settingspane-container .bda-right > .ui-switch-item {
@@ -14948,8 +14952,8 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
 }
 
 .modal-content.need-help-modal .form-inner ul li:nth-of-type(1){
-  background-image:url('https://www.twitchcord.com/twitchcord-theme/images/edit-large.png');
-  background-size: 46px;
+    background-image: url('https://www.twitchcord.com/twitchcord-theme/images/audio-large.png');
+    background-size: 36px;
 }
 .modal-content.need-help-modal .form-inner ul li:nth-of-type(2){
   background-image: url('https://www.twitchcord.com/twitchcord-theme/images/video-large.png');
@@ -14958,19 +14962,19 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
   background-image: url('https://www.twitchcord.com/twitchcord-theme/images/email-large.png');
 }
 .modal-content.need-help-modal .form-inner ul li:nth-of-type(4){
-  background-image: url('https://www.twitchcord.com/twitchcord-theme/images/audio-large.png');
-  background-size: 36px;
-}
-.modal-content.need-help-modal .form-inner ul li:nth-of-type(5){
   background-image: url('https://www.twitchcord.com/twitchcord-theme/images/bug-large.png');
   background-size: 56px;
 }
-.modal-content.need-help-modal .form-inner ul li:nth-of-type(6){
+.modal-content.need-help-modal .form-inner ul li:nth-of-type(5){
   background-image: url('https://www.twitchcord.com/twitchcord-theme/images/nitro-large.png');
+}
+.modal-content.need-help-modal .form-inner ul li:nth-of-type(6){
+    background-image:url('https://www.twitchcord.com/twitchcord-theme/images/edit-large.png');
+    background-size: 46px;
 }
 .modal-content.need-help-modal .form-inner ul li::after{
     font-size:15px;
-    color: ##b9bbbe;
+    color: #b9bbbe;
     bottom:20px;
     left:0;
     position: absolute;
@@ -14982,22 +14986,22 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
 }
 
 .modal-content.need-help-modal .form-inner ul li:nth-of-type(1)::after{
-    content:"Text Formatting";
+    content:"Audio";
 }
 .modal-content.need-help-modal .form-inner ul li:nth-of-type(2)::after{
     content:"Video";
 }
 .modal-content.need-help-modal .form-inner ul li:nth-of-type(3)::after{
-    content:"Email Verification";
+    content:"Categories Info";
 }
 .modal-content.need-help-modal .form-inner ul li:nth-of-type(4)::after{
-    content:"Audio";
-}
-.modal-content.need-help-modal .form-inner ul li:nth-of-type(5)::after{
     content:"Report Bugs";
 }
-.modal-content.need-help-modal .form-inner ul li:nth-of-type(6)::after{
+.modal-content.need-help-modal .form-inner ul li:nth-of-type(5)::after{
     content:"Nitro";
+}
+.modal-content.need-help-modal .form-inner ul li:nth-of-type(6)::after{
+    content:"Text Formatting";
 }
 .modal-content.need-help-modal .form-inner ul li a{
     position:absolute;
