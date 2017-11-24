@@ -2642,6 +2642,7 @@ textarea {
 .message-group .comment .markup .mention:hover {
     background-color: transparent!important;
     text-decoration: none;
+    color: var(--links-color);
 }
 
 .guilds-wrapper .guild-separator {
@@ -5394,7 +5395,7 @@ button {
     letter-spacing: 0!important;
     font-size: 14px;
     line-height: 20px;
-    font-family: var(--font)!important;
+    font-family: var(--font-coding)!important;
     padding: 1px 4px;
     border-radius: 0;
     max-width: 100%;
@@ -9112,7 +9113,7 @@ content: "";
     overflow-x: auto;
     color: #cbc8d0 !important;
     padding: 0.5em;
-    font-family: var(--font)!important;
+    font-family: var(--font-coding)!important;
     line-height: 24px;
 }
 
