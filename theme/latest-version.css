@@ -15888,6 +15888,36 @@ Forum style start
     font-size: 12px;
 }
 
+/* new invite button */
+.wrapper-uAa07y {
+    background: var(--dark-modal-bg) !important;
+    border: 1px solid var(--titlebar-color) !important;
+    border-radius: 0;
+}
+.wrapper-uAa07y .guildIcon-KMiSsu {
+    background-color: var(--top-nav-color) !important;
+    border: 2px solid var(--channels-color) !important;
+    border-radius: 0;
+}
+.wrapper-uAa07y .guildName-C1hTEs {
+    color: #fff !important;
+    font-weight: 500;
+}
+.wrapper-uAa07y .h5-3KssQU {
+    color: var(--dark-text-header) !important;
+    font-weight: 500;
+}
+.wrapper-uAa07y .guildDetail-1-o1X5 {
+    color: var(--dark-text-tint) !important;
+    font-weight: 500;
+}
+.wrapper-uAa07y .guildNameExpired-3OXvVV {
+    color: #f04747;
+    font-weight: 500;
+}
+.wrapper-uAa07y .buttonIcon-3jPc5f {
+    display: none;
+}
 
 /*
 ---------------------------
