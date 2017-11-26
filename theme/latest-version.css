@@ -1630,7 +1630,7 @@ textarea {
     border: 1px solid var(--titlebar-color)!important;
     background-color: var(--dark-modal-bg)!important;
     margin-bottom: 10px;
-    line-height: 22px!important;
+    line-height: 18px!important;
 }
 
 .message-group .comment .edited {
@@ -6472,6 +6472,10 @@ div[class*="modal-"] {
     border-radius: 0!important;
     box-shadow: none!important;
     padding: 15px 30px!important;
+}
+
+.nameUserPopout-1Hbg0M {
+    color: #fff;
 }
 
 .userPopout-4pfA0d {
