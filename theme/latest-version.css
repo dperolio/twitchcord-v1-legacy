@@ -486,6 +486,13 @@ textarea {
 
 .invite-modal .avatar-xxxlarge {
     border-radius: 0;
+    border: 1px solid var(--top-nav-color);
+    -webkit-box-shadow: 0 0 5px rgba(57, 46, 92, 0.2), inset 0 0 5px rgba(57, 46, 92, 0.1);
+    box-shadow: 0 0 5px rgba(57, 46, 92, 0.2), inset 0 0 5px rgba(57, 46, 92, 0.1);
+    -webkit-transform-style: preserve-3d;  
+    transform-style: preserve-3d;  
+    -webkit-animation: animJelly 1s forwards, glow3 800ms ease-out infinite alternate;
+    animation: animJelly 1s forwards, glow3 800ms ease-out infinite alternate;
 }
 
 .headerNormal-1cioxU {
@@ -1119,9 +1126,13 @@ textarea {
 
 .bd-blue .mention,
 .mention {
-    color: var(--links-color)!important;
+    color: var(--links-color);
     font-weight: normal;
     padding: 0px 4px;
+}
+
+.message.mentioned .mention {
+    color: var(--links-color);
 }
 
 .topic-1KFf6J::before {
@@ -1171,7 +1182,7 @@ textarea {
 .textArea-20yzAH {
     color: #faf9fa;
     background: var(--channels-color);
-    border: 1px solid #433f4a;
+    border: 1px solid #3c305b;
     -webkit-transition: -webkit-box-shadow 0.12s ease-in;
     transition: -webkit-box-shadow 0.12s ease-in;
     transition: box-shadow 0.12s ease-in;
@@ -1886,10 +1897,6 @@ textarea {
     left: -3px;
 }
 
-.message.mentioned .mention {
-    color: var(--links-color)!important;
-}
-
 .container-iksrDt .avatar-small {
     border: 2px solid var(--channels-color);
 }
@@ -2139,9 +2146,9 @@ textarea {
     border-radius: 0!important;
     border: none!important;
     background: transparent;
-    top: 20px!important;
+    top: 22px!important;
     left: -12px!important;
-    height: 44px!important;
+    height: 42px!important;
     width: 5px!important;
     transition: none!important;
 }
@@ -2629,11 +2636,13 @@ textarea {
 
 .message-group .comment .markup .mention {
     background-color: transparent!important;
-    padding: 2px 2px;
+    padding: 2px;
 }
 
 .message-group .comment .markup .mention:hover {
     background-color: transparent!important;
+    text-decoration: none;
+    color: var(--links-color);
 }
 
 .guilds-wrapper .guild-separator {
@@ -2815,7 +2824,7 @@ textarea {
 }
 
 .guilds-wrapper .guilds-add:hover,
-.guilds-wrapper .guilds-add:active, {
+.guilds-wrapper .guilds-add:active {
     color: #fff;
 }
 
@@ -3194,7 +3203,7 @@ textarea {
     top: 79px;
     width: 100%;
     border-radius: 0;
-    z-index: 102;
+    z-index: 9999;
 }
 
 .notice .notice-dismiss {
@@ -3220,6 +3229,10 @@ textarea {
 
 .notice.notice-danger .btn:hover {
     color: #f04747!important;
+}
+
+.notice.notice-streamer-mode .btn:hover {
+    color: #593695!important;
 }
 
 .ui-phone-field .send-button {
@@ -4724,7 +4737,7 @@ button {
 }
 
 .headerActivityText-3qBQRo {
-    margin-bottom: 15spx;
+    margin-bottom: 15px;
 }
 
 .headerUsernameNoNickname-1iGxNP {
@@ -4910,7 +4923,7 @@ button {
     min-width: 200px;
     padding: 0;
     margin: 0px 10px;
-    z-index: 10001;
+    z-index: 99999999;
 }
 
 .user-settings-security-image {
@@ -5382,7 +5395,7 @@ button {
     letter-spacing: 0!important;
     font-size: 14px;
     line-height: 20px;
-    font-family: var(--font)!important;
+    font-family: var(--font-coding)!important;
     padding: 1px 4px;
     border-radius: 0;
     max-width: 100%;
@@ -6542,7 +6555,7 @@ div[class*="modal-"] {
 }
 
 .quick-message {
-    border: 1px solid #433f4a;
+    border: 1px solid #3c305b;
     border-radius: 0;
     width: 100%;
     font-size: 14px;
@@ -6555,6 +6568,14 @@ div[class*="modal-"] {
     background: var(--channels-color);
     color: #cbc8d0;
     margin-bottom: 2px;
+    -webkit-transition: box-shadow 0.12s ease-in;
+    transition: box-shadow 0.12s ease-in;
+}
+
+.quick-message:focus {
+    box-shadow: inset 0 0 0 1px #7d5bbe, 0 0 6px -2px #7d5bbe;
+    -webkit-transition: box-shadow 0.12s ease-in;
+    transition: box-shadow 0.12s ease-in;
 }
 
 .member-roles {
@@ -7379,13 +7400,14 @@ div[class*="modal-"] {
 }
 
 .invite-modal {
-    border-radius: 2px;
+    border-radius: 0;
+    border: 1px solid var(--titlebar-color);
 }
 
 .invite-modal .scroller {
     overflow: hidden;
-    background: #fff url('https://www.twitchcord.com/twitchcord-theme/images/horde-vs-alliance.png') no-repeat;
-    background-position: 47% 120%;
+    background: var(--dark-modal-bg) url('https://www.twitchcord.com/twitchcord-theme/images/horde-vs-alliance.png') no-repeat;
+    background-position: 49% 120%;
 }
 
 .invite-modal .invite-actions {
@@ -7399,7 +7421,7 @@ div[class*="modal-"] {
 }
 
 .invite-modal .invite-body {
-    color: #322f37;
+    color: var(--dark-text-tint);
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -8693,7 +8715,7 @@ content: "";
     width: 18px;
     height: 16px;
     border: 2px solid var(--chat-color);
-    background-color: #43b581;
+    background-color: var(--button-color);
     background-size: 16px;
     border-radius: 0;
     overflow: hidden;
@@ -9091,7 +9113,7 @@ content: "";
     overflow-x: auto;
     color: #cbc8d0 !important;
     padding: 0.5em;
-    font-family: var(--font)!important;
+    font-family: var(--font-coding)!important;
     line-height: 24px;
 }
 
@@ -14426,7 +14448,15 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
     display: inline-block;
 }
 
+#bd-settingspane-container .bda-slist .ui-switch-item {
+    padding: 10px 0 10px;
+}
+
 #bd-settingspane-container .ui-switch-item {
+    padding: 10px 40px 10px;
+}
+
+#bd-settingspane-container .bda-right > .ui-switch-item {
     padding: 10px 40px 10px;
 }
 
@@ -14632,6 +14662,7 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
     margin: 10px 0;
     max-height: none;
     padding: 30px;
+    max-height: 100%!important;
 }
 
 .ui-standard-sidebar-view .bda-slist li svg {
@@ -14922,8 +14953,8 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
 }
 
 .modal-content.need-help-modal .form-inner ul li:nth-of-type(1){
-  background-image:url('https://www.twitchcord.com/twitchcord-theme/images/edit-large.png');
-  background-size: 46px;
+    background-image: url('https://www.twitchcord.com/twitchcord-theme/images/audio-large.png');
+    background-size: 36px;
 }
 .modal-content.need-help-modal .form-inner ul li:nth-of-type(2){
   background-image: url('https://www.twitchcord.com/twitchcord-theme/images/video-large.png');
@@ -14932,19 +14963,19 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
   background-image: url('https://www.twitchcord.com/twitchcord-theme/images/email-large.png');
 }
 .modal-content.need-help-modal .form-inner ul li:nth-of-type(4){
-  background-image: url('https://www.twitchcord.com/twitchcord-theme/images/audio-large.png');
-  background-size: 36px;
-}
-.modal-content.need-help-modal .form-inner ul li:nth-of-type(5){
   background-image: url('https://www.twitchcord.com/twitchcord-theme/images/bug-large.png');
   background-size: 56px;
 }
-.modal-content.need-help-modal .form-inner ul li:nth-of-type(6){
+.modal-content.need-help-modal .form-inner ul li:nth-of-type(5){
   background-image: url('https://www.twitchcord.com/twitchcord-theme/images/nitro-large.png');
+}
+.modal-content.need-help-modal .form-inner ul li:nth-of-type(6){
+    background-image:url('https://www.twitchcord.com/twitchcord-theme/images/edit-large.png');
+    background-size: 46px;
 }
 .modal-content.need-help-modal .form-inner ul li::after{
     font-size:15px;
-    color: ##b9bbbe;
+    color: #b9bbbe;
     bottom:20px;
     left:0;
     position: absolute;
@@ -14956,22 +14987,22 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
 }
 
 .modal-content.need-help-modal .form-inner ul li:nth-of-type(1)::after{
-    content:"Text Formatting";
+    content:"Audio";
 }
 .modal-content.need-help-modal .form-inner ul li:nth-of-type(2)::after{
     content:"Video";
 }
 .modal-content.need-help-modal .form-inner ul li:nth-of-type(3)::after{
-    content:"Email Verification";
+    content:"Categories Info";
 }
 .modal-content.need-help-modal .form-inner ul li:nth-of-type(4)::after{
-    content:"Audio";
-}
-.modal-content.need-help-modal .form-inner ul li:nth-of-type(5)::after{
     content:"Report Bugs";
 }
-.modal-content.need-help-modal .form-inner ul li:nth-of-type(6)::after{
+.modal-content.need-help-modal .form-inner ul li:nth-of-type(5)::after{
     content:"Nitro";
+}
+.modal-content.need-help-modal .form-inner ul li:nth-of-type(6)::after{
+    content:"Text Formatting";
 }
 .modal-content.need-help-modal .form-inner ul li a{
     position:absolute;
@@ -15847,7 +15878,7 @@ Forum style start
     height: 20px;
     top: 0;
     left: 0;
-    line-height: 32px;
+    line-height: 22px;
     background: var(--top-nav-color);
     color: #fff!important;
     font-size: 12px;
@@ -15882,4 +15913,18 @@ Forum style start
 }
 .wrapper-uAa07y .buttonIcon-3jPc5f {
     display: none;
+
+/*
+---------------------------
+| VARIABLE DECLARATIONS
+---------------------------
+*/
+
+.orrie-buttonRed, .bda-slist .orrie-buttonRed {
+    margin-right: 0;
+}
+
+.orrie-flex {
+    margin-top: 10px;
+    justify-content: flex-end;
 }
