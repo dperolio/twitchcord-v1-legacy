@@ -5,6 +5,7 @@
 class Twitchcord {
   constructor () {
     this.BASE_URL = 'https://rawgit.com/dperolio/twitchcordTheme/master';
+    this.userBackgrounds = new Object();
     this.SNIPPET_URL = `${this.BASE_URL}/pluginSnippets/snippets.json`;
     this.USER_BG_URL = 'https://api.github.com/gists/aaa364d4cae7e5c0cf7799c6fd5310d3';
     this.PLUGIN_URL = `${this.BASE_URL}/plugin/Twitchcord.plugin.js`;
@@ -31,11 +32,8 @@ class Twitchcord {
 
   async injectUserModals () {
     const res = await window.fetch(this.USER_BG_URL).then(r => r.json());
-    const URLs = JSON.parse(res.files['userBackgrounds.json'].content);
-    for (const ID in URLs) {
-      const styleTag = document.querySelector('#twitchcord-styletag');
-      styleTag.innerHTML = `${styleTag.innerHTML}\n#user-profile-modal[user-id="${ID}"] .header { background-image: url('${URLs[ID]}') !important; }`;
-    }
+
+    this.userBackgrounds = JSON.parse(res.files['userBackgrounds.json'].content);
     const MO = new MutationObserver(changes => {
       if (changes.some(change => change.target && change.target.className.includes('scroll') && document.querySelector('#user-profile-modal'))) {
         this.injectUserModal();
@@ -48,7 +46,8 @@ class Twitchcord {
 
   async injectUserModal () {
     const modal = document.querySelector('#user-profile-modal');
-    modal.setAttribute('user-id', modal.children[2].children[0].style.backgroundImage.split('/')[4]);
+    const id = modal.children[2].children[0].style.backgroundImage.split('/')[4];
+    modal.children[0].style.backgroundImage = `url("${(this.userBackgrounds[id] || headerModal.style.backgroundImage.slice(4, -1))}")`;
   }
 
   get hamburgerMenu () {
@@ -762,7 +761,7 @@ class Twitchcord {
   }
 
   getVersion () {
-    return '0.4.5';
+    return '0.4.6';
   }
 
   getAuthor () {
