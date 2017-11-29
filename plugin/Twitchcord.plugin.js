@@ -47,7 +47,9 @@ class Twitchcord {
   async injectUserModal () {
     const modal = document.querySelector('#user-profile-modal');
     const id = modal.children[2].children[0].style.backgroundImage.split('/')[4];
-    modal.children[0].style.backgroundImage = `url("${(this.userBackgrounds[id] || modal.children[0].style.backgroundImage.slice(4, -1))}")`;
+    if (this.userBackgrounds[id]) {
+      modal.children[0].style.backgroundImage = `url("${this.userBackgrounds[id]}")`;
+    }
   }
 
   get hamburgerMenu () {
@@ -761,7 +763,7 @@ class Twitchcord {
   }
 
   getVersion () {
-    return '0.4.7';
+    return '0.4.8';
   }
 
   getAuthor () {
