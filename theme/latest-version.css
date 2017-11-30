@@ -6612,12 +6612,6 @@ div[class*="modal-"] {
     transition: box-shadow 0.12s ease-in;
 }
 
-.quick-message:focus {
-    box-shadow: inset 0 0 0 1px #7d5bbe, 0 0 6px -2px #7d5bbe;
-    -webkit-transition: box-shadow 0.12s ease-in;
-    transition: box-shadow 0.12s ease-in;
-}
-
 .member-roles {
     padding: 3px 15px;
     margin-bottom: 6px;
@@ -6684,15 +6678,17 @@ div[class*="modal-"] {
 }
 
 .assetsLargeImage-1A0_EG, .assetsSmallImage-3WEvRP {
-    border: 4px solid var(--channels-color)
+    border: 4px solid var(--channels-color);
+    background-color: var(--chat-color);
+}
+
+.assetsLargeImage-1A0_EG {
+    background-color: var(--channels-color);
+    border-radius: 0;
 }
 
 #user-profile-modal .actionButton-3gCSjA:first-of-type {
     margin-left: 0;
-}
-
-.assetsSmallImage-3WEvRP {
-    border-color: var(--channels-color);
 }
 
 .name-8onsv0 {
@@ -7244,6 +7240,7 @@ div[class*="modal-"] {
     font-size: 14px;
 }
 
+.bd-blue .search-popout .date-picker .date-picker-hint .hint-value,
 .search-popout .date-picker .date-picker-hint .hint-value {
     background-color: var(--button-color);
     color: #fff;
@@ -13309,11 +13306,9 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
     transition: filter 0.2s, opacity 0.2s;
 }
 
-/*-*-*-*-*_* CUSTOM EMOJIS *-*-*-*-*_*/
-.emoji-item .sprite-item[style*='assets/f24711dae4f6d6b28335e866a93e9d9b.png'] {
-    background-image: url('https://www.twitchcord.com/twitchcord-theme/images/blosd.png')!important;
+.emoji-picker .search-bar-light .search-bar-icon .icon.visible {
+    top: 6px;
 }
-/* +++++++++++++++++++++++++++++++++ */
 
 /* Discord Nitro page */
 .premium-settings .premium-header.splash {
@@ -15936,6 +15931,8 @@ Forum style start
     border: 2px solid var(--channels-color) !important;
     border-radius: 0;
     margin-top: -25px;
+    height: 80px;
+    width: 80px;
 }
 
 .wrapper-uAa07y .guildName-C1hTEs {
@@ -15956,11 +15953,16 @@ Forum style start
     margin-left: 94px;
     top: 6px;
     position: relative;
+    text-transform: none;
 }
 
 .wrapper-uAa07y .buttonPrimaryOutlinedDefault--H0hhk:hover,
 .wrapper-uAa07y .buttonPrimaryOutlinedDefault--H0hhk:active {
     background: none!important;
+}
+
+.wrapper-uAa07y .buttonGreenFilledDefault-_lLQaz {
+    height: 32px;
 }
 
 .wrapper-uAa07y .buttonBrandFilledDefault-2Rs6u5 {
