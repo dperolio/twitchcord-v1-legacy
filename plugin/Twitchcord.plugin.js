@@ -49,6 +49,14 @@ class Twitchcord {
 
   async injectUserModal () {
     const header = document.querySelector('.root-2sNHUF .header-2Lg0Oe');
+    if (
+      !header ||
+      !header.children[0] ||
+      !header.children[0].children[0]
+    ) {
+      return;
+    }
+    
     const id = header.children[0].children[0].style.backgroundImage.split('/')[4];
 
     if (this.userBackgrounds[id]) {
@@ -767,7 +775,7 @@ class Twitchcord {
   }
 
   getVersion () {
-    return '0.4.9';
+    return '0.4.10';
   }
 
   getAuthor () {
