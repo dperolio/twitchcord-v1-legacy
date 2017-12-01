@@ -35,20 +35,24 @@ class Twitchcord {
 
     this.userBackgrounds = JSON.parse(res.files['userBackgrounds.json'].content);
     const MO = new MutationObserver(changes => {
-      if (changes.some(change => change.target && change.target.className.includes('scroll') && document.querySelector('#user-profile-modal'))) {
+      if (changes.some(change =>
+        change.addedNodes && change.addedNodes[0] &&
+        change.addedNodes[0].className === 'backdrop-2ohBEd' 
+      )) {
         this.injectUserModal();
       }
     });
 
-    MO.observe(document.querySelector('#app-mount'), { childList: true, subtree: true });
+    MO.observe(document.querySelector('.app').parentNode, { childList: true, subtree: true });
     this.observers.push(MO);
   }
 
   async injectUserModal () {
-    const modal = document.querySelector('#user-profile-modal');
-    const id = modal.children[2].children[0].style.backgroundImage.split('/')[4];
+    const header = document.querySelector('.root-2sNHUF .header-2Lg0Oe');
+    const id = header.children[0].children[0].style.backgroundImage.split('/')[4];
+
     if (this.userBackgrounds[id]) {
-      modal.children[0].style.backgroundImage = `url("${this.userBackgrounds[id]}")`;
+      header.style.backgroundImage = `url("${this.userBackgrounds[id]}")`;
     }
   }
 
@@ -763,7 +767,7 @@ class Twitchcord {
   }
 
   getVersion () {
-    return '0.4.8';
+    return '0.4.9';
   }
 
   getAuthor () {
