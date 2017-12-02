@@ -6276,10 +6276,6 @@ div[class*="modal-"] {
     }
 }
 
-.status.status-streaming {
-    animation: streaming-pulse 1.5s linear infinite;
-}
-
 .header-3mZJcV .avatarStatusStreaming-3lGjGk {
     border-color: var(--channels-color);
 }
