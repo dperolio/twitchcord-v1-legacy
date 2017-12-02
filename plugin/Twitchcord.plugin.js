@@ -539,6 +539,9 @@ class Twitchcord {
   }
 
   start () {
+    this.oldRatio = window.devicePixelRatio;
+    window.devicePixelRatio = 2;
+
     this.loadSnippets();
     this.watchState();
     this.addHamburgerMenu();
@@ -578,6 +581,10 @@ class Twitchcord {
   }
 
   stop () {
+    document.body.setAttribute('tc-plugin-enabled', '');
+
+    window.devicePixelRatio = this.oldRatio;
+
     for (const observer of this.observers) {
       observer.disconnect();
     }
@@ -775,7 +782,7 @@ class Twitchcord {
   }
 
   getVersion () {
-    return '0.4.10';
+    return '0.5.0';
   }
 
   getAuthor () {

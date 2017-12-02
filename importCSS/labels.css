@@ -50,7 +50,9 @@
 .avatar-large[style*="98270968945864704"]+.comment .timestamp::before,
 .avatar-large[style*="119321587026493441"]+.comment .timestamp::before,
 .avatar-large[style*="145799943980843008"]+.comment .timestamp::before,
-.avatar-large[style*="157887056608100352"]+.comment .timestamp::before {
+.avatar-large[style*="157887056608100352"]+.comment .timestamp::before,
+.avatar-large[style*="71575679543549952"]+.comment .timestamp::before,
+.avatar-large[style*="219078125974192128"]+.comment .timestamp::before {
     content: 'Supporter';
     border-color: #FF6666;
     background: #e52e2e;
