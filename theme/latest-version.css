@@ -1731,25 +1731,63 @@ textarea {
     border-right-color: var(--important-notification-color);
 }
 
+.tooltip,
+.tooltip.tooltip-black,
+.tipsy-inner {
+    padding: 8px 18px;
+}
+
+.tooltip.tooltip-brand,
+.tooltip.tooltip-black,
+.tipsy-inner {
+    background-color: #fff!important;
+    border-radius: 1px;
+    color: #0e1011!important;
+    border: 1px solid #b8b5c0!important;
+    padding: 8px 18px;
+    line-height: 16px;
+    font-size: 12px;
+}
+
 .tooltip.tooltip-brand.tooltip-right:after,
 .tooltip.tooltip-black.tooltip-right:after {
-    display: none;
+    border-radius: 0;
+    border-right: 8px solid #fff!important;
+    border-top: 8px solid transparent!important;
+    border-bottom: 8px solid transparent!important;
+    display: block;
 }
 
 .tooltip.tooltip-brand.tooltip-top:after,
 .tooltip.tooltip-black.tooltip-top:after,
 .tipsy-se .tipsy-inner:after {
-    display: none;
+    border-radius: 0;
+    border-right: 8px solid transparent!important;
+    border-top: 8px solid #fff!important;
+    border-left: 8px solid transparent!important;
+    display: block;
 }
 
 .tooltip.tooltip-brand.tooltip-left:after,
 .tooltip.tooltip-black.tooltip-left:after {
-    display: none;
+    border-radius: 0;
+    border-left: 8px solid #fff!important;
+    border-top: 8px solid transparent!important;
+    border-bottom: 8px solid transparent!important;
+    display: block;
 }
 
 .tooltip.tooltip-brand.tooltip-bottom:after,
 .tooltip.tooltip-black.tooltip-bottom:after {
-    display: none;
+    border-radius: 0;
+    border-right: 8px solid transparent!important;
+    border-bottom: 8px solid #fff!important;
+    border-left: 8px solid transparent!important;
+    display: block;
+}
+
+.tooltip.tooltip-top {
+    margin-top: -11px;
 }
 
 @keyframes fadeIn {
@@ -1787,20 +1825,6 @@ textarea {
     animation: scaleTooltip 250ms cubic-bezier(0.23, 1, 0.32, 1) forwards!important;
 }
 /* =================================================== */
-
-.tooltip.tooltip-brand,
-.tooltip.tooltip-black,
-.tipsy-inner {
-    background: var(--chat-color)!important;
-    border: 1px solid var(--titlebar-color);
-    color: #fff!important;
-    border-radius: 1px;
-    padding: 5px 10px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: center;
-}
 
 .tooltip.tooltip-top, .tooltip.tooltip-bottom {
     margin-left: -3px;
@@ -16176,4 +16200,8 @@ Forum style start
 
 .root-2sNHUF .empty-2dxE7O .spinner {
     margin-top: -100px;
+}
+
+.root-2sNHUF .topSectionStreaming-3rIBIm .nameStreaming-2hBnmV {
+    line-height: 22px;
 }

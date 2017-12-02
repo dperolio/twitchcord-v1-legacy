@@ -32,9 +32,9 @@
     "inverted": true
   },
   {
-    "title": "Light Tooltips",
-    "description": "Changes the tooltips to a light alternative.",
-    "filePath": "/pluginSnippets/lightTooltips.css"
+    "title": "Dark Tooltips",
+    "description": "Changes the tooltips to a dark alternative.",
+    "filePath": "/pluginSnippets/darkTooltips.css"
   },
   {
     "title": "User Badges",

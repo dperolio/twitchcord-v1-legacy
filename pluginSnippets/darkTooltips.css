@@ -1,0 +1,38 @@
+/* =================================================== */
+/* ================== DARK TOOLTIPS ================= */
+/* =================================================== */
+
+.tooltip.tooltip-brand.tooltip-right:after,
+.tooltip.tooltip-black.tooltip-right:after {
+    display: none!important;
+}
+
+.tooltip.tooltip-brand.tooltip-top:after,
+.tooltip.tooltip-black.tooltip-top:after,
+.tipsy-se .tipsy-inner:after {
+    display: none!important;
+}
+
+.tooltip.tooltip-brand.tooltip-left:after,
+.tooltip.tooltip-black.tooltip-left:after {
+    display: none!important;
+}
+
+.tooltip.tooltip-brand.tooltip-bottom:after,
+.tooltip.tooltip-black.tooltip-bottom:after {
+    display: none!important;
+}
+
+.tooltip.tooltip-brand,
+.tooltip.tooltip-black,
+.tipsy-inner {
+    background: var(--chat-color)!important;
+    border: 1px solid var(--titlebar-color)!important;
+    color: #fff!important;
+    border-radius: 1px;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+}
