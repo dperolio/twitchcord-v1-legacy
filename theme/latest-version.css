@@ -6950,7 +6950,7 @@ div[class*="modal-"] {
 
 .keybind-shortcut span {
     border: 1px solid #8770c0;
-    padding: 3px 6px 4px;
+    padding: 5px 6px 4px;
     margin-right: 3px;
     border-radius: 2px;
     -webkit-box-shadow: none;
@@ -8329,6 +8329,7 @@ content: "";
     width: 100%;
     padding-left: 20px;
     background: var(--top-nav-color);
+    margin-left: -1px;
 }
 
 .private-channels .channel {
@@ -15780,6 +15781,7 @@ Forum style start
     position: absolute;
     top: 0;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .bd-blue .root-2sNHUF .tab-bar .tab-bar-item,
@@ -15840,7 +15842,7 @@ Forum style start
     white-space: nowrap;
     max-width: 320px;
     display: inline-block;
-    text-shadow: 0 0 30px #000;
+    text-shadow: 1px 1px 3px #000;
 }
 
 .root-2sNHUF .assetsSmallImageProfile-9w2tC5 {
@@ -16242,4 +16244,41 @@ Forum style start
 .userPopout-4pfA0d .assetsSmallImageUserPopout-dXG26U {
     bottom: 4px;
     right: -6px;
+}
+
+.keyboard-shortcuts-modal {
+    background-color: var(--dark-modal-bg) !important;
+    border: 1px solid var(--titlebar-color);
+    border-radius: 0;
+}
+.keybind-shortcut span {
+    background-color: var(--chat-color) !important;
+
+}
+.keybind-shortcut {
+    color: #8770c0;
+    font-family: var(--font)!important;
+}
+.keybind-shortcut span .bind-arrow.up *,.keybind-shortcut span  .bind-arrow.down *,.keybind-shortcut span  .bind-arrow.left,.keybind-shortcut span  .bind-arrow.right * {
+    fill: #8770c0!important;
+}
+
+.keyboard-shortcuts-modal .modal-title .content {
+    color: var(--dark-text-header)!important;
+}
+
+.keyboard-shortcuts-modal .ddr-arrows .arrow {
+    filter: hue-rotate(40deg) saturate(2);
+}
+
+.keyboard-shortcuts-modal .ddr-arrows .arrow.active {
+    filter: none;
+}
+
+.keyboard-shortcuts-modal .keyboard-shortcut-list .keybind-group .keybind-description {
+    color: #f6f6f7;
+}
+.keyboard-shortcuts-modal .modal-subtitle {
+    color: var(--dark-text-tint);
+    font-size: 14px;
 }
