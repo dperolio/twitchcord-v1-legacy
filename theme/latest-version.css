@@ -874,11 +874,9 @@ textarea {
 .textArea-20yzAH {
     color: #faf9fa;
     background: var(--channels-color);
-    border: 1px solid #3c305b;
+    border: 1px solid var(--titlebar-color);
     -webkit-transition: -webkit-box-shadow 0.12s ease-in;
-    transition: -webkit-box-shadow 0.12s ease-in;
     transition: box-shadow 0.12s ease-in;
-    transition: box-shadow 0.12s ease-in, -webkit-box-shadow 0.12s ease-in;
     letter-spacing: 0;
     overflow: hidden;
     font-size: 14px;
@@ -1320,7 +1318,7 @@ textarea {
 .message-group .comment .markup code.inline,
 .message-group .comment .markup pre code {
     border: 1px solid var(--titlebar-color)!important;
-    background-color: var(--dark-modal-bg)!important;
+    background-color: var(--channels-color)!important;
     margin-bottom: 10px;
     line-height: 18px!important;
 }
@@ -1443,8 +1441,8 @@ textarea {
 
 .message-group .embed,
 .message-group .embed.embed-rich {
-    background-color: #14121a!important;
-    border-color: #1a181e!important;
+    background-color: var(--dark-modal-bg)!important;
+    border-color: var(--top-nav-color)!important;
     padding: 10px!important;
     border-radius: 0!important;
 }
@@ -1550,7 +1548,7 @@ textarea {
     overflow: initial;
 }
 
-.guilds-wrapper .guilds .guild.unread:not(.selected) .guild-inner {
+.guilds-wrapper .guilds .guild.unread:not(.selected) {
     box-shadow: rgba(163, 115, 255, .8) 0px 0px 25px!important;
 }
 
@@ -4904,7 +4902,7 @@ button {
 .context-menu .item:active,
 .option-popout .btn-item:hover,
 .option-popout .btn-item:active {
-    background: var(--dark-modal-bg)!important;
+    background: var(--button-color)!important;
     color: #fff!important;
 }
 
@@ -9459,55 +9457,12 @@ content: "";
     background-color: var(--button-color-hover)!important;
     transition: background-color 0.2s;
 }
-
-
 /*-------------------*/
 
 .backdrop-2ohBEd {
     z-index: 10000;
-    opacity: 0;
-    animation: fadeInBackdrop 0.3s forwards;
+    background-color: rgba(0, 0, 0, 0.8)!important;
 }
-
-
-/*
-        .callout-backdrop::before {
-            content: '';
-            display: block;
-            position: fixed;
-            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsBAMAAACLU5NGAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjMwMzFBQUREMDZBNzExRTQ4QjA3RDQzNzY2OUNDNzJCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjMwMzFBQURFMDZBNzExRTQ4QjA3RDQzNzY2OUNDNzJCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MzAzMUFBREIwNkE3MTFFNDhCMDdENDM3NjY5Q0M3MkIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MzAzMUFBREMwNkE3MTFFNDhCMDdENDM3NjY5Q0M3MkIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6UUJbCAAAAGFBMVEX///////////////////////////////8pK8DIAAAAB3RSTlMAClu7vsH9r2JFywAABRBJREFUeNrt3UFW2zAQxvHACejDB2DFnhXrrjhBX/fecABafP2GEEIcZFmWZr75lydt8dNkfqUhsWdGu11fffXVV1999dXXd13XDyFhb+/yP7//cxPwqq6exjzW8/Qz4GUN02uW636aAriunqZpzGNNAVzDPmqOa48VwPWGleM6YOm5hkPUZa4DlpzrHWuZ64il5hqOUZe4jlhirg+sJa4TlpZrOEVNc52wpFyfWGmuMywl13AWNcV1hiXkOsdKcc2wdFzDLOpXrhmWjGuOleB6nP9cxDVcRH1Zu0DCdYn1FWP9CgFWwiKAq4QigKtIQs5VBiHnKnQQc5UyiLmKFaRc5QhSrg0GQq4tBEKuTQIyrm0AMq6N+Yu4tqYv4tqcvYRre/ISrorcBVw1qQu4qjJ356pL3J2rMm9nrtq0nbmqs3blqk/alashZ0eulpQduZoyduNqS9iNqzFfJ67WdJ24mrN14WpP1oXLIFcHLotUHbhMMjXnsknUnMsoT2MuqzSNucyyNOWyS9KUyzBHw60sUzTcy/QXwmwz2/8+ZrsZv9kYbWf91my0n/kfMpMN7f/sm+zo8CHJYEuPj5QGe7p8AG/e1OfrSvOuTl/uGrf1+ircuK/bjYOmjf1uszTt7HhTqmFrz1t4DXu73vCs3tz39nD17s430yu39370ULm/+4OaqgD+j7WqIggeAlaEUDwyrYghecC8OYjmcfzmKKLihY1hVKUeG+PICmM2BdKVEW2KJCy62hBKWaK2IZa0oK84mLb8sTiauFi0MJy6tLYwnrwQuSigvmy7KGJAkXtByIiWgIKYIQ0Uq0FD+ifWo4ZgrYaNwVqNG4S1EjgKayVyGFY2dBxWNnYgViZ4JFYmeijWYvhYrMX4wVgLLyAaa+EVhGMlX0I8VpILgJXg+gHASnD9ImB95ZoIWAkuBNYaVxDWClcYVp4rDCvLFYiV4wrEynCFYi1zhWItcgVjLXEFYy1whWOlucKxklwArBQXAGvP9fviVf296S/rP/tHhP7KM98goG+nzD8+0D/VzA820I+BzA/N0K8YzC9k0K+vzC/70FsjzBtJ0NtuzJuU0Fu6zBvg0McFzIcr0EdRzAd30MeczIfC0EfozIIDaHkGs5gFWvrDLJSClpUxi/CgJYvMAk9oOSyzeBhaas0sTIeW8TObHqAtIsyGGmj7EbNZC9raxmwEhLZNMptMoS25zAZmaLs3szkeOkqAOXgBOqaCOdQDOgKFOTAGOl6HOYwIOrqJOegKOhaMOUQNOnKOOaAPOs6QOfwROiqTOVgUOoaVObQWOuKXORAZOj6aOWwbOpqcOcgdOvaeeUgA9EgF5gEU0OM6mIebQI+CYR6cAz1miHkoE/QIK+aBX9Dj0ZiHyUGP3mMeVAg91pF5CCb0yFDmAavQ42iZh/dCjzpmHgwNPUabeeg49Ih25oH20sq5cgJpnWGxgbgqsxRBXMNaqCCv+C1jkNdHFzkEVJOXQATU3hdIhHQqrFOE9HWsWzyGdMFcYrxcXnAf0jN0yTVeXnD9HNJhNed6vdtluWT9aHOu8esFMy5d996Qx5pxCXsdz7nG1AVnXMrO0CGPdcYl7aP95BrTF5y4tF3HQx7rxCXu0f7gGpcuOHKpO9qHPNaRS97//841Ll9w4NJPSxjyWAeugNkSb1xj7oI9V8QkjiGPtecKmVty9TTmL7h+2EWs27tdX3311VdfffXV17dc/wDg43YLEI5N6gAAAABJRU5ErkJggg==');
-            top: 100px;
-            right: 100px;
-            background-size: 23px 23px;
-            background-repeat: no-repeat;
-            background-position: center center;
-            width: 46px;
-            height: 46px;
-            z-index: 100;
-            outline: none;
-            cursor: pointer;
-            opacity: 1;
-            background-color: var(--button-color);
-            transition: background-color 0.2s;
-        }
-        
-        .callout-backdrop::after {
-            content: 'Close';
-            text-transform: uppercase;
-            font-size: 10px;
-            position: fixed;
-            color: #fff;
-            top: 100px;
-            right: 146px;
-            z-index: 100;
-            outline: none;
-            cursor: pointer;
-            opacity: 1;
-            height: 46px;
-            line-height: 46px;
-            padding: 0 20px;
-            background-color: var(--button-color-hover);
-        }*/
 
 .tipsWithoutResults-202oQR,
 .tipsWithResults-3TVZGE {
@@ -9778,6 +9733,11 @@ content: "";
     box-shadow: rgba(0, 0, 0, 0.117647) 3px 3px 8px;
 }
 
+#autocomplete-popout .row a {
+    font-size: 12px;
+    font-weight: 700;
+}
+
 .popout.popout-invert:not(.popout-bottom).popout-top-right header:before, .popout.popout-invert:not(.popout-bottom).popout-top header:before {
     border-top-color: var(--top-nav-color)!important;
 }
@@ -9800,8 +9760,13 @@ content: "";
     box-shadow: none!important;
 }
 
-#autocomplete-popout .empty, #autocomplete-popout .row, #autocomplete-popout .section {
+#autocomplete-popout .empty, #autocomplete-popout .section {
     font-size: 14px;
+    line-height: 40px;
+}
+
+#autocomplete-popout .row {
+    border-top: 1px solid var(--titlebar-color);
 }
 
 #autocomplete-popout .empty p {
@@ -9855,7 +9820,7 @@ content: "";
 }
 
 #autocomplete-popout .scroller-fzNley::-webkit-scrollbar {
-    width: 10px!important;
+    width: 6px!important;
 }
 
 #autocomplete-popout .scroller-fzNley::-webkit-scrollbar-track {
@@ -9868,7 +9833,7 @@ content: "";
 }
 
 #autocomplete-popout .row.selected, #autocomplete-popout .row:hover {
-    background: var(--titlebar-color)!important;
+    background: var(--chat-color)!important;
 }
 
 .popout.popout-top-left header:before, .popout.popout-top-right header:before, .popout.popout-top header:before,
@@ -9886,6 +9851,10 @@ content: "";
     padding: 0 10px;
 }
 
+#autocomplete-popout header {
+    background-color: var(--button-color);
+}
+
 #autocomplete-popout h3 {
     color: #eee;
     font-size: 12px;
@@ -9898,6 +9867,7 @@ content: "";
 #autocomplete-popout input[type=text] {
     color: #fff;
     font-size: 12px;
+    margin-bottom: 0;
 }
 
 #friends .friends-table .friends-row .friends-suggestion-inner .avatar-large {
@@ -10245,25 +10215,29 @@ content: "";
     transition: background-color 0.2s;
 }
 
+.status-online, [class*="statusOnline" i],
+.status-idle, [class*="statusIdle" i],
+.status-dnd, [class*="statusDnd" i],
+.status-offline, .status-invisible,
+[class*="statusOffline" i], [class*="statusInvisible" i] {
+    box-shadow: none;
+}
+
 .status-online, [class*="statusOnline" i] {
     background-color: #14b866;
-    box-shadow: none;
 }
 
 .status-idle, [class*="statusIdle" i] {
     background-color: #ffb300;
-    box-shadow: none;
 }
 
 .status-dnd, [class*="statusDnd" i] {
     background-color: #e52b2b;
-    box-shadow: none;
 }
 
 .status-offline, .status-invisible,
 [class*="statusOffline" i], [class*="statusInvisible" i] {
     background-color: #a49fad;
-    box-shadow: none;
 }
 
 .messages-wrapper .scroller-wrap ::-webkit-scrollbar-thumb {
@@ -12917,10 +12891,9 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
 }
 
 .private-channels .search-bar .search-bar-inner {
-    border: none!important;
-    box-shadow: inset 0 0 0 1px #7d5bbe, 0 0 6px -2px #7d5bbe;
+    border: 1px solid var(--titlebar-color);
     background-color: var(--chat-color)!important;
-    font-weight: 700;
+    font-weight: 400;
     box-sizing: border-box;
     font-size: 12px;
     line-height: 20px;
@@ -15447,7 +15420,11 @@ Forum style start
 }
 
 .guildInfo-mu0TQL {
-    max-width: 213px;
+    max-width: 200px;
+}
+
+.guildInfo-mu0TQL + button {
+    margin-top: -15px;
 }
 
 .guildIconExpired-2MVLDd {
@@ -15770,6 +15747,8 @@ Forum style start
     margin-top: 150px;
     margin-left: 25px;
     margin-right: 20px;
+    border-radius: 0;
+    background-color: var(--channels-color);
 }
 
 .root-2sNHUF .tabBarContainer-3RVZc- {
@@ -15842,7 +15821,6 @@ Forum style start
     white-space: nowrap;
     max-width: 320px;
     display: inline-block;
-    text-shadow: 1px 1px 3px #000;
 }
 
 .root-2sNHUF .assetsSmallImageProfile-9w2tC5 {
@@ -16251,14 +16229,17 @@ Forum style start
     border: 1px solid var(--titlebar-color);
     border-radius: 0;
 }
+
 .keybind-shortcut span {
     background-color: var(--chat-color) !important;
 
 }
+
 .keybind-shortcut {
     color: #8770c0;
     font-family: var(--font)!important;
 }
+
 .keybind-shortcut span .bind-arrow.up *,.keybind-shortcut span  .bind-arrow.down *,.keybind-shortcut span  .bind-arrow.left,.keybind-shortcut span  .bind-arrow.right * {
     fill: #8770c0!important;
 }
@@ -16281,4 +16262,101 @@ Forum style start
 .keyboard-shortcuts-modal .modal-subtitle {
     color: var(--dark-text-tint);
     font-size: 14px;
+}
+
+#autocomplete-popout {
+    border: 1px solid var(--titlebar-color);
+}
+
+#autocomplete-popout .scrollerWrap-2uBjct { border: none!important; border-radius: 0; }
+
+/*
+---------------------------
+| Plugin: DateViewer by hamy
+---------------------------
+*/
+
+#dv-container {
+    background: var(--chat-color)!important;
+    box-shadow: 0 -20px 20px -20px rgba(0,0,0,0.8)!important;
+}
+
+#dv-settings-panel {
+    background: var(--chat-color)!important;
+}
+
+#dv-display {
+    font-size: 1.7em!important;
+    line-height: 16px!important;
+    margin-top: 10px!important;
+    color: #fff!important;
+}
+
+#dv-date {
+    color: var(--links-color)!important;
+    opacity: 1!important;
+}
+
+#dv-day {
+    color: var(--links-color)!important;
+    opacity: 0.5;
+}
+
+#dv-container::after {
+    background: var(--titlebar-color)!important;
+    width: 240px!important;
+}
+
+#dv-btn-settings-panel {
+    background-color: var(--button-color)!important;
+    border-radius: 0!important;
+    opacity: 0.4!important;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+#dv-btn-settings-panel:hover {
+    background-color: var(--button-color-hover)!important;
+    opacity: 1!important;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.dv-panel .dv-options {
+    width: 90px!important;
+}
+.dv-btn {
+    right: 16px!important;
+}
+
+.dv-panel .dv-title {
+    border: none!important;
+    color: #fff!important;
+    text-transform: uppercase!important;
+    margin-bottom: 10px!important;
+}
+
+.dv-panel input[type="radio"] + label span {
+    background: var(--chat-color)!important;
+    width: 15px!important;
+    height: 15px!important;
+    border-width: 1px!important;
+    border-style: solid!important;
+    border-color: rgb(100, 66, 164)!important;
+    transition: transform 125ms linear;
+}
+
+.dv-panel input[type="radio"] + label span::after {
+    height: 9px!important;
+    width: 9px!important;
+    display: block;
+    top: 3px!important;
+    left: 3px!important;
+    background-color: var(--button-color)!important;
+    transform-origin: center;
+    transform: scale(0);
+    transition: transform 125ms linear;
+}
+
+.dv-panel input[type="radio"]:checked + label span::after {
+    transform: scale(1);
+    transition: transform 125ms linear;
 }
