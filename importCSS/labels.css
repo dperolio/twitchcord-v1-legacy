@@ -7,7 +7,7 @@
     content: none;
     text-transform: uppercase;
     border: 1px solid #9866ff;
-    border-radius: 3px;
+    border-radius: 2px;
     font-weight: 400;
     margin: 0;
     color: #fefefe;
@@ -69,9 +69,7 @@
  }
 
 /* Plugin Developer */
-.avatar-large[style*="284122164582416385"]+.comment .timestamp::before,
-.avatar-large[style*="249746236008169473"]+.comment .timestamp::before,
-.avatar-large[style*="278543574059057154"]+.comment .timestamp::before {
+.avatar-large[style*="284122164582416385"]+.comment .timestamp::before {
     content: 'Plugin Developer';
     border-color: #9f72c2;
     background: #604575;
