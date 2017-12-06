@@ -1277,7 +1277,7 @@ textarea {
 }
 
 .private-channels .scrollerWrap-2uBjct {
-    margin-top: 47px;
+    margin-top: 109px;
 }
 
 .channel-members {
@@ -8325,13 +8325,13 @@ content: "";
 
 .private-channels .search-bar {
     position: fixed;
-    bottom: 0;
+    top: 49px;
     width: calc(100% - 2px);
     left: -2px;
     margin-left: 2px;
     z-index: 100;
     background: var(--channels-color);
-    border-top: 1px solid var(--titlebar-color);
+    border-bottom: 1px solid var(--titlebar-color);
     border-right: 1px solid var(--titlebar-color);
     border-left: 1px solid var(--titlebar-color);
     color: #ffffff;
@@ -8339,6 +8339,7 @@ content: "";
     font-weight: 400;
     padding: 0;
     height: 55px;
+    padding-top: 5px;
 }
 
 .private-channels .search-bar::before {
