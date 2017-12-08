@@ -16174,9 +16174,11 @@ Forum style start
 .root-2sNHUF .topSectionPlaying-3jAH9b {
     border: none;
     margin: 0;
+    background: none;
 }
 
 .root-2sNHUF .activityProfile-2pymp0 {
+    min-height: 30px;
     top: 50px;
     padding-bottom: 0;
     position: relative;
@@ -16619,9 +16621,9 @@ Forum style start
 }
 
 .profileBadgePremium-3Lp76B {
-    background-image: url('https://www.twitchcord.com/twitchcord-theme/images/nitro-ico.png')!important;
-    width: 20px;
-    height: 13px;
+    background: url('https://www.twitchcord.com/twitchcord-theme/images/nitro-ico2.png') no-repeat 50%!important;
+    width: 16px;
+    height: 16px;
 }
 
 .profileBadgeHypesquad-1z0hV_ {
