@@ -16,7 +16,7 @@
 +  First started: 8/29/2017            +
 +  https://www.twitchcord.com          +
 +  https://discord.me/twitchcord       +
-+  Version: 1.1.0                      +
++  Version: 1.2.0                      +
 ****************************************
 
 ///////////////////////////////////////
@@ -38,7 +38,7 @@ Cheers, and enjoy.
 ---------------------------
 */
 :root {
-    --version: "Twitchcord v1.1.0";
+    --version: "Twitchcord v1.2.0";
 
     --theme-notice: 'Congratulations, you have successfully installed and enabled the Twitchcord theme!\A\A Now that you\'ve succesffully installed the theme, there are a few things you should know. First, the theme should auto-update from now until the future. The updates won\'t be instant, but shouldn\'t take more than a couple of hours. Next, Twitchcord enables custom user backgrounds viewable by other Twitchcord users, but you must enable the Twitchcord plugin to see them. The plugin is avaiable on the website at www.twitchcord.com or from our Discord server listed below. If you have any questions, concerns, problems, or suggestions drop by the Discord server and let us know. Thanks and enjoy the theme.\A\A Discord server: www.discord.me/twitchcord';
     --plugin-notice: 'Now that you\'re using the Twitchcord theme, it\'s highly recommended you also download and enable the official Twitchcord plugin. The plugin contains some small fixes and features not possible with just CSS, including a ton of user customizability options! The plugin also enables custom user profile backgrounds, so if you want to have yours added to the list so other Twitchcord users can see it as well, just download and enable the plugin, and stop on over to our Discord server and submit your background in the #set-user-profile-background channel.';
@@ -521,11 +521,6 @@ textarea {
     animation: animJelly 1s forwards, glow3 800ms ease-out infinite alternate;
 }
 
-.headerNormal-1cioxU {
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/twitch-bg.jpg');
-    background-position: bottom center;
-}
-
 .chat .new-messages-bar {
     left: 0;
     right: 0;
@@ -783,14 +778,15 @@ textarea {
     background-repeat: no-repeat;
     font-size: 1px;
     margin-left: 7px;
-    padding: 2px 5px;
+    margin-right: 7px;
+    padding: 0;
     border-radius: 0;
     color: transparent!important;
-    width: 16px;
-    line-height: 16px;
+    width: 18px;
+    line-height: 18px;
     cursor: default;
     pointer-events: none;
-    height: 16px;
+    height: 18px;
     float: left;
 }
 
@@ -799,7 +795,8 @@ textarea {
 }
 
 .botTag-1OwMgs {
-    padding: 12px;
+    top: 2px;
+    position: relative;
 }
 
 .header-3mZJcV .headerBotTag-1I8GCn {
@@ -1178,6 +1175,7 @@ textarea {
     color: #fff!important;
     height: 21px;
     margin-top: 1px;
+    cursor: default;
 }
 
  ::-webkit-scrollbar {
@@ -1507,13 +1505,14 @@ textarea {
 }
 
 .guilds-wrapper .guilds .guild+.guild {
-    margin-top: 16px;
+    margin-top: 9px;
 }
 
 .guilds-wrapper .guilds .guild {
-    width: 46px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     margin-left: 3px;
+    margin: 0;
 }
 
 .guilds-wrapper .guilds .guild-placeholder {
@@ -1527,8 +1526,10 @@ textarea {
     width: 46px;
     height: 46px;
     color: #fff!important;
-    border: 2px solid var(--channels-color);
-    box-sizing: border-box;
+    border: 2px solid transparent;
+    box-sizing: content-box;
+    background-color: transparent;
+    background-image: url('https://www.twitchcord.com/twitchcord-theme/images/server-bg.png');
 }
 
 .nameTag-26T3kW {
@@ -1563,7 +1564,7 @@ textarea {
     opacity: 0.3;
 }
 
-.message-group .mentioned .markup {
+.message-group .mentioned .markup:not(.embed-description) {
     background: var(--channels-color)!important;
     height: auto!important;
     margin-top: 9px!important;
@@ -1607,13 +1608,18 @@ textarea {
     border-radius: 0;
     background-color: var(--channels-color);
     border: none;
-    height: 150px;
+    height: 120px;
     width: 320px;
+    background-image: url('https://www.twitchcord.com/twitchcord-theme/images/default-banner.png');
+    background-size: cover;
+    background-repeat: none;
+    background-position: center center;
 }
 
 .userPopout-4pfA0d .root-uMQa_6 {
     padding: 5px 10px;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
+    margin-top: 7px;
     max-height: 110px;
     overflow-y: scroll;
 }
@@ -1787,6 +1793,11 @@ textarea {
     100% { opacity: 1; }
 }
 
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 .tipsy-se {
     margin-left: -0.5%;
     margin-top: -45px;
@@ -1859,8 +1870,8 @@ textarea {
     border-radius: 0!important;
     border: none!important;
     background: transparent;
-    top: 22px!important;
-    left: -12px!important;
+    top: 24px!important;
+    left: -9px!important;
     height: 42px!important;
     width: 5px!important;
     transition: none!important;
@@ -2041,16 +2052,6 @@ textarea {
     vertical-align: -0.4em;
 }
 
-.reaction {
-    border-radius: 0;
-    border: 1px solid transparent!important;
-}
-
-.reaction.reaction-me {
-    background: #201b2b!important;
-    border: 1px solid var(--button-color-hover)!important;
-}
-
 .reaction.reaction-me .reaction-count {
     color: #fff!important;
 }
@@ -2127,7 +2128,7 @@ textarea {
     transition: none;
     width: 24px;
     height: 18px;
-    margin-right: 10px!important;
+    margin-right: 5px!important;
     margin-top: 4px;
     z-index: 900;
 }
@@ -2144,7 +2145,7 @@ textarea {
 }
 
 .message-group .btn-reaction {
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/heart.png') 50% no-repeat;
+    background: url('https://www.twitchcord.com/twitchcord-theme/images/add-reaction.png') 50% no-repeat;
 }
 
 .message-group .comment>div:hover .btn-option,
@@ -2344,15 +2345,16 @@ textarea {
 }
 
 .guilds-wrapper .guilds .guild .guild-inner {
-    line-height: 40px;
+    line-height: 44px;
     border-radius: 0!important;
-    background: var(--top-nav-color)!important;
+    background: none!important;
 }
 
 .guilds-wrapper .guilds>.guild:first-of-type .guild-inner a {
     border: none;
     height: 50px;
     width: 50px;
+    background: none;
 }
 
 .guilds .avatar-small {
@@ -2362,7 +2364,7 @@ textarea {
 .guilds-wrapper .guilds>div.guild:first-of-type {
     width: 61px;
     position: fixed;
-    left: -3px;
+    left: -1px;
     margin-top: -18px;
     height: 50px;
     background: var(--top-nav-color);
@@ -2375,8 +2377,8 @@ textarea {
 }
 
 .guilds-wrapper .guilds .guild .badge {
-    bottom: -10px;
-    right: -6px;
+    bottom: -4px;
+    right: -4px;
     border: 2px solid var(--chat-color);
     border-radius: 1px!important;
 }
@@ -2517,8 +2519,8 @@ textarea {
     width: 42px;
     height: 42px;
     display: block;
-    margin-left: 12px;
-    border: 2px solid var(--channels-color);
+    margin-left: 13px;
+    border: none;
     transition: background-color 0.2s;
 }
 
@@ -3071,6 +3073,14 @@ textarea {
     box-sizing: border-box;
     -webkit-box-shadow: 0 2px 10px 0 rgba(0,0,0,.2)!important;
     box-shadow: 0 2px 10px 0 rgba(0,0,0,.2)!important;
+}
+
+.modal-3HOjGZ .message-group .comment .attachment a {
+    width: 270px;
+}
+
+.modal-3HOjGZ .message-group .comment .attachment a::after {
+    display: none;
 }
 
 .modal-2CasLk {
@@ -4033,10 +4043,10 @@ button {
 
 .search .search-bar {
     box-shadow: inset 0 0 0 1px var(--top-nav-color);
-    background-color: var(--chat-color)!important;
+    background: var(--chat-color)!important;
+    width: 320px!important;
     color: #faf9fa;
     height: 30px;
-    width: 320px!important;
     border-radius: 0;
     padding-top: 1px;
     transition: box-shadow 0.12s ease-in;
@@ -4988,9 +4998,10 @@ button {
 }
 
 .search.focused .search-bar {
+    background-color: var(--chat-color)!important;
     box-shadow: inset 0 0 0 1px #7d5bbe, 0 0 6px -2px #7d5bbe;
     transition: box-shadow 0.12s ease-in, width 0.2s ease-in-out;
-    width: 320px;
+    width: 320px!important;
 }
 
 .search.focused .search-bar-icon .icon.visible {
@@ -5021,6 +5032,7 @@ button {
     font-size: 13px;
     position: relative;
     overflow-x: hidden;
+    white-space: pre-wrap!important;
 }
 
 .messages-wrapper .scroller-wrap pre code.scrollbar-11WJwo.hljs::-webkit-scrollbar-thumb { 
@@ -5658,6 +5670,8 @@ button {
     font-size: 14px;
     line-height: 20px;
     filter: grayscale(0)!important;
+    max-width: calc(100% - 26px);
+    display: inline-block;
 }
 
 .channel-members .member:hover .member-username-inner,
@@ -5671,20 +5685,20 @@ button {
 
 .private-channels .channel .avatar-small,
 .channel-members .avatar-small {
-    border: 2px solid var(--chat-color);
+    border: 2px solid transparent);
     margin-right: 9px;
     transition: border-color 0.2s;
-    background-color: var(--titlebar-color);
+    background-color: transparent;
 }
 
 .channel-members .avatar-small {
-    border-color: var(--channels-color);
+    border-color: transparent;
 }
 
 .chat .avatar-large {
-    border: 2px solid var(--channels-color);
+    border: 2px solid transparent;
     transition: border-color 0.2s;
-    background-color: var(--titlebar-color);
+    background-color: transparent;
 }
 
 .private-channels .channel .channel-activity {
@@ -5991,9 +6005,9 @@ button {
 
 div[class*="modal-"] {
     opacity: 0;
-    animation: fadeIn 0.3s forwards, scaleIn 0.2s forwards;
+    animation: fadeIn 0.3s forwards;
     z-index: 10000;
-    transform: scale(1) translateZ(0px) rotateZ(360deg)!important;
+    transform: none!important;
 }
 
 @keyframes scaleIn {
@@ -6096,7 +6110,7 @@ div[class*="modal-"] {
 .userPopout-4pfA0d {
     width: 320px;
     border-radius: 0;
-    overflow: hidden;
+    overflow: visible;
     border: 1px solid var(--titlebar-color);
     box-shadow: none;
     position: relative;
@@ -6660,20 +6674,23 @@ div[class*="modal-"] {
 }
 
 .search-popout {
-    -webkit-box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
     max-height: 70vh;
     border-radius: 0;
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
     background: var(--dark-modal-bg);
     color: var(--dark-text-header);
-    -webkit-box-shadow: 0 0 0 1px var(--titlebar-color), 0 1px 1px rgba(0, 0, 0, 0.25), 0 15px 45px rgba(0, 0, 0, 0.6) !important;
-    box-shadow: 0 0 0 1px var(--titlebar-color), 0 1px 1px rgba(0, 0, 0, 0.25), 0 5px 25px rgba(0, 0, 0, 0.6) !important;
-    width: 318px;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    border: 1px solid var(--titlebar-color);
+    width: 320px;
     margin-top: -8px;
-    left: -57px;
+    left: -58px;
     box-sizing: border-box;
+}
+
+.search-popout:empty {
+    border: none;
 }
 
 .ui-calendar-picker {
@@ -7291,6 +7308,7 @@ div[class*="modal-"] {
 .search.focused .search-bar,
 .search.opened .search-bar,
 .search .popout-open {
+    background: var(--chat-color)!important;
     box-shadow: inset 0 0 0 1px #7d5bbe, 0 0 6px -2px #7d5bbe;
     transition: box-shadow 0.12s ease-in;
     width: 320px!important;
@@ -8400,7 +8418,6 @@ content: "";
 
 #friends .friends-table {
     margin-top: 0;
-    height: auto;
 }
 
 .channel-members h2 {
@@ -9308,10 +9325,14 @@ content: "";
     padding-left: 5px;
 }
 
-#friends .friends-table .friends-table-body {
-    padding: 10px;
-    margin: 10px;
-    min-height: 100vh;
+#friends .friends-table .friends-table-body,
+.activityFeed-HeiGwL .feed-2fHzeU {
+
+    margin: 10px 10px 0;
+}
+
+.activityFeed-HeiGwL .feed-2fHzeU > div {
+    margin-top: -15px;
 }
 
 #friends .friends-table .friends-column-guilds {
@@ -9842,6 +9863,13 @@ content: "";
     line-height: 40px;
 }
 
+#autocomplete-popout .section {
+    font-size: 10px;
+    line-height: 40px;
+    color: #fff;
+    background-color: var(--channels-color);
+}
+
 #autocomplete-popout .row {
     border-top: 1px solid var(--titlebar-color);
 }
@@ -9938,12 +9966,12 @@ content: "";
 }
 
 #autocomplete-popout h3 {
-    color: #eee;
+    color: #eee!important;
     font-size: 12px;
 }
 
 #autocomplete-popout input[type=text]::-webkit-input-placeholder {
-    color: #eee;
+    color: #eee!important;
 }
 
 #autocomplete-popout input[type=text] {
@@ -11567,8 +11595,8 @@ div#bd-customcss-detach-container::before {
 .layer.stop-animations~.layer[layer-id="user-settings"],
 .layer.stop-animations~.layer[layer-id="server-settings"] {
     opacity: 1;
-    -webkit-transform: scale(1) rotateZ(360deg)!important;
-    transform: scale(1) rotateZ(360deg)!important;
+    -webkit-transform: none!important;
+    transform: none!important;
     -webkit-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -11578,8 +11606,8 @@ div#bd-customcss-detach-container::before {
 .layer.animating:not(.stop-animations)~.layer[layer-id="server-settings"] {
     opacity: 0!important;
     overflow: hidden;
-    -webkit-transform: scale(0.2) rotateZ(360deg)!important;
-    transform: scale(0.2) rotateZ(360deg)!important;
+    -webkit-transform: none!important;
+    transform: none!important;
     -webkit-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -11593,8 +11621,8 @@ div#bd-customcss-detach-container::before {
 .layers > .layer.animating.stop-animations ~ .layer:not(.animating) {
     opacity: 0!important;
     overflow: hidden;
-    -webkit-transform: scale(0.2) rotateZ(360deg)!important;
-    transform: scale(0.2)!important;
+    -webkit-transform: none!important;
+    transform: none!important;
 }
 
 .added-3Q7OGu:after, .fixed-2XWtYH:after, .improved-2HhjlK:after, .progress-2GXXO5:after {
@@ -12739,6 +12767,15 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
 }
 .layer[layer-id="server-settings"] .item-3879bf.itemDanger-3m3dwx:hover::before,
 .layer[layer-id="server-settings"] .ui-standard-sidebar-view .sidebar-region .ui-tab-bar.SIDE .ui-tab-bar-item.danger:hover::before{
+    content:url('https://www.twitchcord.com/twitchcord-theme/images/delete-ico.png');
+}
+.layer[layer-id="server-settings"] .item-3879bf:nth-of-type(16)::before,
+.layer[layer-id="server-settings"] .ui-standard-sidebar-view .sidebar-region .ui-tab-bar.SIDE .ui-tab-bar-item:nth-of-type(16)::before{
+    content:url('https://www.twitchcord.com/twitchcord-theme/images/delete-ico.png');
+    left: 2px;
+}
+.layer[layer-id="server-settings"] .item-3879bf.selected-eNoxEK:nth-of-type(16):hover::before,
+.layer[layer-id="server-settings"] .ui-standard-sidebar-view .sidebar-region .ui-tab-bar.SIDE .ui-tab-bar-item.selected:nth-of-type(16):hover::before{
     content:url('https://www.twitchcord.com/twitchcord-theme/images/delete-ico.png');
 }
 /*/settings icons*/
@@ -14198,9 +14235,9 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
 }
 
 .aka-2Ba14Z {
-    background: transparent;
     border-radius: 0;
-    padding: 2px 5px;
+    background: var(--titlebar-color);
+    padding: 5px;
 }
 
 #bd-settingspane-container .ui-switch-wrapper {
@@ -15361,7 +15398,6 @@ body[tc-plugin-enabled] .ui-standard-sidebar-view #bd-settingspane-container .co
     background-position: center left 20px;
     border-radius: 2px;
     color: #fff;
-    white-space: pre;
     margin-bottom: 10px;
     border-radius: 2px;
     margin-top: 2px;
@@ -15414,7 +15450,7 @@ Forum style start
     border-radius: 0;
     display: none;
 }
-
+/*
 .message-group .comment .markup.spoiler {
     border: 1px solid var(--titlebar-color);
     box-sizing: border-box;
@@ -15439,7 +15475,7 @@ Forum style start
 }
 
 .spoiler::before {
-    content: "SPOILER - (hover to reveal)";
+    content: "SPOILER";
     font-family: var(--font);
     position: absolute;
     width: 100%;
@@ -15451,7 +15487,49 @@ Forum style start
     color: #fff!important;
     font-size: 12px;
 }
+*/
 
+.chat .content .message-group .comment .markup.spoiler,
+.chat .content .message-group .comment .markup.spoiler .mention{
+    color: transparent!important;
+    transition: color 200ms;
+}
+
+.chat .content .message-group .comment .markup.spoiler{
+    min-width: 28px;
+    position: relative;
+}
+
+.chat .content .message-group .comment .markup.spoiler:before{
+    content: "SPOILER";
+    width: 100%;
+    height: 100%;
+    min-height: initial;
+    font-size: 11px;
+    background-color: var(--titlebar-color);
+    color: #fff!important;
+    font-family: var(--font);
+    border-radius: 0;
+    line-height: normal;
+    padding: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 200ms;
+    user-select: none;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.chat .content .message-group .comment .markup.spoiler:hover {color: #cbc8d0!important;}
+.chat .content .message-group .comment .markup.spoiler:hover .mention{color: var(--links-color)!important;}
+
+.chat .content .message-group .comment .markup.spoiler:hover::before {
+    color: transparent!important;
+    opacity: 0;
+}
 /* new invite button */
 .wrapper-uAa07y {
     background: var(--dark-modal-bg) !important;
@@ -15570,21 +15648,27 @@ Forum style start
 }
 
 .userPopout-4pfA0d .image-EVRGPw {
-    width: 320px!important;
-    height: 150px!important;
+    width: 80px!important;
+    height: 80px!important;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    background-image: url('https://www.twitchcord.com/twitchcord-theme/images/default-banner.jpeg');
+    border: 3px solid var(--titlebar-color);
+    box-shadow: 0 0 20px rgba(0,0,0,.75);
+    top: -25px;
+    position: relative;
+    margin: 0px 10px;
+    background-color: var(--channels-color);
+    z-index: 2;
 }
 
-.headerText-3tKBWq {
+.userPopout-4pfA0d .headerText-3tKBWq {
     content: '';
     width: 320px;
-    height: 80px;
+    height: 111px;
     background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.84902) 100%);
     padding: 6px 10px;
     box-sizing: border-box;
@@ -15599,39 +15683,46 @@ Forum style start
     pointer-events: none;
 }
 
-.headerTop-1QGMLs {
+.userPopout-4pfA0d .headerTop-1QGMLs {
     padding: 0;
     position: relative;
+    height: 120px;
 }
 
-.headerPlaying-2eYqm9 {
+.userPopout-4pfA0d .headerPlaying-2eYqm9 {
     background: none;
 }
 
-.headerTag-3zin_i {
+.userPopout-4pfA0d .headerTag-3zin_i {
     font-size: 16px;
     line-height: 24px;
-    top: 39px;
+    top: 70px;
     position: relative;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    width: 280px;
+    width: 270px;
 }
 
-.headerName-2N8Pdz {
+.userPopout-4pfA0d .headerName-2N8Pdz {
     width: 100%;
     position: absolute;
-    top: -70px;
+    top: -9px;
     left: 0;
     background: rgba(23,20,31, 0.7);
     padding: 5px 15px;
-    font-size: 14px;
+    font-size: 12px;
     border-bottom: 1px solid var(--titlebar-color);
+    box-sizing: border-box;
+    z-index: 1;
+    padding-left: 103px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.headerName-2N8Pdz::before {
-    content: "Nickname:";
+.userPopout-4pfA0d .headerName-2N8Pdz::before {
+    content: "AKA:";
     color: #fff;
     font-size: 12px;
     font-weight: 700;
@@ -15639,13 +15730,20 @@ Forum style start
     opacity: 0.7;
 }
 
-.headerTag-3zin_i > .username {
+.userPopout-4pfA0d .headerTag-3zin_i > .username {
     color: #fff;
     font-weight: 700;
+    max-width: 210px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.headerTag-3zin_i > .discriminator { 
+.userPopout-4pfA0d .headerTag-3zin_i > .discriminator { 
     font-size: 12px;
+    position: relative;
+    top: -7px;
 }
 
 .headerText-2CVBxK,
@@ -15688,9 +15786,10 @@ Forum style start
     padding-bottom: 5px;
 }
 
-.activity-AFBUEw {
+.userPopout-4pfA0d .activity-AFBUEw {
     padding: 0;
     background-color: var(--channels-color);
+    overflow: hidden;
 }
 
 .assetsLargeImageUserPopout-1rupnL {
@@ -15761,7 +15860,7 @@ Forum style start
     height: 10px;
     border-radius: 50%;
     position: absolute;
-    top: 163px;
+    top: 132px;
     left: 15px;
 }
 
@@ -15772,7 +15871,7 @@ Forum style start
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    top: 163px;
+    top: 132px;
     left: 15px;
     position: absolute;
     animation: live-pulse 2s;
@@ -15783,6 +15882,11 @@ Forum style start
   .root-2sNHUF .topSectionStreaming-3rIBIm .headerText-2CVBxK::after {
     top: 25px;
     left: 32px;
+  }
+
+  .contentNoImagesProfile-3LoZbH .nameWrap-10NXPd {
+    padding-left: 16px;
+    margin: 10px 0 20px;
   }
 
   .root-2sNHUF .topSectionStreaming-3rIBIm .headerText-2CVBxK {
@@ -15818,6 +15922,7 @@ Forum style start
     width: 800px;
     border: 1px solid var(--titlebar-color);
     border-radius: 0;
+    box-sizing: border-box;
 }
 
 .root-2sNHUF .avatar-1BXaQj::before {
@@ -15825,16 +15930,16 @@ Forum style start
     position: absolute;
     height: 120px;
     display: block;
-    width: 800px;
+    width: 799px;
     bottom: 29px;
-    left: -26px;
+    left: -27px;
     z-index: -1;
     background: linear-gradient(to top, rgba(14,12,19,1), rgba(14,12,19,0));
 }
 
 .root-2sNHUF .headerInfo-Gkqcz9 {
-    margin-top: 120px;
-    transform: scale(1) translate3d(0, 0, 0)!important;
+    position: relative;
+    top: 100px;
 }
 
 .root-2sNHUF .headerInfo-Gkqcz9 + .flex-lFgbSz, .root-2sNHUF .headerInfo-Gkqcz9 + button {
@@ -15843,11 +15948,17 @@ Forum style start
     right: 20px;
 }
 
+.root-2sNHUF .body-3_tdh6 {
+    display: flex;
+    flex: 1 1 auto;
+}
+
 .root-2sNHUF .avatar-1BXaQj {
     height: 128px;
     width: 128px;
     border: 2px solid var(--chat-color);
-    margin-top: 150px;
+    position: relative;
+    top: 115px;
     margin-left: 25px;
     margin-right: 20px;
     border-radius: 0;
@@ -15890,15 +16001,11 @@ Forum style start
     z-index: 2;
     position: relative;
     background-color: var(--chat-color);
-    background-image: url('https://www.twitchcord.com/twitchcord-theme/images/default-banner.jpeg');
+    background-image: url('https://www.twitchcord.com/twitchcord-theme/images/default-banner.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 220px;
-}
-
-.root-2sNHUF .header-2Lg0Oe+div:empty {
-    display: none;
+    height: 300px;
 }
 
 .root-2sNHUF .status-3jUEha {
@@ -16184,6 +16291,7 @@ Forum style start
 
 .root-2sNHUF .scrollerWrap-2uBjct {
     border-right: none;
+    height: auto;
 }
 
 .root-2sNHUF .userInfoSection-2WJxMm .connectedAccounts-3WWAND .connectedAccount-3mKaTA .connectedAccountIcon-2nYV8J {
@@ -16243,10 +16351,6 @@ Forum style start
     color: #322f37;
     font-weight: 400;
     text-transform: capitalize;
-}
-
-.root-2sNHUF .botTag-1OwMgs {
-    padding: 2px 5px;
 }
 
 .root-2sNHUF .buttonBrandInverted-VFL7Yc,
@@ -16320,6 +16424,15 @@ Forum style start
     right: -6px;
 }
 
+.userPopout-4pfA0d .actionsUserPopout-1Q68Yy {
+    margin: 0;
+}
+
+.userPopout-4pfA0d .actionsUserPopout-1Q68Yy button {
+    width: 90%;
+    margin: 0 auto 20px;
+}
+
 .keyboard-shortcuts-modal {
     background-color: var(--dark-modal-bg) !important;
     border: 1px solid var(--titlebar-color);
@@ -16362,6 +16475,15 @@ Forum style start
 
 #autocomplete-popout {
     border: 1px solid var(--titlebar-color);
+    border-radius: 0;
+}
+
+#autocomplete-popout .autocomplete-shadow { 
+    border-radius: 0;
+}
+
+.popout-bottom #autocomplete-popout .autocomplete-arrow-wrapper {
+    display: none;
 }
 
 #autocomplete-popout .scrollerWrap-2uBjct { border: none!important; border-radius: 0; }
@@ -16629,4 +16751,114 @@ Forum style start
     width: 400px;
     background-color: var(--channels-color);
     border-radius: 0;
+}
+
+.message-group .reaction {
+    background: none;
+    position: relative;
+}
+
+.message-group .reaction, .message-group .reaction .emoji {
+    border-radius: 50%;
+    border: none;
+    padding: 4px;
+    width: 24px;
+    height: 24px;
+    background: var(--titlebar-color);
+    margin-bottom: 20px!important;
+}
+
+.message-group .reaction .emoji {
+    margin: 0!important;
+    background: none;
+}
+
+.message-group .reaction.reaction-me {
+    background: rgba(20,184,102,.15);
+}
+
+.message-group .reaction {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin-right: 4px;
+    transform: none!important;
+}
+
+.message-group .reaction .reaction-count {
+    position: absolute!important;
+    color: #fff;
+    opacity: 0.5;
+    left: 0;
+    right: 0;
+    width: 36px;
+    font-size: 11px;
+    letter-spacing: 0;
+    top: 37px;
+    margin: 0 auto;
+    z-index: 5;
+    text-align: center;
+    display: block;
+    min-width: 32px!important;
+}
+
+.message-group .reaction.reaction-me .reaction-count {
+    opacity: 1;
+}
+
+.message-group .reactions .btn-reaction {
+    visibility: visible;
+    opacity: 0.8!important;
+    width: 24px;
+    height: 24px;
+    margin-top: -16px;
+    background: url('https://www.twitchcord.com/twitchcord-theme/images/add-reaction.svg') 50% no-repeat;
+}
+
+.message-group .reaction::before, .message-group .reaction::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.message-group .reaction.reaction-me::after {
+    opacity: 1;
+}
+
+.message-group .reaction.reaction-me::before {
+    -webkit-box-shadow: inset 0 0 7px #14b866;
+    box-shadow: inset 0 0 7px #14b866;
+    top: 1px;
+    left: 1px;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: .6s 1 pulseReact cubic-bezier(.075,.82,.165,1),.6s 1 fadeOut;
+    animation: .6s 1 pulseReact cubic-bezier(.075,.82,.165,1),.6s 1 fadeOut;
+}
+
+.message-group .reaction.reaction-me::after {
+    top: 1px;
+    left: 1px;
+    width: 30px;
+    height: 30px;
+    -webkit-box-shadow: 0 0 0 2px #14b866;
+    box-shadow: 0 0 0 2px #14b866;
+}
+
+@keyframes pulseReact {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(2);
+        transform: scale(2);
+    }
+}
+
+.activityFeed-HeiGwL .scrollerThemed-19vinI.themeGhostHairline-2H8SiW .scroller-fzNley::-webkit-scrollbar-thumb,
+.activityFeed-HeiGwL .scrollerThemed-19vinI.themeGhostHairlineChannels-2lQojW .scroller-fzNley::-webkit-scrollbar-thumb {
+    width: 10px!important;
 }
