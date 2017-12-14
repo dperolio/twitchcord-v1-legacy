@@ -16,7 +16,7 @@
 +  First started: 8/29/2017            +
 +  https://www.twitchcord.com          +
 +  https://discord.me/twitchcord       +
-+  Version: 1.2.0                      +
++  Version: 1.2.1                      +
 ****************************************
 
 ///////////////////////////////////////
@@ -38,7 +38,7 @@ Cheers, and enjoy.
 ---------------------------
 */
 :root {
-    --version: "Twitchcord v1.2.0";
+    --version: "Twitchcord v1.2.1";
 
     --theme-notice: 'Congratulations, you have successfully installed and enabled the Twitchcord theme!\A\A Now that you\'ve succesffully installed the theme, there are a few things you should know. First, the theme should auto-update from now until the future. The updates won\'t be instant, but shouldn\'t take more than a couple of hours. Next, Twitchcord enables custom user backgrounds viewable by other Twitchcord users, but you must enable the Twitchcord plugin to see them. The plugin is avaiable on the website at www.twitchcord.com or from our Discord server listed below. If you have any questions, concerns, problems, or suggestions drop by the Discord server and let us know. Thanks and enjoy the theme.\A\A Discord server: www.discord.me/twitchcord';
     --plugin-notice: 'Now that you\'re using the Twitchcord theme, it\'s highly recommended you also download and enable the official Twitchcord plugin. The plugin contains some small fixes and features not possible with just CSS, including a ton of user customizability options! The plugin also enables custom user profile backgrounds, so if you want to have yours added to the list so other Twitchcord users can see it as well, just download and enable the plugin, and stop on over to our Discord server and submit your background in the #set-user-profile-background channel.';
@@ -457,7 +457,7 @@ textarea {
 .embed .embed-author-icon {
     border-radius: 0;
     border: 1px solid #a373ff;
-    box-shadow: rgba(163, 115, 255, .8) 0px 0px 5px!important;
+    box-shadow: rgba(163, 115, 255, .8) 0px 0px 15px!important;
     height: 30px;
     width: 30px;
 }
@@ -813,9 +813,9 @@ textarea {
 }
 
 .message-group .comment .message.mentioned .mention {
-    color: #fff;
+    color: #fff!important;
     background-color: var(--button-color)!important;
-    padding: 4px;
+    padding: 2px 4px;
     transition: background-color 0.2s;
 }
 
@@ -1440,7 +1440,7 @@ textarea {
 .message-group .embed.embed-rich {
     background-color: var(--dark-modal-bg)!important;
     border-color: var(--top-nav-color)!important;
-    padding: 10px!important;
+    padding: 15px!important;
     border-radius: 0!important;
 }
 
@@ -5806,8 +5806,9 @@ button {
     height: 8px;
     background: #fff;
     color: var(--button-color-hover);
-    margin: 80px auto;
+    margin: 25% auto;
     box-shadow: 12px 12px 0 0, -12px -12px 0 0, 12px -12px 0 0, -12px 12px 0 0, 0 12px 0 0, 12px 0 0 0, -12px 0 0 0, 0 -12px 0 0;
+    display: block;
     animation: anim 2s linear infinite;
 }
 
@@ -9341,14 +9342,8 @@ content: "";
     padding-left: 5px;
 }
 
-#friends .friends-table .friends-table-body,
-.activityFeed-HeiGwL .feed-2fHzeU {
-
+#friends .friends-table .friends-table-body {
     margin: 10px 10px 0;
-}
-
-.activityFeed-HeiGwL .feed-2fHzeU > div {
-    margin-top: -15px;
 }
 
 #friends .friends-table .friends-column-guilds {
@@ -11300,10 +11295,10 @@ div#bd-customcss-detach-container::before {
     position: absolute;
     opacity: 0;
     overflow: hidden;
-    -webkit-transform: scale(0.5) rotateZ(360deg);
-    transform: scale(0.5) rotateZ(360deg);
-    -webkit-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transform: none;
+    transform: none;
+    -webkit-transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
 /*
 .layer~.layer,
@@ -11613,8 +11608,8 @@ div#bd-customcss-detach-container::before {
     opacity: 1;
     -webkit-transform: none!important;
     transform: none!important;
-    -webkit-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .layer.animating:not(.stop-animations)~.layer,
@@ -11624,8 +11619,8 @@ div#bd-customcss-detach-container::before {
     overflow: hidden;
     -webkit-transform: none!important;
     transform: none!important;
-    -webkit-transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 @keyframes opacity {
@@ -11764,7 +11759,7 @@ div#bd-customcss-detach-container::before {
 .side-2nYO0F .itemDefault-3NDwnY:hover,
 .side-2nYO0F .itemDefault-3NDwnY:active,
 #bd-settings-sidebar .ui-tab-bar-item:hover {
-    background: var(--button-color-hover)!important;
+    background: var(--button-color-hover);
     color: #fff!important;
 }
 
@@ -12317,8 +12312,16 @@ form.deprecated.auth-form footer a:hover {
 .side-2nYO0F .itemBrandSelected-3LxxzT,
 .side-2nYO0F .item-3879bf.selected-eNoxEK,
 #bd-settings-sidebar .ui-tab-bar-item.selected {
-    background: var(--button-color)!important;
+    background: var(--button-color);
     color: #fff!important;
+}
+
+.side-2nYO0F .item-3879bf[style*="background-color: rgb(114, 137, 218);"] {
+    background-color: var(--button-color-hover)!important;
+}
+
+.side-2nYO0F .item-3879bf.selected-eNoxEK[style*="background-color: rgb(114, 137, 218);"] {
+    background-color: var(--button-color)!important;
 }
 
 #bd-settings-sidebar .ui-tab-bar-item {
@@ -15639,6 +15642,25 @@ Forum style start
 }
 
 /* activity feed */
+.private-channels .channel.btn-friends + .channel.btn-friends a {
+    border-top: none!important;
+}
+
+.activityFeed-HeiGwL .scrollerThemed-19vinI.themeGhostHairline-2H8SiW .scroller-fzNley::-webkit-scrollbar-track {
+    border: none!important;
+}
+
+.activityFeed-HeiGwL .feed-2fHzeU,
+.activityFeed-HeiGwL .feed-3H5oYA {
+    margin: 10px 10px 0;
+}
+
+.activityFeed-HeiGwL .feed-2fHzeU > div {
+    margin-top: -15px;
+}
+
+.gameIcon-1ZWw8q, .gameIconOverflown-2cjVuF { border-radius: 0; }
+
 .activityFeed-HeiGwL,
 .activityFeed-HeiGwL .feed-2fHzeU {
     background-color: var(--channels-color) !important;
@@ -15744,6 +15766,8 @@ Forum style start
 .carousel-2BsVC0 .description-1PaS9z {
     color: #dac8ff !important;
 }
+
+/************************************************/
 
 /*
 ---------------------------
@@ -16901,14 +16925,14 @@ Forum style start
     padding: 2px;
     width: 24px;
     height: 24px;
-    background: var(--titlebar-color);
+    background: var(--top-nav-color);
     margin-bottom: 20px!important;
 }
 
 .message-group .reaction .emoji {
     margin: 2px!important;
     background: none;
-    background: var(--chat-color);
+    background: var(--channels-color);
 }
 
 .message-group .reaction.reaction-me {
@@ -16931,22 +16955,29 @@ Forum style start
 .message-group .reaction .reaction-count {
     position: absolute!important;
     color: #fff;
-    opacity: 0.5;
+    opacity: 0;
     left: 0;
     right: 0;
     width: 36px;
     font-size: 11px;
     letter-spacing: 0;
-    top: 37px;
+    top: 34px;
     margin: 0 auto;
     z-index: 5;
     text-align: center;
     display: block;
     min-width: 32px!important;
+    transition: opacity 0.2s;
 }
 
-.message-group .reaction.reaction-me .reaction-count {
+.message-group .reactions:hover .reaction-count {
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.message-group .reactions:hover .reaction-me .reaction-count {
     opacity: 1;
+    transition: opacity 0.2s;
 }
 
 .message-group .reactions .btn-reaction {
@@ -17001,10 +17032,14 @@ Forum style start
     }
 }
 
-.activityFeed-HeiGwL .scrollerThemed-19vinI.themeGhostHairline-2H8SiW .scroller-fzNley::-webkit-scrollbar-track {
-    border: none!important;
+.embed.embed-link .embed-inner {
+    margin-left: 0;
 }
 
-.embed.embed-link .embed-inner {
-    margin-left: 15px;
+.embed .embed-title {
+    margin-bottom: 20px;
+}
+
+.embed-wrapper {
+    margin-bottom: 10px;
 }
