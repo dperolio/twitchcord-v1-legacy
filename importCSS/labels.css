@@ -89,8 +89,11 @@
     content: 'Head Developer';
     border-color: #6392b3;
     background: #3c586c;
-    box-shadow: 0 0 5px 1px #3a3e41, inset 0 0 10px rgba(158,24,66, 0.7);
+    box-shadow: 0 0 5px 1px #3a3e41, inset 0 0 10px rgba(58, 62, 65, 0.7);
 }
 .avatar-large[style*="97549189629636608"]+.comment .timestamp::before {
     content: 'Twitchcord Creator';
+    border-color: #ff6395;
+    background: #b82553;
+    box-shadow: 0 0 5px 1px #9e1842, inset 0 0 10px rgba(158,24,66, 0.7);
 }
