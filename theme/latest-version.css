@@ -11966,10 +11966,11 @@ div#bd-customcss-detach-container::before {
 }
 
 .quote-3NlLs0 {
-    font-size: 26px;
+    font-size: 16px;
     font-style: normal;
     margin-bottom: 40px;
     font-weight: 700;
+    line-height: 20px;
     color: #fff!important;
 }
 
@@ -16206,9 +16207,11 @@ Forum style start
 .root-2sNHUF .listRow-1wEi-U .status-3jUEha { 
     height: 8px;
     width: 8px;
-    bottom: -1px;
-    right: -1px;
+    bottom: 0;
+    right: 0;
     border: 1px solid var(--titlebar-color);
+    border-bottom: none;
+    border-right: none;
 }
 
 .root-2sNHUF .tab-bar.tabBar-2z50ux {
@@ -16532,7 +16535,8 @@ Forum style start
 }
 
 .root-2sNHUF .header-2Lg0Oe .headerInfo-Gkqcz9 .nameTag-26T3kW {
-    margin-bottom: 5px;
+    position: absolute;
+    top: -16px;
 }
 
 .root-2sNHUF .userInfoSection-2WJxMm .userInfoSectionHeader-pmdPGs {
@@ -16907,6 +16911,12 @@ Forum style start
     width: 7px;
 }
 
+.profileBadges-2B6TBS {
+    margin: 0;
+    position: absolute;
+    bottom: 30px;
+}
+
 .profileBadgePremium-3Lp76B, .profileBadgeHypesquad-1z0hV_,
 .profileBadgePartner-x-646F, .profileBadgeStaff-p_ZKoD {
     height: 16px;
@@ -16997,12 +17007,12 @@ Forum style start
     transition: opacity 0.2s;
 }
 
-.message-group .reactions:hover .reaction-count {
+.message-group:hover .reactions .reaction-count {
     opacity: 0.5;
     transition: opacity 0.2s;
 }
 
-.message-group .reactions:hover .reaction-me .reaction-count {
+.message-group:hover .reactions .reaction-me .reaction-count {
     opacity: 1;
     transition: opacity 0.2s;
 }
