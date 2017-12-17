@@ -141,6 +141,7 @@
 .avatar-large[style*="71575679543549952"]+.comment .username-wrapper::after,
 .avatar-large[style*="219078125974192128"]+.comment .username-wrapper::after,
 .avatar-large[style*="178214422890676224"]+.comment .username-wrapper::after,
+.avatar-large[style*="211403732158513152"]+.comment .username-wrapper::after,
 /*--- channel members wrap ---*/
 .avatar-small[style*="167335587488071682"]+.member-inner .member-username-inner::before,
 .avatar-small[style*="98270968945864704"]+.member-inner .member-username-inner::before,
@@ -150,6 +151,7 @@
 .avatar-small[style*="71575679543549952"]+.member-inner .member-username-inner::before,
 .avatar-small[style*="219078125974192128"]+.member-inner .member-username-inner::before,
 .avatar-small[style*="178214422890676224"]+.member-inner .member-username-inner::before,
+.avatar-small[style*="211403732158513152"]+.member-inner .member-username-inner::before,
 /*--- friends list ---*/
 .avatar-small[style*="167335587488071682"]+.discord-tag .username::after,
 .avatar-small[style*="98270968945864704"]+.discord-tag .username::after,
@@ -159,6 +161,7 @@
 .avatar-small[style*="71575679543549952"]+.discord-tag .username::after,
 .avatar-small[style*="219078125974192128"]+.discord-tag .username::after,
 .avatar-small[style*="178214422890676224"]+.discord-tag .username::after,
+.avatar-small[style*="211403732158513152"]+.discord-tag .username::after,
 /*--- user profile friends list ---*/
 .avatar-large[style*="167335587488071682"]+.guild-inner .username::after,
 .avatar-large[style*="98270968945864704"]+.guild-inner .username::after,
@@ -167,7 +170,8 @@
 .avatar-large[style*="157887056608100352"]+.guild-inner .username::after,
 .avatar-large[style*="71575679543549952"]+.guild-inner .username::after,
 .avatar-large[style*="219078125974192128"]+.guild-inner .username::after,
-.avatar-large[style*="178214422890676224"]+.guild-inner .username::after {
+.avatar-large[style*="178214422890676224"]+.guild-inner .username::after,
+.avatar-large[style*="211403732158513152"]+.guild-inner .username::after {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/donor.png');
 }
@@ -177,21 +181,21 @@
 /* ============================================== */
 
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
-/* 5/12/2018 */ .avatar-large[style*="98270968945864704"]+.comment .username-wrapper::before,
+.avatar-large[style*="98270968945864704"]+.comment .username-wrapper::before,
+.avatar-large[style*="145799943980843008"]+.comment .username-wrapper::before,
+.avatar-large[style*="211403732158513152"]+.comment .username-wrapper::before,
 /*--- channel members wrap ---*/
-/* 5/12/2018 */ .avatar-small[style*="98270968945864704"]+.member-inner .member-username::before,
+.avatar-small[style*="98270968945864704"]+.member-inner .member-username::before,
+.avatar-small[style*="145799943980843008"]+.member-inner .member-username::before,
+.avatar-small[style*="211403732158513152"]+.member-inner .member-username::before,
 /*--- friends list ---*/
-/* 5/12/2018 */ .avatar-small[style*="98270968945864704"]+.discord-tag .username::before,
+.avatar-small[style*="98270968945864704"]+.discord-tag .username::before,
+.avatar-small[style*="145799943980843008"]+.discord-tag .username::before,
+.avatar-small[style*="211403732158513152"]+.discord-tag .username::before,
 /*--- user profile friends list ---*/
-/* 5/12/2018 */ .avatar-large[style*="98270968945864704"]+.guild-inner .username::before,
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* 7/18/2018 */ .avatar-large[style*="145799943980843008"]+.comment .username-wrapper::before,
-/*--- channel members wrap ---*/
-/* 7/18/2018 */ .avatar-small[style*="145799943980843008"]+.member-inner .member-username::before,
-/*--- friends list ---*/
-/* 7/18/2018 */ .avatar-small[style*="145799943980843008"]+.discord-tag .username::before,
-/*--- user profile friends list ---*/
-/* 7/18/2018 */ .avatar-large[style*="145799943980843008"]+.guild-inner .username::before {
+.avatar-large[style*="98270968945864704"]+.guild-inner .username::before,
+.avatar-large[style*="145799943980843008"]+.guild-inner .username::before,
+.avatar-large[style*="211403732158513152"]+.guild-inner .username::before {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/turbo.png');
 }
@@ -202,12 +206,20 @@
 
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
 .avatar-large[style*="284122164582416385"]+.comment .username-wrapper::after,
+.avatar-large[style*="95567914089844736"]+.comment .username-wrapper::after,
+.avatar-large[style*="137236165899059200"]+.comment .username-wrapper::after,
 /*--- channel members wrap ---*/
 .avatar-small[style*="284122164582416385"]+.member-inner .member-username-inner::before,
+.avatar-small[style*="95567914089844736"]+.member-inner .member-username-inner::before,
+.avatar-small[style*="137236165899059200"]+.member-inner .member-username-inner::before,
 /*--- friends list ---*/
 .avatar-small[style*="284122164582416385"]+.discord-tag .username::after,
+.avatar-small[style*="95567914089844736"]+.discord-tag .username::after,
+.avatar-small[style*="137236165899059200"]+.discord-tag .username::after,
 /*--- user profile friends list ---*/
-.avatar-large[style*="284122164582416385"]+.guild-inner .username::after {
+.avatar-large[style*="284122164582416385"]+.guild-inner .username::after,
+.avatar-large[style*="95567914089844736"]+.guild-inner .username::after,
+.avatar-large[style*="137236165899059200"]+.guild-inner .username::after {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/plugin-developer.png');
 }
@@ -229,8 +241,36 @@
 }
 
 /* ============================================== */
-/* ================ ADMIN BADGES  =============== */
+/* ============== STAFF BADGES  ================= */
 /* ============================================== */
+
+/*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
+.avatar-large[style*="97549189629636608"]+.comment .username-wrapper::before,
+.avatar-large[style*="284122164582416385"]+.comment .username-wrapper::before,
+.avatar-large[style*="95567914089844736"]+.comment .username-wrapper::before,
+.avatar-large[style*="137236165899059200"]+.comment .username-wrapper::before,
+/*--- channel members wrap ---*/
+.avatar-small[style*="97549189629636608"]+.member-inner .member-username::before,
+.avatar-small[style*="284122164582416385"]+.member-inner .member-username::before,
+.avatar-small[style*="95567914089844736"]+.member-inner .member-username::before,
+.avatar-small[style*="137236165899059200"]+.member-inner .member-username::before,
+/*--- friends list ---*/
+.avatar-small[style*="97549189629636608"]+.discord-tag .username::before,
+.avatar-small[style*="284122164582416385"]+.discord-tag .username::before,
+.avatar-small[style*="95567914089844736"]+.discord-tag .username::before,
+.avatar-small[style*="137236165899059200"]+.discord-tag .username::before,
+/*--- user profile friends list ---*/
+.avatar-large[style*="97549189629636608"]+.guild-inner .username::before,
+.avatar-large[style*="284122164582416385"]+.guild-inner .username::before,
+.avatar-large[style*="95567914089844736"]+.guild-inner .username::before,
+.avatar-large[style*="137236165899059200"]+.guild-inner .username::before {
+    content: '';
+    background: url('https://www.twitchcord.com/twitchcord-theme/images/staff-badge.png');
+}
+
+/* ======================================================== */
+/* ================ CREATOR (ADMIN) BADGES  =============== */
+/* ======================================================== */
 
 /*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
 .avatar-large[style*="97549189629636608"]+.comment .username-wrapper::after,
@@ -242,24 +282,4 @@
 .avatar-large[style*="97549189629636608"]+.guild-inner .username::after {
     content: '';
     background: url('https://www.twitchcord.com/twitchcord-theme/images/admin.png');
-}
-
-/* ============================================== */
-/* ============== STAFF BADGES  ================= */
-/* ============================================== */
-
-/*--- chat area, includes main chat, mentions popout, pinned messages, etc ---*/
-.avatar-large[style*="97549189629636608"]+.comment .username-wrapper::before,
-.avatar-large[style*="284122164582416385"]+.comment .username-wrapper::before,
-/*--- channel members wrap ---*/
-.avatar-small[style*="97549189629636608"]+.member-inner .member-username::before,
-.avatar-small[style*="284122164582416385"]+.member-inner .member-username::before,
-/*--- friends list ---*/
-.avatar-small[style*="97549189629636608"]+.discord-tag .username::before,
-.avatar-small[style*="284122164582416385"]+.discord-tag .username::before,
-/*--- user profile friends list ---*/
-.avatar-large[style*="97549189629636608"]+.guild-inner .username::before,
-.avatar-large[style*="284122164582416385"]+.guild-inner .username::before {
-    content: '';
-    background: url('https://www.twitchcord.com/twitchcord-theme/images/staff-badge.png');
 }

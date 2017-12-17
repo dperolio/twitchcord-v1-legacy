@@ -4,29 +4,29 @@
 
 .tooltip.tooltip-brand.tooltip-right:after,
 .tooltip.tooltip-black.tooltip-right:after {
-    display: none!important;
+    border-right-color:#000!important;
 }
 
 .tooltip.tooltip-brand.tooltip-top:after,
 .tooltip.tooltip-black.tooltip-top:after,
 .tipsy-se .tipsy-inner:after {
-    display: none!important;
+    border-top-color:#000!important;
 }
 
 .tooltip.tooltip-brand.tooltip-left:after,
 .tooltip.tooltip-black.tooltip-left:after {
-    display: none!important;
+    border-left-color: #000!important;
 }
 
 .tooltip.tooltip-brand.tooltip-bottom:after,
 .tooltip.tooltip-black.tooltip-bottom:after {
-    display: none!important;
+    border-bottom-color: #000!important;
 }
 
 .tooltip.tooltip-brand,
 .tooltip.tooltip-black,
 .tipsy-inner {
-    background: var(--chat-color)!important;
+    background: #000!important;
     border: 1px solid var(--titlebar-color)!important;
     color: #fff!important;
     border-radius: 1px;

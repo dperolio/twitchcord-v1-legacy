@@ -53,7 +53,8 @@
 .avatar-large[style*="157887056608100352"]+.comment .timestamp::before,
 .avatar-large[style*="71575679543549952"]+.comment .timestamp::before,
 .avatar-large[style*="219078125974192128"]+.comment .timestamp::before,
-.avatar-large[style*="178214422890676224"]+.comment .timestamp::before {
+.avatar-large[style*="178214422890676224"]+.comment .timestamp::before,
+.avatar-large[style*="211403732158513152"]+.comment .timestamp::before {
     content: 'Supporter';
     border-color: #FF6666;
     background: #e52e2e;
@@ -61,32 +62,34 @@
 }
 
 /* Turbo User */
-/* 5/12/2018 */ .avatar-large[style*="98270968945864704"]+.comment .timestamp::before,
-/* 7/18/2018 */ .avatar-large[style*="145799943980843008"]+.comment .timestamp::before {
+.avatar-large[style*="98270968945864704"]+.comment .timestamp::before,
+.avatar-large[style*="145799943980843008"]+.comment .timestamp::before,
+.avatar-large[style*="211403732158513152"]+.comment .timestamp::before {
     content: 'Turbo User';
     border-color: #9866ff;
     background: #5f29cc;
-    box-shadow: 0 0 5px 1px var(--top-nav-color), inset 0 0 10px rgba(57, 46, 92, 0.7);
+    box-shadow: 0 0 5px 1px #392e5c, inset 0 0 10px rgba(57, 46, 92, 0.7);
  }
 
 /* Plugin Developer */
-.avatar-large[style*="284122164582416385"]+.comment .timestamp::before {
-    content: 'Plugin Developer';
-    border-color: #9f72c2;
-    background: #604575;
-    box-shadow: 0 0 5px 1px #3f3b42, inset 0 0 10px rgba(63,59,66, 0.7);
+.avatar-large[style*="284122164582416385"]+.comment .timestamp::before,
+.avatar-large[style*="95567914089844736"]+.comment .timestamp::before,
+.avatar-large[style*="137236165899059200"]+.comment .timestamp::before {
+    content: 'Developer';
+    border-color: #6392b3;
+    background: #3c586c;
+    box-shadow: 0 0 5px 1px #3a3e41, inset 0 0 10px rgba(63,59,66, 0.7);
     /*border-color: #d8d8d8;
     background: #9e9e9e;
     box-shadow: 0 0 5px 1px #3a3a3a, inset 0 0 10px rgba(58,58,58, 0.7);*/
 }
 
 /* Staff special labels */
-.avatar-large[style*="97549189629636608"]+.comment .timestamp::before,
 .avatar-large[style*="284122164582416385"]+.comment .timestamp::before {
-    content: 'Twitchcord Head Developer';
-    border-color: #ff6395;
-    background: #b82553;
-    box-shadow: 0 0 5px 1px #9e1842, inset 0 0 10px rgba(158,24,66, 0.7);
+    content: 'Head Developer';
+    border-color: #6392b3;
+    background: #3c586c;
+    box-shadow: 0 0 5px 1px #3a3e41, inset 0 0 10px rgba(158,24,66, 0.7);
 }
 .avatar-large[style*="97549189629636608"]+.comment .timestamp::before {
     content: 'Twitchcord Creator';
