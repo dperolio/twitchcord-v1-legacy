@@ -16,7 +16,7 @@
 +  First started: 8/29/2017            +
 +  https://www.twitchcord.com          +
 +  https://discord.me/twitchcord       +
-+  Version: 1.2.1                      +
++  Version: 1.2.4                      +
 ****************************************
 
 ///////////////////////////////////////
@@ -38,7 +38,7 @@ Cheers, and enjoy.
 ---------------------------
 */
 :root {
-    --version: "Twitchcord v1.2.1";
+    --version: "Twitchcord v1.2.4";
 
     --theme-notice: 'Congratulations, you have successfully installed and enabled the Twitchcord theme!\A\A Now that you\'ve succesffully installed the theme, there are a few things you should know. First, the theme should auto-update from now until the future. The updates won\'t be instant, but shouldn\'t take more than a couple of hours. Next, Twitchcord enables custom user backgrounds viewable by other Twitchcord users, but you must enable the Twitchcord plugin to see them. The plugin is avaiable on the website at www.twitchcord.com or from our Discord server listed below. If you have any questions, concerns, problems, or suggestions drop by the Discord server and let us know. Thanks and enjoy the theme.\A\A Discord server: www.discord.me/twitchcord';
     --plugin-notice: 'Now that you\'re using the Twitchcord theme, it\'s highly recommended you also download and enable the official Twitchcord plugin. The plugin contains some small fixes and features not possible with just CSS, including a ton of user customizability options! The plugin also enables custom user profile backgrounds, so if you want to have yours added to the list so other Twitchcord users can see it as well, just download and enable the plugin, and stop on over to our Discord server and submit your background in the #set-user-profile-background channel.';
@@ -64,8 +64,8 @@ Cheers, and enjoy.
     --dark-text-normal: #99aab5;
     --dark-text-header: #dad8de;
 
-    --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --font-coding: 'Roboto Mono', monospace;
+    --font: 'Helvetica Neue', Helvetica, Arial, Whitney, sans-serif;
+    --font-coding: 'Roboto Mono', Menlo, Consolas, Monaco, monospace;
 }
 /* =========================== */
 
@@ -2632,6 +2632,14 @@ textarea {
     border-radius: 0;
 }
 
+.status {
+    overflow: hidden;
+}
+
+.status .spinner-pulsing-ellipsis {
+    right: -1px;
+}
+
 .avatarDefault-3jtQoc,
 .avatarSpeaking-3teDH6 {
     border-radius: 0;
@@ -3192,11 +3200,18 @@ input:focus {
 
 .input-2YozMi:focus, .need-help-modal.deprecated .header input[type=text]:focus, .ui-search-bar .input:focus, .bda-slist input[type="text"]:focus, .root-2sNHUF .userInfoSection-2WJxMm .note textarea:focus,
 .ui-phone-field .input-field:focus, .form.deprecated .control-group input[type=text]:focus, .bda-slist input[type="text"]:focus, .bda-slist input[type="textarea"]:focus, .bda-slist input[type="number"]:focus,
-.bda-slist select:focus, .quick-message:focus {
+.bda-slist select:focus, .quick-message:focus, .search-bar .search-bar-inner input:focus {
     box-shadow: inset 0 0 0 1px #7d5bbe, 0 0 6px -2px #7d5bbe;
     transition: box-shadow .12s ease-in;
     outline: none;
     outline-style: none;
+}
+.search-bar .search-bar-inner .search-bar-icon {
+    position: absolute;
+}
+
+.search-bar .search-bar-inner input {
+    font-size: 12px!important;
 }
 
 .bda-slist input[type="number"]::-webkit-outer-spin-button,
@@ -5822,7 +5837,7 @@ button {
     height: 8px;
     background: #fff;
     color: var(--button-color-hover);
-    margin: 25% auto;
+    margin: 0 auto;
     box-shadow: 12px 12px 0 0, -12px -12px 0 0, 12px -12px 0 0, -12px 12px 0 0, 0 12px 0 0, 12px 0 0 0, -12px 0 0 0, 0 -12px 0 0;
     display: block;
     animation: anim 2s linear infinite;
@@ -5924,6 +5939,9 @@ button {
 
 .message-group .comment .spinner {
     margin-top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
 }
 
 @keyframes loader-scale {
@@ -7988,17 +8006,16 @@ content: "";
 .channelTextArea-os01xC .autocomplete-1TnWNR,
 .channel-text-area-upload .autocomplete-1TnWNR,
 .edit-message .autocomplete-1TnWNR {
-    border-radius: 2px;
+    border-radius: 0;
     max-width: 540px;
-    margin-bottom: 6px;
     z-index: 10;
-    border: 1px solid #433f4a;
+    border: 1px solid var(--titlebar-color);
     overflow-x: hidden;
     overflow-y: auto;
     background: var(--channels-color);
     display: flex;
     flex-direction: column;
-    margin: 7px 0px;
+    margin: -1px 0;
     padding: 0px 0px 8px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 10px;
 }
@@ -10270,14 +10287,14 @@ content: "";
     text-transform: uppercase;
     font-size: 12px;
     background: var(--chat-color);
-    border-bottom: 1px solid #433f4a;
+    border-bottom: 1px solid var(--titlebar-color);
     color: #898395;
     margin-bottom: 8px;
 }
 
 .channelTextArea-os01xC .divider-2JwdCF,
 .channel-text-area-upload .divider-2JwdCF {
-    background-color: #433f4a!important;
+    background-color: var(--button-color)!important;
 }
 
 .upload-modal .textAreaEnabled-2vOfh8.textArea-20yzAH {
@@ -10560,11 +10577,11 @@ content: "";
 /* Emoji Popup */
 .bda-dark .emoji-picker,
 .emoji-picker {
-    border-radius: 1px;
+    border-radius: 0;
     background: var(--dark-modal-bg);
-    border-color: #433f4a!important;
+    border-color: var(--titlebar-color)!important;
     margin-right: -20px;
-    margin-bottom: 2px;
+    margin-bottom: -5px;
     width: 368px;
 }
 
@@ -10657,7 +10674,7 @@ content: "";
 .emoji-picker .search-bar .search-bar-inner {
     background: var(--channels-color);
     border-radius: 0!important;
-    border: 1px solid #433f4a;
+    border: 1px solid var(--titlebar-color);
 }
 
 .emoji-picker .search-bar input::-webkit-input-placeholder {
@@ -10671,7 +10688,7 @@ content: "";
     left: 0;
     margin: 0;
     background: var(--channels-color);
-    border: 1px solid #433f4a;
+    border: 1px solid var(--titlebar-color);
     width: 370px;
     box-sizing: border-box;
     -webkit-align-items: center;
@@ -10928,10 +10945,10 @@ div#bd-customcss-detach-container::before {
 #bda-qem-twitch-container,
 #bda-qem-favourite-container {
     margin-top: -53px;
-    margin-bottom: 2px;
-    border-radius: 0 0 1px 1px;
+    margin-bottom: -5px;
+    border-radius: 0;
     background: var(--dark-modal-bg);
-    border: 1px solid #433f4a!important;
+    border: 1px solid var(--titlebar-color)!important;
     width: 368px;
     height: 316px;
     margin-right: -20px;
@@ -10991,7 +11008,7 @@ div#bd-customcss-detach-container::before {
     font-size: 11px;
     text-transform: uppercase;
     color: #eee;
-    border: 1px solid #433f4a;
+    border: 1px solid var(--titlebar-color);
     -webkit-box-shadow: none!important;
     box-shadow: none!important;
     transition: background-color 0.2s;
@@ -12109,6 +12126,16 @@ margin: 0 0 20px 41px;
     margin: 0 auto!important;
 }
 
+.modal-image .embed {
+    padding: 50px!important;
+    background-color: var(--dark-modal-bg);
+    border: 1px solid var(--titlebar-color);
+}
+
+.modal-image .embed .embed-error {
+    color: #fff;
+}
+
 .user-settings-authorized-apps .app-avatar {
     border-radius: 0;
     height: 64px;
@@ -12977,13 +13004,8 @@ div.platform-win .user-settings-modal .tab-bar.SIDE .tab-bar-item:nth-of-type(15
 
 .search-bar-light .search-bar-icon .icon.visible {
     opacity: 1;
-    top: 3px;
-    transition: filter 0.2s, opacity 0.2s;
-}
-
-.search-bar-light input:focus + .search-bar-icon .icon.visible {
     filter: brightness(300%);
-    transition: filter 0.2s, opacity 0.2s;
+    top: 3px;
 }
 
 .emoji-picker .search-bar-light .search-bar-icon .icon.visible {
@@ -16858,10 +16880,30 @@ Forum style start
     border-color: inherit;
     box-sizing: border-box;
     opacity: 0.5;
-  }
+}
 
-  .roleName-DUQZ9m {
-    margin: 0 4px;
+.roleName-DUQZ9m {
+margin: 0 4px;
+}
+
+.role-3rahR_.addButton-3RuTE0 {
+    border: none!important;
+    background: none!important;
+    line-height: 24px!important;
+    width: 16px!important;
+}
+
+.role-3rahR_.addButton-3RuTE0:hover {
+    color: #fff!important;
+}
+
+.role-3rahR_.addButton-3RuTE0::before {
+    display: none!important;
+}
+
+.role-3rahR_.addButton-3RuTE0 .addButtonIcon-3GVNfn {
+    height: 10px;
+    width: 10px;
 }
 
 .roleCircleButton-sMOdib {
