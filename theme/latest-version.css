@@ -198,6 +198,7 @@ a {
 
 body {
     font-family: var(--font)!important;
+    background-color: var(--chat-color);
 }
 
 body,
@@ -363,6 +364,7 @@ svg[name="TitleBarMinimize"] {
     left: 105px;
     position: absolute;
     padding: 5px 15px;
+    will-change: transform;
     transform: translateY(-200px);
     -webkit-animation: advert 315s ease-in-out 15s infinite;
     animation: advert 315s ease-in-out 15s infinite;
@@ -381,6 +383,7 @@ svg[name="TitleBarMinimize"] {
     position: absolute;
     border-radius: 5px;
     padding: 5px 15px;
+    will-change: transform;
     transform: translateY(-200px);
     -webkit-animation: advert 315s ease-in-out 15s infinite;
     animation: advert 315s ease-in-out 15s infinite;
@@ -399,7 +402,7 @@ body[tc-plugin-enabled] .guilds-wrapper .guild-separator::after {
 
 @keyframes advert {
     0% {
-        transform: translateY(-200px);
+        transform: translateY(-200px) ;
     }
     0.5% {
         transform: translateY(0);
@@ -2384,7 +2387,7 @@ textarea {
 
 .guilds-wrapper .guilds>div.guild:first-of-type {
     width: 61px;
-    position: fixed;
+    position: absolute;
     left: -1px;
     margin-top: -18px;
     height: 50px;
@@ -2522,7 +2525,7 @@ textarea {
     padding: 0;
     border: none;
     margin-left: 5px!important;
-    position: fixed!important;
+    position: absolute!important;
     bottom: -5px;
     background: var(--chat-color);
     width: 68px!important;
@@ -3208,6 +3211,7 @@ input:focus {
 }
 .search-bar .search-bar-inner .search-bar-icon {
     position: absolute;
+    right: 0;
 }
 
 .search-bar .search-bar-inner input {
@@ -16697,7 +16701,10 @@ Forum style start
     border-radius: 0;
 }
 
-.popout-bottom #autocomplete-popout .autocomplete-arrow-wrapper {
+.popout-bottom #autocomplete-popout .autocomplete-arrow-wrapper,
+.popout-top #autocomplete-popout .autocomplete-arrow-wrapper,
+.popout-right #autocomplete-popout .autocomplete-arrow-wrapper,
+.popout-left #autocomplete-popout .autocomplete-arrow-wrapper {
     display: none;
 }
 
@@ -17137,3 +17144,11 @@ iframe.image {
     box-shadow: 0 5px 35px rgba(57,46,92,0.75);
 }
 */
+
+.raging-demon .symbol img {
+    height: auto;
+    max-height: none;
+    max-width: none;
+    width: 50%;
+    filter: hue-rotate(20deg);
+}
