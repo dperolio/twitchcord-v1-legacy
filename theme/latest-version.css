@@ -567,6 +567,8 @@ textarea {
     border-bottom-color: var(--titlebar-color)!important;
     border-top: 1px solid var(--titlebar-color)!important;
     padding: 17px 30px 16px;
+    height: 40px;
+    line-height: 28px;
 }
 
 .friends-table .messages .divider:before,
@@ -1632,7 +1634,7 @@ textarea {
     width: 320px;
     background-image: url('https://www.twitchcord.com/twitchcord-theme/images/default-banner.png');
     background-size: cover;
-    background-repeat: none;
+    background-repeat: no-repeat;
     background-position: center center;
 }
 
@@ -2943,6 +2945,14 @@ textarea {
     color: #fff!important;
 }
 
+.DevilBro-notice.notice-9857600353355658 .btn:hover {
+    color: #F04747!important;
+}
+
+.notice.notice-facebook .btn:hover {
+    color: #355089!important;
+}
+
 .notice.notice-info .btn:hover {
     color: #4a90e2!important;
 }
@@ -2960,7 +2970,8 @@ textarea {
 }
 
 .defaultColor-v22dK1, .root-2sNHUF .userInfoSection-2WJxMm .userInfoSectionHeader-pmdPGs, .root-2sNHUF .userInfoSection-2WJxMm .connectedAccounts-3WWAND::before,
-.root-2sNHUF .header-2Lg0OeText-2CVBxK, .ui-phone-verification-modal .title, .bd-blue .create-guild-container.deprecated h5, .create-guild-container.deprecated h5 {
+.root-2sNHUF .header-2Lg0OeText-2CVBxK, .ui-phone-verification-modal .title, .bd-blue .create-guild-container.deprecated h5, .create-guild-container.deprecated h5,
+.lfg-3xoFkI .wrapper-33pNYY .title-7_vIlL, .bd-blue .ui-new-terms-modal .title, .ui-new-terms-modal .title, .titleText-2hobNv {
     color: var(--dark-text-header)!important;
     font-weight: 400!important;
     text-transform: none!important;
@@ -3571,6 +3582,57 @@ textarea.input-2YozMi {
     background: url('https://www.twitchcord.com/twitchcord-theme/images/rupees-pixelart.png') no-repeat center!important;
     width: 500px!important;
     height: 109px!important;
+    background-size: 100%!important;
+}
+
+/* Private Messages - LFG channel - Connect to Voice image */
+/* dark mode image */ .image-3Y4mXQ[style*='background-image: url("/assets/a8fd82cc52f43902aa1113fdda7c1ef7.svg")'],
+/* light mode image */ .image-3Y4mXQ[style*='background-image: url("/assets/7d12b6a6565c106a587c1d1f06690ca9.svg")'] {
+    background: url('https://www.twitchcord.com/twitchcord-theme/images/shells-pixelart.gif') no-repeat center!important;
+    width: 500px!important;
+    height: 160px!important;
+    background-size: 50%!important;
+}
+
+/* Private Messages - LFG channel - No Groups Available image */
+/* dark mode image */ .image-3Y4mXQ[style*='background-image: url("/assets/131dcaaa628405e6d0ebee7708111c7a.svg")'],
+/* light mode image */ .image-3Y4mXQ[style*='background-image: url("/assets/d0320d29cdef93b8e2baf889a28d32e0.svg")'] {
+    background: url('https://www.twitchcord.com/twitchcord-theme/images/skull-pixelart.png') no-repeat center!important;
+    width: 192px!important;
+    height: 192px!important;
+    background-size: 100%!important;
+}
+
+/* New ToS modal image */
+img[src="/assets/a13cfdd7220132fff399a76c3ed64519.svg"] {
+    content: url('https://www.twitchcord.com/twitchcord-theme/images/pokemon-pixelart.png')!important;
+    width: 150px!important;
+    height: 167px!important;
+    background-size: 100%!important;
+}
+
+/* LFG party full popout image */
+.private-channel-recipients-invite .error-state.party-full .icon {
+    background: url('https://www.twitchcord.com/twitchcord-theme/images/princesspeach-pixelart.png') no-repeat center!important;
+    width: 68px!important;
+    height: 120px!important;
+    background-size: 100%!important;
+}
+
+/* No friends online, group up and play a game - Activity feed */
+.activityFeed-HeiGwL .image-1QuRMw {
+    background: url('https://www.twitchcord.com/twitchcord-theme/images/zelda-pixelart.png') no-repeat center!important;
+    width: 200px!important;
+    height: 163px!important;
+    background-size: 100%!important;
+    margin-bottom: 20px;
+}
+
+/* No friends - Group DM popout */
+.private-channel-recipients-invite .error-state .icon {
+    background: url('https://www.twitchcord.com/twitchcord-theme/images/pokeball-pixelart.png') no-repeat center!important;
+    width: 90px!important;
+    height: 90px!important;
     background-size: 100%!important;
 }
 
@@ -4214,7 +4276,6 @@ button {
 }
 
 /* replace question mark icon on top nav bar */
-
 .title-qAcLxz svg[name="QuestionMark"], .headerBar-cxbhPD svg[name="QuestionMark"], .titleCall-3X0yGQ svg[name="QuestionMark"] {
     background: url('https://www.twitchcord.com/twitchcord-theme/images/question-mark.png') no-repeat center !important;
     height: 50px!important;
@@ -4222,7 +4283,6 @@ button {
 }
 
 /* replace update icon on top nav bar */
-
 .title-qAcLxz svg[name="Update"], .headerBar-cxbhPD svg[name="Update"], .titleCall-3X0yGQ svg[name="Update"] {
     background: url('https://www.twitchcord.com/twitchcord-theme/images/update3.png') no-repeat center !important;
     height: 50px!important;
@@ -4236,7 +4296,6 @@ button {
 }
 
 /*use default Compose and Phone icons icon on top nav bar */
-
 .headerBar-cxbhPD svg[name="Compose"] g,
 .title-qAcLxz svg[name="Phone"] g {
     display: block;
@@ -4244,7 +4303,6 @@ button {
 }
 
 /* replace mute channel icon on top nav bar */
-
 .title-qAcLxz svg[name="NotificationBell"], .headerBar-cxbhPD svg[name="NotificationBell"] {
     background: url('https://www.twitchcord.com/twitchcord-theme/images/channel-unmuted.png') no-repeat center !important;
     height: 50px!important;
@@ -4252,7 +4310,6 @@ button {
 }
 
 /* replace unmute channel icon on top nav bar */
-
 .title-qAcLxz svg[name="NotificationBellOff"], .headerBar-cxbhPD svg[name="NotificationBellOff"] {
     background: url('https://www.twitchcord.com/twitchcord-theme/images/channel-muted.png') no-repeat center !important;
     height: 50px!important;
@@ -4260,7 +4317,6 @@ button {
 }
 
 /* replace members list icon on top nav bar */
-
 .title-qAcLxz svg[name="People"], .headerBar-cxbhPD svg[name="People"], .titleCall-3X0yGQ svg[name="People"] {
     background: url('https://www.twitchcord.com/twitchcord-theme/images/members-list.png') no-repeat center !important;
     height: 50px!important;
@@ -4269,16 +4325,13 @@ button {
 
 
 /* replace pinned icon on top nav bar */
-
 .title-qAcLxz svg[name="Pin"], .headerBar-cxbhPD svg[name="Pin"], .titleCall-3X0yGQ svg[name="Pin"] {
     background: url('https://www.twitchcord.com/twitchcord-theme/images/notifications2.png') no-repeat center !important;
     height: 50px!important;
     width: 19px!important;
 }
 
-
 /* replace add friend on top nav bar */
-
 .title-qAcLxz svg[name="PersonPlus"], .headerBar-cxbhPD svg[name="PersonPlus"], .titleCall-3X0yGQ svg[name="PersonPlus"] {
     background: url('https://www.twitchcord.com/twitchcord-theme/images/add-user.png') no-repeat center !important;
     height: 50px!important;
@@ -4286,7 +4339,6 @@ button {
 }
 
 /* replace video call on top nav bar */
-
 .title-qAcLxz svg[name="VideoCamera"] {
     background: url('https://www.twitchcord.com/twitchcord-theme/images/video-icon.png') no-repeat center !important;
     height: 50px!important;
@@ -4294,7 +4346,6 @@ button {
 }
 
 /* replace mentions icon on top nav bar */
-
 .title-qAcLxz svg[name="Mention"], .headerBar-cxbhPD svg[name="Mention"], .titleCall-3X0yGQ svg[name="Mention"] {
     background: url('https://www.twitchcord.com/twitchcord-theme/images/mentions2.png') no-repeat center !important;
     height: 50px!important;
@@ -4305,6 +4356,29 @@ button {
     fill: none;
 }
 
+.editPartyIcon-JxCCSD {
+    background-color: var(--top-nav-color);
+    background-image: url('https://www.twitchcord.com/twitchcord-theme/images/settings.png')!important;
+    background-repeat: no-repeat!important;
+    background-position: 50%!important;
+    background-size: 18px!important;
+    height: 50px!important;
+    width: 30px!important;
+    position: absolute;
+    right: 532px;
+    padding-left: 4px;
+    opacity: 1;
+    z-index: 2;
+}
+
+.editPartyIcon-JxCCSD:hover {
+    opacity: .8;
+}
+
+.editPartyIcon-JxCCSD path {
+    display: none;
+}
+
 .channels-3g2vYe .button-1aU9q1 {
     vertical-align: middle;
     opacity: 1!important;
@@ -4312,10 +4386,6 @@ button {
 
 .channels-3g2vYe .container-3NvGrL {
     background: var(--top-nav-color);
-}
-
-.channels-3g2vYe .button-1aU9q1:hover svg[name="Gear"] {
-    animation: rotate360 4s infinite linear;
 }
 
 @keyframes rotate360 {
@@ -4543,7 +4613,7 @@ button {
 
 .ui-call-avatar.voice {
     border-radius: 0;
-    border: 1px solid #332d45;
+    border: 1px solid var(--top-nav-color);
 }
 
 .private-channel-call .button-exit.voice {
@@ -5719,6 +5789,10 @@ button {
     display: inline-block;
 }
 
+.private .channel-members .member .member-username-inner {
+    max-width: calc(100% - 46px);
+}
+
 .channel-members .member:hover .member-username-inner,
 .channel-members .member.popout-open .member-username-inner {
     color: var(--links-color)!important;
@@ -6260,7 +6334,7 @@ div[class*="modal-"] {
 
 .container-2WJW5U .buttonPrimaryFilledDefault-ekmMaT {
     margin: 0 auto!important;
-    margin-right: 0!important;
+    margin-right: 10px!important;
 }
 
 .member-roles:empty {
@@ -6403,7 +6477,7 @@ div[class*="modal-"] {
     }
 }
 
-.private-channels header {
+.private-channels header, .private-channels .btn-friends + .channel.private::before {
     letter-spacing: 0;
     -webkit-transition: opacity .15s ease;
     transition: opacity .15s ease;
@@ -6419,6 +6493,22 @@ div[class*="modal-"] {
     text-transform: capitalize;
     font-size: 14px;
     font-weight: normal;
+    overflow: visible;
+}
+
+.private-channels .btn-friends + .channel.private {
+    overflow: visible;
+    margin-bottom: 60px;
+}
+
+.private-channels .btn-friends + .channel.private::before {
+    content: 'LFG Channel';
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    border: none;
+    overflow: visible;
 }
 
 .small-popout-box {
@@ -6634,10 +6724,8 @@ div[class*="modal-"] {
 
 .ui-video {
     background: var(--dark-modal-bg)!important;
-}
-
-.ui-video-background {
-    border-bottom: 1px solid #463d5e;
+    border-bottom: 1px solid var(--titlebar-color);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .buttonRedFilled-1NjJNj {
@@ -6645,7 +6733,7 @@ div[class*="modal-"] {
 }
 
 .private-channel-call.minimum .private-channel-call-actions .center {
-    border: 1px solid #433f4a !important;
+    border: 1px solid var(--titlebar-color) !important;
     background: rgba(0, 0, 0, 0.2) !important;
     padding: 0px 10px;
 }
@@ -8412,13 +8500,25 @@ content: "";
     height: 46px!important;
 }
 
-.private-channels .channel svg[name="PersonWaving"] {
+.private-channels .channel svg[name="PersonWaving"],
+.private-channels .channel svg[name="GroupAdd"],
+.private-channels .channel svg[name="PlayCircle"] {
     background: transparent url('https://www.twitchcord.com/twitchcord-theme/images/friends.png') 50% no-repeat;
     height: 24px;
     width: 40px;
 }
 
-.private-channels .channel svg[name="PersonWaving"] g {
+.private-channels .channel svg[name="GroupAdd"] {
+    background: transparent url('https://www.twitchcord.com/twitchcord-theme/images/lfg-icon.png') 50% no-repeat;
+}
+
+.private-channels .channel svg[name="PlayCircle"] {
+    background: transparent url('https://www.twitchcord.com/twitchcord-theme/images/activity-icon.png') 50% no-repeat;
+}
+
+.private-channels .channel svg[name="PersonWaving"] g,
+.private-channels .channel svg[name="GroupAdd"] g,
+.private-channels .channel svg[name="PlayCircle"] g  {
     display: none;
 }
 
@@ -9283,20 +9383,7 @@ content: "";
     padding: 0px;
     border: none!important;
     background-color: var(--dark-modal-bg);
-    transform-style: preserve-3d;
-    transform: translateY(200px);
-    animation: fallPerspective .4s ease-in-out forwards;
-}
-
-#friends .friends-table .friends-row:nth-of-type(even) {
-    transform: translateY(500px);
-    animation: fallPerspective .4s ease-in-out forwards;
-}
-
-@keyframes fallPerspective {
-    100% {
-        transform: translateY(0px);
-    }
+    animation: fadeIn .4s ease-in-out forwards;
 }
 
 #friends .friends-table .friends-row:hover {
@@ -10066,7 +10153,7 @@ content: "";
     box-shadow: 0 0 0 1px var(--titlebar-color), 0 1px 1px rgba(0, 0, 0, 0.25), 0 15px 25px rgba(0, 0, 0, 0.6) !important;
 }
 
-.messages-popout-wrap .scroller-wrap .scroller {
+.scroller-wrap .scroller, .messages-popout-wrap .scroller-wrap .scroller {
     overflow-y: auto;
 }
 
@@ -14977,7 +15064,7 @@ img[src*="/assets/5fb477ca84edd15d9a2888ac28365acd.svg"] {
 }
 
 .friends-table .messages .message-group-blocked.revealed .message-group, .messages-wrapper .messages .message-group-blocked.revealed .message-group {
-    padding: 20px;
+    padding: 11px 20px;
 }
 
 .friends-table .messages .message-group-blocked .message-group-blocked-btn, .messages-wrapper .messages .message-group-blocked .message-group-blocked-btn {
@@ -15574,6 +15661,10 @@ Forum style start
 }
 */
 
+.image[src*="share_steam_logo.png"] {
+    filter: grayscale(1) brightness(1000%);
+}
+
 .chat .content .message-group .comment .markup.spoiler,
 .chat .content .message-group .comment .markup.spoiler .mention{
     color: transparent!important;
@@ -15695,8 +15786,17 @@ Forum style start
 }
 
 /* activity feed */
-.private-channels .channel.btn-friends + .channel.btn-friends a {
-    border-top: none!important;
+.activityFeed-HeiGwL .emptyState-1rpxla {
+    justify-content: center;
+}
+
+.activityFeed-HeiGwL .card-2WxYqG {
+    opacity: 0;
+    animation: fadeIn .4s ease-in-out forwards;
+}
+
+.private-channels .channel.btn-friends + .channel.btn-friends {
+    margin-top: 5px!important;
 }
 
 .activityFeed-HeiGwL .scrollerThemed-19vinI.themeGhostHairline-2H8SiW .scroller-fzNley::-webkit-scrollbar-track {
@@ -15959,6 +16059,14 @@ Forum style start
     top: -7px;
 }
 
+.headerText-1r7YO4 {
+    color: #dcddde!important;
+}
+
+.headerText-1r7YO4 strong {
+    color: #fff!important;
+}
+
 .headerText-2CVBxK,
 .body-3rkFrF .bodyTitle-yehI7c {
     height: 34px;
@@ -16104,6 +16212,15 @@ Forum style start
 
   .root-2sNHUF .topSectionStreaming-3rIBIm .headerText-2CVBxK {
       margin-left: 15px;
+  }
+
+  .root-2sNHUF .guildNick-1oZKE3 {
+    line-height: 20px;
+    margin-bottom: -2px;
+  }
+
+  .root-2sNHUF .guildNick-1oZKE3:empty {
+      display: none;
   }
 
   @keyframes live-pulse {
@@ -17152,3 +17269,296 @@ iframe.image {
     width: 50%;
     filter: hue-rotate(20deg);
 }
+
+.channel-members .member .member-group-owner-icon {
+    top: -3px;
+}
+
+/* LFG */
+.lfg-3xoFkI .wrapper-3_GGbm.wrapperFull-2_7g2- {
+    color: #72767d!important;
+    background-color: var(--chat-color)!important;
+    opacity: 0.5;
+}
+
+.lfg-3xoFkI .bodyText-3-EAqW {
+    color: var(--dark-text-tint);
+    line-height: 22px;
+    font-size: 14px;
+}
+
+.lfg-3xoFkI .bodyText-3-EAqW + .gameSelector-24sFfz {
+    background: var(--dark-modal-bg);
+    border: 1px solid var(--titlebar-color);
+    border-radius: 0;
+    margin-top: 40px;
+    padding: 10px;
+}
+
+.lfg-3xoFkI .bodyText-3-EAqW + .gameSelector-24sFfz .gameDefault-2SBp6B {
+    padding: 10px;
+    border: none;
+}
+
+.lfg-3xoFkI .bodyText-3-EAqW + .gameSelector-24sFfz .gameDefault-2SBp6B:focus,
+.lfg-3xoFkI .bodyText-3-EAqW + .gameSelector-24sFfz .gameDefault-2SBp6B:hover {
+    border: none;
+    background: var(--channels-color);
+}
+
+.lfg-3xoFkI::before {
+    content: 'Looking For Group';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    background-color: var(--top-nav-color);
+    color: #fff;
+    font-size: 16px;
+    line-height: 50px;
+    font-weight: 700;
+    padding-left: 10px;
+}
+
+.lfg-3xoFkI {
+    background-color: var(--chat-color)!important;
+}
+
+.lfg-3xoFkI .header-3lpf0u .tabBar-PTjkZh {
+    justify-content: space-around;
+    position: relative;
+    border: none;
+    background-color: var(--chat-color);
+}
+
+.lfg-3xoFkI .header-3lpf0u .headerText-1r7YO4 {
+    margin: 0;
+    padding: 0 8px 0 12px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.lfg-3xoFkI .tabBarItem-2YOhcM {
+    display: inline-block;
+    width: auto;
+    margin: 0;
+}
+
+.lfg-3xoFkI .tabBarItem-2YOhcM .game-3qQlfY {
+    border: none;
+    padding: 20px;
+}
+
+.lfg-3xoFkI .tabBarItem-2YOhcM.itemSelected-3XxAMf {
+    border: none;
+}
+
+.lfg-3xoFkI .tabBarItem-2YOhcM.itemSelected-3XxAMf::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--button-color);
+    -webkit-animation: topBorderGrow 0.2s ease-in-out;
+    animation: tabBorderGrow 0.2s ease-in-out;
+}
+
+@keyframes tabBorderGrow {
+    0% {
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+    }
+    100% {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+}
+
+.lfg-3xoFkI .tabBarItem-2YOhcM.itemSelected-3XxAMf::before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.lfg-3xoFkI .tabBarItem-2YOhcM .game-3qQlfY:focus,
+.lfg-3xoFkI .tabBarItem-2YOhcM .game-3qQlfY:hover {
+    background-color: transparent;
+    border: none;
+}
+
+.lfg-3xoFkI .listHeader-1GwSBl {
+    background: var(--dark-modal-bg);
+    border-bottom: 1px solid var(--titlebar-color)!important;
+    border-top: 1px solid var(--titlebar-color)!important;
+    padding: 17px 30px 16px;
+    box-shadow: none!important;
+}
+
+.lfg-3xoFkI .listHeader-1GwSBl .gameCount-3gA7A4 {
+    font-size: 16px!important;
+    font-weight: 700!important;
+    margin: 5px 0;
+    color: #fff!important;
+    padding: 0!important;
+    line-height: 16px;
+}
+
+.lfg-3xoFkI .wrapper-3_GGbm .count-25CzCS {
+    line-height: 32px;
+}
+
+.lfg-3xoFkI .wrapper-3_GGbm .max-mvI_jT {
+    background-color: var(--chat-color);
+    line-height: 32px;
+}
+
+.lfg-3xoFkI .wrapper-3_GGbm .max-mvI_jT:before {
+    border-bottom-color: var(--chat-color);
+}
+
+.lfg-3xoFkI .newGroupsContainer-1Clfwl .pill-1nbD-Z {
+    border-radius: 0;
+    box-sizing: border-box;
+    background-color: var(--top-nav-color);
+    border: 1px solid #444;
+    border-color: #9866ff;
+    margin: 7px;
+    box-shadow: 0 0 6px var(--top-nav-color), inset 0 0 10px rgba(57, 46, 92, 0.7);
+    animation: glow3 1s ease-out infinite alternate;
+}
+
+.lfg-3xoFkI .ui-search-bar .input {
+    margin-left: -100px;
+    margin-right: -20px;
+    padding-right: 30px;
+}
+
+.lfg-3xoFkI .ui-search-bar .ui-search-bar-icon {
+    right: 9px;
+}
+
+.lfg-3xoFkI .newGroupsContainer-1Clfwl .pill-1nbD-Z .pillIcon-20SWkM {
+    margin-right: 10px;
+}
+
+.lfg-3xoFkI .wrapper-3_GGbm {
+    border-radius: 0;
+    color: #fff;
+    background-color: var(--button-color)!important;
+    border: 1px solid var(--titlebar-color);
+    cursor: default;
+}
+
+.lfg-3xoFkI .wrapper-33pNYY::before {
+    display: none;
+}
+
+.lfg-3xoFkI .reportButton-3Yuq49 {
+    position: relative;
+    top: -3px;
+    color: #fff!important;
+}
+
+.lfg-3xoFkI .emptyUser-34aCrC {
+    border-radius: 0;
+    background-color: var(--channels-color);
+}
+
+.lfg-3xoFkI .avatar-1pYW6h {
+    margin-right: 4px;
+}
+
+.lfg-3xoFkI .wrapper-33pNYY .description-1YngYv {
+    font-size: 14px;
+    color: var(--dark-text-tint);
+}
+
+.lfg-3xoFkI .wrapper-33pNYY {
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid var(--titlebar-color)!important;
+    background-color: var(--dark-modal-bg);
+    opacity: 0;
+    animation: fadeIn .4s ease-in-out forwards;
+}
+
+.lfg-3xoFkI .scroller-1nBnGs {
+    padding: 0px 20px 20px 10px;
+    margin: 10px;
+}
+
+.lfg-3xoFkI .emptyState-3qXDQ6 {
+    opacity: 0;
+    animation: fadeIn .4s ease-in-out forwards;
+}
+  
+.lfg-3xoFkI .header-3lpf0u {
+    background-color: var(--top-nav-color);
+    box-shadow: none;
+}
+
+.gameSelector-1Kxi2X .game-3qQlfY {
+    border: none;
+    padding: 10px;
+}
+
+.lfg-3xoFkI .buttonPrimaryOutlinedDefault--H0hhk:hover {
+    background: none!important;
+}
+
+.gameSelector-1Kxi2X .gameSelected-31teRt,
+.gameSelector-1Kxi2X .gameDefault-2SBp6B:focus,
+.gameSelector-1Kxi2X .gameDefault-2SBp6B:hover {
+    background-color: var(--channels-color);
+}
+/***************************************************/
+
+/*new terms modal */
+.ui-new-terms-modal {
+    background: var(--dark-modal-bg);
+    border: 1px solid var(--titlebar-color);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.ui-new-terms-modal .title {
+    margin-bottom: 10px;
+}
+
+.ui-new-terms-modal .button-container {
+    background-color: var(--channels-color);
+}
+
+.ui-new-terms-modal .ack {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.ui-new-terms-modal .checkbox-1QwaS4 {
+    border: 1px solid var(--titlebar-color)!important;
+    background: var(--channels-color);
+    border-radius: 0;
+    margin-right: 10px;
+    box-shadow: none!important;
+}
+
+.ui-new-terms-modal .checked-2TahvT {
+    background: var(--button-color)!important;
+}
+
+.ui-new-terms-modal div:nth-last-child(2),
+.ui-new-terms-modal div:nth-last-child(4) {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.ui-new-terms-modal .bd-blue *[style*="border-color: rgb(114, 137, 218)"] {
+    border-color: var(--titlebar-color)!important;
+}
+/***************************************************/
