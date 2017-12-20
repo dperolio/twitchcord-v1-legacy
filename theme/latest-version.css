@@ -16,7 +16,7 @@
 +  First started: 8/29/2017            +
 +  https://www.twitchcord.com          +
 +  https://discord.me/twitchcord       +
-+  Version: 1.2.4                      +
++  Version: 1.2.6                      +
 ****************************************
 
 ///////////////////////////////////////
@@ -38,7 +38,7 @@ Cheers, and enjoy.
 ---------------------------
 */
 :root {
-    --version: "Twitchcord v1.2.4";
+    --version: "Twitchcord v1.2.6";
 
     --theme-notice: 'Congratulations, you have successfully installed and enabled the Twitchcord theme!\A\A Now that you\'ve succesffully installed the theme, there are a few things you should know. First, the theme should auto-update from now until the future. The updates won\'t be instant, but shouldn\'t take more than a couple of hours. Next, Twitchcord enables custom user backgrounds viewable by other Twitchcord users, but you must enable the Twitchcord plugin to see them. The plugin is avaiable on the website at www.twitchcord.com or from our Discord server listed below. If you have any questions, concerns, problems, or suggestions drop by the Discord server and let us know. Thanks and enjoy the theme.\A\A Discord server: www.discord.me/twitchcord';
     --plugin-notice: 'Now that you\'re using the Twitchcord theme, it\'s highly recommended you also download and enable the official Twitchcord plugin. The plugin contains some small fixes and features not possible with just CSS, including a ton of user customizability options! The plugin also enables custom user profile backgrounds, so if you want to have yours added to the list so other Twitchcord users can see it as well, just download and enable the plugin, and stop on over to our Discord server and submit your background in the #set-user-profile-background channel.';

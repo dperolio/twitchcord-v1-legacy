@@ -55,7 +55,7 @@
 .avatar-large[style*="219078125974192128"]+.comment .timestamp::before,
 .avatar-large[style*="178214422890676224"]+.comment .timestamp::before,
 .avatar-large[style*="211403732158513152"]+.comment .timestamp::before {
-    content: 'Supporter';
+    content: 'Donor';
     border-color: #FF6666;
     background: #e52e2e;
     box-shadow: 0 0 5px 1px #5c2e2e, inset 0 0 10px rgba(92, 46, 46, 0.7);
