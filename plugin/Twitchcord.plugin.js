@@ -30,21 +30,38 @@ class Twitchcord {
     bodySelect.setAttribute('tc-plugin-enabled', '');
   }
 
-  async injectUserModals () {
+  async injectUserBackgrounds () {
     const res = await window.fetch(this.USER_BG_URL).then(r => r.json());
-
     this.userBackgrounds = JSON.parse(res.files['userBackgrounds.json'].content);
-    const MO = new MutationObserver(changes => {
+
+    const MO = new MutationObserver(async changes => {
       if (changes.some(change =>
         change.addedNodes && change.addedNodes[0] &&
-        change.addedNodes[0].className === 'backdrop-2ohBEd' 
+        change.addedNodes[0].className === 'backdrop-2ohBEd'
       )) {
         this.injectUserModal();
+      } else if (changes.some(change => 
+        change.target && change.target.className.includes('popouts')
+      )) {
+        this.injectUserPopout();
       }
     });
 
-    MO.observe(document.querySelector('.app').parentNode, { childList: true, subtree: true });
+    MO.observe(document.querySelector('#app-mount'), { childList: true, subtree: true });
     this.observers.push(MO);
+  }
+
+  async injectUserPopout () {
+    const header = document.querySelector('.userPopout-4pfA0d .avatar-1BXaQj');
+    if (!header) {
+      return;
+    }
+    
+
+    const id = header.children[0].style.backgroundImage.split('/')[4];
+    if (this.userBackgrounds[id]) {
+      header.style.backgroundImage = `url("${this.userBackgrounds[id]}")`;
+    }
   }
 
   async injectUserModal () {
@@ -56,7 +73,6 @@ class Twitchcord {
     ) {
       return;
     }
-    
     const id = header.children[0].children[0].style.backgroundImage.split('/')[4];
 
     if (this.userBackgrounds[id]) {
@@ -204,6 +220,10 @@ class Twitchcord {
     }
 
     const titleBar = document.querySelector('div[class*=titleBar]');
+    if (!titleBar) {
+      return;
+    }
+
     const menuVessel = this.createElement('div', { id: 'twitchcord-hamburger-menu-vessel' });
     titleBar.insertBefore(menuVessel, titleBar.children[0]);
 
@@ -407,7 +427,7 @@ class Twitchcord {
     }
     this.styleTag.innerHTML = '';
     this.loadSnippets();
-    this.injectUserModals();
+    this.injectUserBackgrounds();
   }
 
   get settingTabThing () {
@@ -545,7 +565,7 @@ class Twitchcord {
     this.loadSnippets();
     this.watchState();
     this.addHamburgerMenu();
-    this.injectUserModals();
+    this.injectUserBackgrounds();
     this.checkForUpdate();
 
     /* Most of everything beyond this point is Zere's script */
@@ -782,7 +802,7 @@ class Twitchcord {
   }
 
   getVersion () {
-    return '0.5.0';
+    return '0.5.1';
   }
 
   getAuthor () {
