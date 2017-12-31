@@ -22,7 +22,6 @@
 }
 
 /* Beta Tester */
-.avatar-large[style*="177744816665395200"]+.comment .timestamp::before,
 .avatar-large[style*="269929826075410432"]+.comment .timestamp::before,
 .avatar-large[style*="284122164582416385"]+.comment .timestamp::before,
 .avatar-large[style*="71575679543549952"]+.comment .timestamp::before,
@@ -45,7 +44,7 @@
     box-shadow: 0 0 5px 1px #5C482E, inset 0 0 10px rgba(92, 68, 46, 0.7);
 }
 
-/* Supporter */
+/* Donor */
 .avatar-large[style*="167335587488071682"]+.comment .timestamp::before,
 .avatar-large[style*="98270968945864704"]+.comment .timestamp::before,
 .avatar-large[style*="119321587026493441"]+.comment .timestamp::before,
@@ -54,7 +53,8 @@
 .avatar-large[style*="71575679543549952"]+.comment .timestamp::before,
 .avatar-large[style*="219078125974192128"]+.comment .timestamp::before,
 .avatar-large[style*="178214422890676224"]+.comment .timestamp::before,
-.avatar-large[style*="211403732158513152"]+.comment .timestamp::before {
+.avatar-large[style*="211403732158513152"]+.comment .timestamp::before,
+.avatar-large[style*="173449041181409281"]+.comment .timestamp::before {
     content: 'Donor';
     border-color: #FF6666;
     background: #e52e2e;

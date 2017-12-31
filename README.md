@@ -1,11 +1,11 @@
 # Twitchcord Discord Theme
-`v1.0.0` By BakedPVP ![alt text](http://www.dperolio.com/Twitchcord/images/verified5.png "Verified")
+`v1.3.0` By BakedPVP ![alt text](http://www.dperolio.com/Twitchcord/images/verified5.png "Verified")
 
 ![alt text](http://www.dperolio.com/Twitchcord/images/twitchcord-ava-256.png "Twitchcord")
 
 **[Website](http://www.twitchcord.com)**
 
-**[Download](http://www.twitchcord.com/twitchcord-theme/Twitchcord.zip)** v1.0.1
+**[Download](http://www.twitchcord.com/twitchcord-theme/Twitchcord.zip)** v1.3.0
 
 **[Twitchcord discord server](https://discord.me/twitchcord)**
 
@@ -33,16 +33,3 @@ please!
 ![Full size preview](https://www.twitchcord.com/images/prev-11.png)
 ![Full size preview](https://www.twitchcord.com/images/prev-12.png)
 ![Full size preview](https://www.twitchcord.com/images/prev-13.png)
-
-
-
-# Changelog:
-**1.0.0**
-- Beta version of website now live @ http://www.twitchcord.com
-- Finished User Profile modals
-
-**0.0.9**
-- Changed top navigation icons
-- Changed user status bar icons
-- Finished User Popouts
-- Finished User Profiles

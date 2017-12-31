@@ -2,12 +2,6 @@
 /* ================== LIGHT TOOLTIPS ================= */
 /* =================================================== */
 
-.tooltip,
-.tooltip.tooltip-black,
-.tipsy-inner {
-    padding: 8px 18px;
-}
-
 .tooltip.tooltip-brand,
 .tooltip.tooltip-black,
 .tipsy-inner {
@@ -26,7 +20,7 @@
     border-right: 8px solid #fff!important;
     border-top: 8px solid transparent!important;
     border-bottom: 8px solid transparent!important;
-    display: block;
+    display: block!important;
 }
 
 .tooltip.tooltip-brand.tooltip-top:after,
@@ -36,7 +30,7 @@
     border-right: 8px solid transparent!important;
     border-top: 8px solid #fff!important;
     border-left: 8px solid transparent!important;
-    display: block;
+    display: block!important;
 }
 
 .tooltip.tooltip-brand.tooltip-left:after,
@@ -45,7 +39,7 @@
     border-left: 8px solid #fff!important;
     border-top: 8px solid transparent!important;
     border-bottom: 8px solid transparent!important;
-    display: block;
+    display: block!important;
 }
 
 .tooltip.tooltip-brand.tooltip-bottom:after,
@@ -54,9 +48,5 @@
     border-right: 8px solid transparent!important;
     border-bottom: 8px solid #fff!important;
     border-left: 8px solid transparent!important;
-    display: block;
-}
-
-.tooltip.tooltip-top {
-    margin-top: -11px;
+    display: block!important;
 }
