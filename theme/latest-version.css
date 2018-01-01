@@ -16,7 +16,7 @@
 +  First started: 8/29/2017            +
 +  https://www.twitchcord.com          +
 +  https://discord.me/twitchcord       +
-+  Version: 1.3.0                      +
++  Version: 1.3.1                      +
 ****************************************
 
 ///////////////////////////////////////
@@ -38,7 +38,7 @@ Cheers, and enjoy.
 ---------------------------
 */
 :root {
-    --version: "Twitchcord v1.3.0";
+    --version: "Twitchcord v1.3.1";
 
     --theme-notice: 'Congratulations, you have successfully installed and enabled the Twitchcord theme!\A\A Now that you\'ve succesffully installed the theme, there are a few things you should know. First, the theme should auto-update from now until the future. The updates won\'t be instant, but shouldn\'t take more than a couple of hours. Next, Twitchcord enables custom user backgrounds viewable by other Twitchcord users, but you must enable the Twitchcord plugin to see them. The plugin is avaiable on the website at www.twitchcord.com or from our Discord server listed below. If you have any questions, concerns, problems, or suggestions drop by the Discord server and let us know. Thanks and enjoy the theme.\A\A Discord server: www.discord.me/twitchcord';
     --plugin-notice: 'Now that you\'re using the Twitchcord theme, it\'s highly recommended you also download and enable the official Twitchcord plugin. The plugin contains some small fixes and features not possible with just CSS, including a ton of user customizability options! The plugin also enables custom user profile backgrounds, so if you want to have yours added to the list so other Twitchcord users can see it as well, just download and enable the plugin, and stop on over to our Discord server and submit your background in the #set-user-profile-background channel.';
@@ -200,6 +200,9 @@ Cheers, and enjoy.
 }
 */
 
+::-moz-selection { color: #fff; background: #a373ff; }
+::selection { color: #fff; background: #a373ff; }
+
 a {
     color: var(--links-color);
 }
@@ -255,6 +258,7 @@ textarea:disabled, textarea:disabled:hover {
     opacity: 1;
     width: 100%;
     background: var(--titlebar-color);
+    top: -4px;
 }
 .wordmark-2L03Wr svg {
     display: none;
@@ -473,7 +477,8 @@ textarea {
     font-family: var(--font)!important;
 }
 
-.channel-members .avatar-small .status {
+.channel-members .avatar-small .status,
+.message-group .avatar-large .status {
     bottom: 0;
     right: 0;
     border-radius: 0;
@@ -566,6 +571,7 @@ textarea {
     border-radius: 0;
     background-color: #5b3c95;
     opacity: 0.9;
+    z-index: 12;
 }
 
 .bd-blue .chat .new-messages-bar:hover,
@@ -2138,16 +2144,29 @@ textarea {
 
 .chat .jump-to-present-bar {
     background-color: var(--titlebar-color)!important;
-    border: 1px solid var(--button-color)!important;
+    border: 1px solid #a373ff!important;
     padding: 5px 10px!important;
     margin-bottom: 0px!important;
-    left: 17px;
-    bottom: 5px;
-    border-radius: 0;
+    bottom: 10px;
     transition: none;
-    right: 22px;
     left: 20px;
     opacity: 0.95;
+    right: 45px;
+    border-radius: 0;
+    box-sizing: border-box;
+    box-shadow: 0 0 6px var(--top-nav-color), inset 0 0 10px rgba(57, 46, 92, 0.7);
+    animation: glow3 1s ease-out infinite alternate;
+    color: #fff;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font-size: 11px;
+    font-weight: 600;
+    height: 34px;
+    line-height: 18px;
+    pointer-events: all;
+    margin: 0 auto;
+    width: 340px;
+    bottom: 10px;
 }
 
 .chat .jump-to-present-bar:hover {
@@ -2156,8 +2175,20 @@ textarea {
     transition: none;
 }
 
+.chat .jump-to-present-bar button:first-child, 
+.chat .jump-to-present-bar button:last-child {
+    display: inline-block;
+    flex: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
 .chat .jump-to-present-bar button:last-child {
     color: #fff;
+    padding-left: 10px;
 }
 
 .spinner-pulsing-ellipsis .spinner-item {
@@ -5141,6 +5172,13 @@ button {
 .wrapper-2xO9RX {
     box-shadow: none;
     padding: 2px 4px;
+    min-height: 18px;
+    min-width: 18px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
 }
 
 .private-channel-call-btns-wrapper {
@@ -5231,8 +5269,8 @@ button {
     max-width: 100%;
     word-wrap: break-word;
     display: inline-block;
-    margin: 2px 0;
-    padding: 3px 7px;
+    margin: 2px;
+    padding: 2px 5px;
 }
 
 .message-group .comment .markup.embed-description code.inline {
@@ -6346,6 +6384,7 @@ div[class*="modal-"] {
     border: 1px solid var(--titlebar-color);
     box-shadow: none;
     position: relative;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.6) !important;
 }
 
 .avatarWrapper-2Gfmp1 {
@@ -8236,7 +8275,7 @@ content: "";
     flex-direction: column;
     margin: -1px 0;
     padding: 0px 0px 8px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 10px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.6) !important;
 }
 
 .channelTextArea-os01xC .descriptionUsername-1quCGz::before,
@@ -8790,7 +8829,7 @@ content: "";
     height: 8px;
 }
 
-.avatar-small .status, .avatar-xsmall .status {
+.message-group .avatar-large .status, .avatar-small .status, .avatar-xsmall .status {
     right: -2px!important;
     bottom: -2px!important;
 }
@@ -10216,7 +10255,7 @@ content: "";
 }
 
 #autocomplete-popout .row.selected, #autocomplete-popout .row:hover {
-    background: var(--chat-color)!important;
+    background: var(--channels-color)!important;
 }
 
 .popout.popout-top-left header:before, .popout.popout-top-right header:before, .popout.popout-top header:before,
@@ -10296,6 +10335,11 @@ content: "";
     overflow-y: auto;
 }
 
+.messages-popout-wrap .scroller-wrap .scroller {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .scroller-wrap .messages.scroller {
     overflow-y: scroll;
 }
@@ -10312,7 +10356,7 @@ content: "";
 .messages-popout-wrap::before {
     content: '';
     background: transparent;
-    border-color: transparent transparent var(--chat-color);
+    border-color: transparent transparent var(--titlebar-color);
     border-style: solid;
     border-width: 8px;
     color: transparent;
@@ -10344,7 +10388,7 @@ content: "";
 }
 
 .messages-popout-wrap .header .title {
-    background: var(--chat-color);
+    background: var(--titlebar-color);
     padding: 12px 20px;
     border-bottom: 1px solid var(--titlebar-color);
 }
@@ -10380,6 +10424,11 @@ content: "";
     border: none!important;
     border-radius: 0;
     margin: 6px 0 6px 0;
+    width: 100%;
+}
+
+.messages-popout-wrap .messages-popout .message-group + .message-group {
+    margin-top: 0;
 }
 
 .messages-popout-wrap .messages-popout .message-group:hover {
@@ -10398,8 +10447,9 @@ content: "";
 .messages-popout .channel-separator {
     margin-bottom: 0;
     margin-top: 0;
-    background: var(--titlebar-color);
+    background: var(--top-nav-color);
     padding: 9px 20px;
+    width: 100%;
 }
 
 .messages-popout .channel-separator:first-of-type {
@@ -10413,7 +10463,9 @@ content: "";
 }
 
 .messages-popout .empty-placeholder.loading-placeholder {
-    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .messages-popout-wrap .messages-popout .message-group:hover .action-buttons {
@@ -10467,6 +10519,10 @@ content: "";
     margin-top: -105px;
     color: #999!important;
     line-height: 24px!important;
+}
+
+.messages-popout .empty-placeholder {
+    width: 100%;
 }
 
 @-webkit-keyframes linkAnimation {
@@ -12101,11 +12157,6 @@ div#bd-customcss-detach-container::before {
     visibility: visible;
 }
 
-.scrollerWrap-2uBjct .scrollerFade-28dRsO .scroller-fzNley::-webkit-scrollbar-track-piece,
-.scrollerWrap-2uBjct .scrollerFade-28dRsO .scroller-fzNley::-webkit-scrollbar-track {
-    border: 20px solid var(--chat-color)!important;
-}
-
 .ui-color-picker-swatch.custom, .ui-color-picker-swatch.default, .ui-color-picker-swatch, .saturation-QX6a9n>div>div, .saturation-QX6a9n>div, .hue-3rjXU8>div>div, .hue-3rjXU8>div>div>div>div {
     border-radius: 0!important;
 }
@@ -12324,6 +12375,10 @@ div#bd-customcss-detach-container::before {
     color: var(--dark-text-tint)!important;
 }
 
+.user-settings-account .avatar-xxlarge {
+    background-color: transparent;
+}
+
 .avatar-uploader .remove-button {
     font-size: 12px;
     font-weight: 400;
@@ -12385,9 +12440,10 @@ margin: 0 0 20px 41px;
 .user-info-viewing .ui-form-item:nth-of-type(2) .view-body {
     filter: blur(3px);
     transition: filter 0.2s;
+    display: inline-block;
 }
 
-.user-info-viewing .ui-form-item:nth-of-type(2):hover .view-body {
+.user-info-viewing .ui-form-item:nth-of-type(2) .view-body:hover {
     filter: blur(0);
     transition: filter 0.2s;
 }
@@ -15553,10 +15609,32 @@ background: var(--dark-modal-bg);
     text-indent: 20px;
 }
 
-.typeMacOS-3IiWed #twitchcord-hamburger-menu-container+.wordmark-2L03Wr::before,
-.typeMacOS-3IiWed #twitchcord-hamburger-menu-container+.wordmark-2L03Wr::after {
+.platform-osx .guilds-wrapper {
+    margin-top: 0;
+}
+
+.typeMacOS-3IiWed #twitchcord-hamburger-clicker { left: 80px; }
+
+.typeMacOS-3IiWed #twitchcord-hamburger-menu-container+.wordmark-2L03Wr::before {
     text-indent: 57px;
     background-position: 160px;
+    transition: text-indent 0.2s, background-position 0.2s;
+}
+
+[tc-opened] .typeMacOS-3IiWed #twitchcord-hamburger-menu-container+.wordmark-2L03Wr::before {
+    text-indent: 0;
+    background-position: 103px;
+    transition: text-indent 0.2s, background-position 0.2s;
+}
+
+.typeMacOS-3IiWed #twitchcord-hamburger-menu-container+.wordmark-2L03Wr::after {
+    text-indent: 50px;
+    transition: text-indent 0.2s;
+}
+
+[tc-opened] .typeMacOS-3IiWed #twitchcord-hamburger-menu-container+.wordmark-2L03Wr::after {
+    text-indent: -6px;
+    transition: text-indent 0.2s;
 }
 
 #twitchcord-hamburger-menu-container+.wordmark-2L03Wr::after {
@@ -15793,27 +15871,6 @@ body[tc-plugin-enabled] #bd-settingspane-container .bda-slist::before {
     flex-direction: column;
 }
 
-/*
-Forum style start
-
-.chat .messages {
-    counter-reset: messageCount;
-}
-
-.message-group {
-    counter-increment: messageCount;
-}
-
-.message-group::before {
-    content: "Message #" counter(messageCount);
-    display: block;
-    background: orange;
-    color: #fff;
-    font-size: 14px;
-    width: 150px;
-    height: 50px;
-}
-*/
 
 .slider-handle span {
     border-radius: 0;
@@ -16477,7 +16534,7 @@ Forum style start
     top: -25px;
     position: relative;
     margin: 0px 10px;
-    background-color: var(--channels-color);
+    background-color: var(--chat-color);
     z-index: 2;
 }
 
@@ -16792,7 +16849,7 @@ Forum style start
 .root-2sNHUF .avatar-1BXaQj {
     height: 128px;
     width: 128px;
-    border: 2px solid var(--titlebar-color);
+    border: 2px solid var(--chat-color);
     position: relative;
     top: 115px;
     margin-left: 25px;
@@ -17248,9 +17305,10 @@ Forum style start
     transform: scale(0.6);
     margin: 0;
     width: 256px;
-    height: 256px;
+    height: 186px;
     position: relative;
     background: url('https://www.twitchcord.com/twitchcord-theme/images/yoshi-pixelart.gif') no-repeat 50%!important;
+    background-size: 75%!important;
 }
 
 .root-2sNHUF .empty-2dxE7O .spinner {
@@ -18108,4 +18166,12 @@ iframe.image {
 .modal-2O4A7c .ui-search-bar .input {
     margin-right: -10px;
     padding-right: 30px;
+}
+
+/* spotify embed */
+webview[src^="https://open.spotify.com/embed"] {
+    opacity: 0.7;
+    filter: contrast(1.3);
+    border: 1px solid var(--titlebar-color);
+    margin: 5px 0;
 }
