@@ -4,7 +4,7 @@
 
 class Twitchcord {
   constructor () {
-    this.BASE_URL = 'https://rawgit.com/dperolio/twitchcordTheme/master';
+    this.BASE_URL = 'https://rawgit.com/twitchcord/twitchcord/master';
     this.userBackgrounds = new Object();
     this.SNIPPET_URL = `${this.BASE_URL}/pluginSnippets/snippets.json`;
     this.USER_BG_URL = 'https://api.github.com/gists/aaa364d4cae7e5c0cf7799c6fd5310d3';
@@ -802,7 +802,7 @@ class Twitchcord {
   }
 
   getVersion () {
-    return '0.5.1';
+    return '0.5.2';
   }
 
   getAuthor () {
