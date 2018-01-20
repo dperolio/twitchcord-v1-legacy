@@ -40,7 +40,7 @@ class Twitchcord {
         change.addedNodes[0].className === 'backdrop-2ohBEd'
       )) {
         this.injectUserModal();
-      } else if (changes.some(change => 
+      } else if (changes.some(change =>
         change.target && change.target.className.includes('popouts')
       )) {
         this.injectUserPopout();
@@ -56,7 +56,7 @@ class Twitchcord {
     if (!header) {
       return;
     }
-    
+
 
     const id = header.children[0].style.backgroundImage.split('/')[4];
     if (this.userBackgrounds[id]) {
@@ -263,7 +263,7 @@ class Twitchcord {
       }
     };
 
-    const app = document.querySelector('.layer').parentNode.parentNode.parentNode;
+    const app = document.querySelector('.layer-kosS71').parentNode.parentNode.parentNode;
     app.onclick = () => {
       if (container.hasAttribute('opened')) {
         closeContainer();
@@ -320,7 +320,7 @@ class Twitchcord {
 
     const tabObserver = new MutationObserver(onMutation);
     this.observers.push(tabObserver);
-    tabObserver.observe(document.querySelector('.app .layer'), { attributes: true });
+    tabObserver.observe(document.querySelector('.app .layer-kosS71'), { attributes: true });
   }
 
   createElement (type, properties) {
@@ -352,7 +352,7 @@ class Twitchcord {
       TwitchcordTab.appendChild(item);
     }
 
-    const settingsBar = document.querySelector('.layer .sidebar .side-2nYO0F');
+    const settingsBar = document.querySelector('.layer-kosS71 .sidebar .side-2nYO0F');
     settingsBar.insertBefore(TwitchcordTab, document.querySelector('span#bd-settings-sidebar')); // Inject our section into the settings sidebar
 
     Array.from(settingsBar.children)
@@ -362,11 +362,11 @@ class Twitchcord {
           c.children[2].onclick = () => {
             this.renderSettings();
             button.className = this.selectedTabClasses;
-            const querySelector = document.querySelector('.layer .sidebar .side-2nYO0F .itemDefaultSelected-1UAWLe.item-3879bf.selected-eNoxEK:not(#twitchcord-button)');
+            const querySelector = document.querySelector('.layer-kosS71 .sidebar .side-2nYO0F .itemDefaultSelected-1UAWLe.item-3879bf.selected-eNoxEK:not(#twitchcord-button)');
             if (querySelector) {
               querySelector.className = this.unselectedTabClasses;
             } else {
-              const selectedTab = document.querySelector('.layer .sidebar .side-2nYO0F div.ui-tab-bar-item.selected:not(#twitchcord-button)');
+              const selectedTab = document.querySelector('.layer-kosS71 .sidebar .side-2nYO0F div.ui-tab-bar-item.selected:not(#twitchcord-button)');
               if (selectedTab) {
                 selectedTab.className = 'ui-tab-bar-item';
               }
@@ -520,7 +520,7 @@ class Twitchcord {
   renderSettings () {
     const querySelector = document.querySelector('#bd-settings-sidebar span div .selected') ?
       '#bd-settingspane-container div div div' :
-      '.layer .content-column div';
+      '.layer-kosS71 .content-column div';
 
     window.BDV2.reactDom.render(window.BDV2.react.createElement(this.settingTabThing), document.querySelector(querySelector));
   }
@@ -626,7 +626,7 @@ class Twitchcord {
   observeContextMenus (e) {
     if (!e.addedNodes.length || !(e.addedNodes[0] instanceof Element) || !e.addedNodes[0].classList) { return; }
     const elem = e.addedNodes[0];
-    const isContext = elem.classList.contains('context-menu');
+    const isContext = elem.classList.contains('contextMenu-uoJTbz');
     if (!isContext) { return; }
     const contextMenu = $(elem);
 
