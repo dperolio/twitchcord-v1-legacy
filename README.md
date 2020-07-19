@@ -1,35 +1,4 @@
-# Twitchcord Discord Theme
-`v1.3.0` By BakedPVP ![alt text](http://www.dperolio.com/Twitchcord/images/verified5.png "Verified")
+# Twitchcord v1 Legacy
+This is the oldest living version of my Twitchcord Discord theme project. I no longer have any of my old code, and the repo was deleted, so I'm going ahead and forking this fork of my project for memories.
 
-![alt text](http://www.dperolio.com/Twitchcord/images/twitchcord-ava-256.png "Twitchcord")
-
-**[Website](http://www.twitchcord.com)**
-
-**[Download](http://www.twitchcord.com/twitchcord-theme/Twitchcord.zip)** v1.3.0
-
-**[Twitchcord discord server](https://discord.me/twitchcord)**
-
-# Want to help test the theme for bugs?
-I'm only one man, and there are thousands of lines of codes
-and lots of hidden elements, and Discord is updating
-them constantly. If you see something is off, or if you have
-an issue, head on over to the Discord server and let me know
-please!
-
-[Twitchcord discord server](https://discord.me/twitchcord)
-
-# Previews:
-(might be out of date)
-![Full size preview](https://www.twitchcord.com/images/prev-1.png)
-![Full size preview](https://www.twitchcord.com/images/prev-2.png)
-![Full size preview](https://www.twitchcord.com/images/prev-3.png)
-![Full size preview](https://www.twitchcord.com/images/prev-4.png)
-![Full size preview](https://www.twitchcord.com/images/prev-5.png)
-![Full size preview](https://www.twitchcord.com/images/prev-6.png)
-![Full size preview](https://www.twitchcord.com/images/prev-7.png)
-![Full size preview](https://www.twitchcord.com/images/prev-8.png)
-![Full size preview](https://www.twitchcord.com/images/prev-9.png)
-![Full size preview](https://www.twitchcord.com/images/prev-10.png)
-![Full size preview](https://www.twitchcord.com/images/prev-11.png)
-![Full size preview](https://www.twitchcord.com/images/prev-12.png)
-![Full size preview](https://www.twitchcord.com/images/prev-13.png)
+I am still working on my Twitchcord Discord theme to this day...
